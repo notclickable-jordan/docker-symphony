@@ -1,4 +1,21 @@
-# Map network share to Docker volume
+# About
+
+Docker compose files for the services I run on my home server.
+
+The main reverse proxy is in `/nginx` and handles ports 80 and 443. It proxies to the other services on their respective ports.
+
+There are `env.*` files which you'll need to create if you want to replicate this setup. They contain environment variables for the services.
+
+## Services
+
+- Mastodon (8010-8013)
+- Calibre (8040-8042)
+- Miniflux (8050-8052)
+- Minecraft (19132/udp)
+
+# Discoveries
+
+## Map network share to Docker volume
 
 Run this independently in the command line, then mount the volume in the docker-compose.yml file as `external: true`
 
@@ -6,15 +23,17 @@ Run this independently in the command line, then mount the volume in the docker-
 docker volume create --driver local --opt type=cifs --opt device=//ip.address/folder --opt o=user=username,password=password volume_name
 ```
 
-# Obtaining a SSL certificate for an nginx Docker container
+It worked for me once, then I couldn't get it to work again.
 
-## Assumptions
+## Obtaining a SSL certificate for an nginx Docker container
+
+### Assumptions
 - Container is called **my_app**
 - App is on port 8080
 - Domain is website.com
 - There is a top level nginx reverse proxy service (**top_nginx**) sending traffic to **my_app**. If not, skip steps involving **top_nginx**.
 
-## Steps
+### Steps
 1. In **my_app**'s `docker-compose.yml`, add the following services and volumes
     ``` yaml
     services:
@@ -169,7 +188,7 @@ docker volume create --driver local --opt type=cifs --opt device=//ip.address/fo
     docker compose up -d
     ```
 
-## Renewal
+### Renewal
 
 For a Windows host, here's how to create a script to renew the certificate and reload the nginx services.
 
