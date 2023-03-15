@@ -1,0 +1,26 @@
+services:
+  bitwarden:
+    image: bitwarden/server:2023.2.1
+    depends_on:
+      - db
+    env_file:
+      - env.bitwarden
+    ports:
+      - 8060:8080
+      - 8061:8443
+    volumes:
+      - bitwarden:/etc/bitwarden
+      - logs:/var/log/bitwarden
+
+  db:
+    env_file:
+      - env.mariadb
+    image: mariadb:10
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  bitwarden:
+  logs:
+  db:

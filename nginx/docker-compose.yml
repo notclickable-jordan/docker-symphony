@@ -1,0 +1,21 @@
+services:
+  nginx:
+    image: nginx:1.23.3
+    container_name: switchboard
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - mastodon_letsencrypt:/etc/letsencrypt-mastodon
+      - calibre_letsencrypt:/etc/letsencrypt-calibre
+      - miniflux_letsencrypt:/etc/letsencrypt-miniflux
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+
+volumes:
+  mastodon_letsencrypt:
+    external: true
+  calibre_letsencrypt:
+    external: true
+  miniflux_letsencrypt:
+    external: true
