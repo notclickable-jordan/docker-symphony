@@ -154,7 +154,7 @@ It worked for me once, then I couldn't get it to work again.
     services:
         nginx:
             volumes:
-            - my_app_letsencrypt:/etc/letsencrypt-my-app
+                - my_app_letsencrypt:/etc/letsencrypt-my-app
     volumes:
         my_app_letsencrypt:
             external: true
