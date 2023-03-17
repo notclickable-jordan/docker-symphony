@@ -8,11 +8,15 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 
 ## Services
 
+### TCP
 - Mastodon (8010-8013)
 - Docker Registry (8020)
 - Calibre (8040-8042)
 - Miniflux (8050-8052)
-- Minecraft (19132/udp)
+- Bitwarden (8060-8061)
+
+### UDP
+- Minecraft (19132)
 
 # Discoveries
 
