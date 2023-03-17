@@ -18,6 +18,7 @@ services:
       - "19132:19132/udp"
     volumes:
       - data:/data
+    restart: always
 
 volumes:
   data:
