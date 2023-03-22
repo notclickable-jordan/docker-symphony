@@ -5,9 +5,7 @@ services:
     env_file: env.web
     restart: always
     ports:
-      - 3001:3001
-    networks:
-      - standardnotes_self_hosted
+      - 8060:3001
 
   server:
     image: standardnotes/server:f8a2892811ebb4d8f067e036fb9f54780a400535
@@ -15,8 +13,8 @@ services:
     container_name: standardnotes
     restart: always
     ports:
-      - 3000:3000
-      - 3125:3104
+      - 8061:3000
+      - 8062:3104
     volumes:
       - logs:/var/lib/server/logs
       - uploads:/opt/bundled/files/packages/files/dist/uploads
