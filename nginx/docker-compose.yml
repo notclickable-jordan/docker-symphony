@@ -7,6 +7,7 @@ services:
       - mastodon_letsencrypt:/etc/letsencrypt-mastodon
       - calibre_letsencrypt:/etc/letsencrypt-calibre
       - miniflux_letsencrypt:/etc/letsencrypt-miniflux
+      - archivebox_letsencrypt:/etc/letsencrypt-archivebox
     ports:
       - 80:80
       - 443:443
@@ -18,4 +19,6 @@ volumes:
   calibre_letsencrypt:
     external: true
   miniflux_letsencrypt:
+    external: true
+  archivebox_letsencrypt:
     external: true

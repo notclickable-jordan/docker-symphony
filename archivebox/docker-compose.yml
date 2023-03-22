@@ -1,7 +1,7 @@
 services:
   backup:
     image: alpine:3.17.2
-    container_name: calibre_backup
+    container_name: archivebox_backup
     entrypoint: "tail -f /dev/null"
     volumes:
       - data:/data
@@ -29,8 +29,8 @@ services:
         - letsencrypt:/etc/letsencrypt
         - certbot:/var/www/certbot
     ports:
-        - 8081:80
-        - 8082:443
+        - 8021:80
+        - 8022:443
     depends_on:
         - archivebox
     restart: always
