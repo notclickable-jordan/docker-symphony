@@ -37,7 +37,7 @@ services:
   letsencrypt:
     image: certbot/certbot:v2.4.0
     container_name: trilium_letsencrypt
-    command: sh -c "certbot certonly --reinstall -v -d website.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
+    command: sh -c "certbot certonly --reinstall -v -d notes.notclickable.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
     entrypoint: ""
     depends_on:
         - nginx
