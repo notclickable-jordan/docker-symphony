@@ -10,6 +10,7 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 
 ### TCP
 - Mastodon (8010-8013)
+- Archivebox (8020-8022)
 - Calibre (8040-8042)
 - Miniflux (8050-8052)
 

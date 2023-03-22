@@ -1,0 +1,14 @@
+services:
+    archivebox:
+        image: archivebox/archivebox:sha-829e377
+        command: server --quick-init 0.0.0.0:8000
+        ports:
+            - 8020:8000
+        environment:
+            - ALLOWED_HOSTS=*
+            - MEDIA_MAX_SIZE=750m
+        volumes:
+            - data:/data
+
+volumes:
+  data:
