@@ -14,7 +14,7 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 - Jellyfin (8030)
 - Calibre (8040-8042)
 - Miniflux (8050-8052)
-- Standard Notes (8060-8062)
+- Trilium (8060-8062)
 
 ### UDP
 - Minecraft (19132)
