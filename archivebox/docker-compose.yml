@@ -20,6 +20,7 @@ services:
         - MEDIA_MAX_SIZE=750m
     volumes:
         - data:/data
+    restart: always
 
   nginx:
     image: nginx:1.23.3
