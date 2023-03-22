@@ -47,7 +47,8 @@ It worked for me once, then I couldn't get it to work again.
             ports: 8080:80
 
         nginx:
-            image: nginx:latest
+            image: nginx:1.23.3
+            container_name: my_app_nginx
             volumes:
                 - ./default.conf:/etc/nginx/conf.d/default.conf
                 - letsencrypt:/etc/letsencrypt
@@ -60,8 +61,9 @@ It worked for me once, then I couldn't get it to work again.
             restart: always
 
         letsencrypt:
-            image: certbot/certbot:latest
-            command: sh -c "certbot certonly --reinstall -v -d website.com --webroot --webroot-path /var/www/certbot/ --agree-tos --no-eff-email"
+            image: certbot/certbot:v2.4.0
+            container_name: my_app_letsencrypt
+            command: sh -c "certbot certonly --reinstall -v -d website.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email me@website.com"
             entrypoint: ""
             depends_on:
                 - nginx
@@ -77,7 +79,7 @@ It worked for me once, then I couldn't get it to work again.
         letsencrypt:
         letsencrypt_lib:
     ```
-1. Create a `default.conf` file:
+1. Create a **my_app** `default.conf` file:
     ``` conf
     server {
         listen 80;
