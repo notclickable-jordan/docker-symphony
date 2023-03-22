@@ -20,7 +20,7 @@ services:
             - 8081:80
             - 8082:443
         depends_on:
-            - my_app
+            - archivebox
         restart: always
 
     letsencrypt:
