@@ -8,7 +8,7 @@ services:
       - calibre_letsencrypt:/etc/letsencrypt-calibre
       - miniflux_letsencrypt:/etc/letsencrypt-miniflux
       - archivebox_letsencrypt:/etc/letsencrypt-archivebox
-      - notes_letsencrypt:/etc/notes-archivebox
+      - notes_letsencrypt:/etc/letsencrypt-notes
     ports:
       - 80:80
       - 443:443
