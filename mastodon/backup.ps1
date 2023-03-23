@@ -29,4 +29,4 @@ Move-Item ".\${File4}" "${BackupFolder}\${dateString}\${File4}" -Force
 Move-Item ".\${File5}" "${BackupFolder}\${dateString}\${File5}" -Force
 
 # Delete backups older than 7 days
-Get-ChildItem -Path $BackupFolder -Recurse | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Force
+Get-ChildItem -Path $BackupFolder -Recurse | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Force -Recurse

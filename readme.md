@@ -15,6 +15,7 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 - Calibre (8040-8042)
 - Miniflux (8050-8052)
 - Trilium (8060-8062)
+- Grafana (8070)
 
 ### UDP
 - Minecraft (19132)
