@@ -21,6 +21,7 @@ There are `env.*` files which you'll need to create if you want to replicate thi
     - Prometheus (8071)
     - Grafana (8072)
 - MeTube (8080)
+- Homepage (8090)
 
 ### UDP
 - Minecraft (19132)
