@@ -4,6 +4,7 @@ services:
     container_name: switchboard
     volumes:
       - ./default.conf:/etc/nginx/conf.d/default.conf
+      - nginx_logs:/var/log/nginx
       - mastodon_letsencrypt:/etc/letsencrypt-mastodon
       - calibre_letsencrypt:/etc/letsencrypt-calibre
       - miniflux_letsencrypt:/etc/letsencrypt-miniflux
@@ -22,7 +23,7 @@ services:
 
   nginx-prometheus-exporter:
     image: nginx/nginx-prometheus-exporter:0.11
-    container_name: switchboard_exporter
+    container_name: switchboard_status_exporter
     ports:
       - 8071:9113
     command:
@@ -68,9 +69,11 @@ services:
       - 8072:3000
     depends_on:
       - prometheus
+      - loki
     restart: always
     volumes:
       - ./grafana.ini:/etc/grafana/grafana.ini
+      - ./loki-data-source.yml:/etc/grafana/provisioning/datasources/loki.yml
       - grafana:/var/lib/grafana
     networks:
       monitoring:
@@ -78,9 +81,47 @@ services:
         aliases:
           - grafana
 
+  loki:
+    image: grafana/loki:main-1c012d6
+    container_name: switchboard_loki
+    ports:
+      - 3100
+    volumes:
+      - loki:/loki
+      - ./loki-config.yml:/etc/loki/local-config.yml
+    command: 
+      - '-config.file=/etc/loki/local-config.yml'
+    depends_on:
+      - nginx
+    restart: always
+    networks:
+      monitoring:
+        ipv4_address: 10.10.10.50
+        aliases:
+          - loki
+
+  promtail:
+    image: grafana/promtail:main-1c012d6
+    container_name: switchboard_promtail
+    volumes:
+      - ./promtail.yml:/etc/promtail/promtail.yml
+      - nginx_logs:/var/log/nginx
+    command:
+      - '-config.file=/etc/promtail/promtail.yml'
+    depends_on:
+      - loki
+    restart: always
+    networks:
+      monitoring:
+        ipv4_address: 10.10.10.60
+        aliases:
+          - promtail
+
 volumes:
   prometheus:
   grafana:
+  nginx_logs:
+  loki:
   mastodon_letsencrypt:
     external: true
   calibre_letsencrypt:
