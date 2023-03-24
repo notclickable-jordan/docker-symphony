@@ -24,7 +24,7 @@ services:
       - 8071:9113
     command:
       - -nginx.scrape-uri
-      - http://127.0.0.1:8070
+      - http://127.0.0.1:8070/status
       - -web.telemetry-path=/metrics
     depends_on:
       - nginx
