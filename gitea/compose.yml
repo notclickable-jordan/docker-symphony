@@ -1,0 +1,27 @@
+services:
+  gitea:
+    image: gitea/gitea:1.19.0
+    container_name: gitea
+    env_file: env.gitea
+    restart: always
+    volumes:
+      - data:/data
+    ports:
+      - 8100:3000
+
+  db:
+    image: postgres:alpine
+    container_name: gitea_db
+    env_file: env.db
+    restart: always
+    volumes:
+      - db:/var/lib/postgresql/data
+    expose:
+      - 5432
+
+volumes:
+  db:
+  data:
+  
+  
+    

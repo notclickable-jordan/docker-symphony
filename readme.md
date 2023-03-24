@@ -22,6 +22,7 @@ There are `env.*` files which you'll need to create if you want to replicate thi
     - Grafana (8072)
 - MeTube (8080)
 - Homepage (8090)
+- Gitea (8100)
 
 ### UDP
 - Minecraft (19132)
