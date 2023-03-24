@@ -4,7 +4,6 @@ services:
     container_name: switchboard
     volumes:
       - ./default.conf:/etc/nginx/conf.d/default.conf
-      - ./grafana.conf:/etc/nginx/conf.d/grafana.conf
       - mastodon_letsencrypt:/etc/letsencrypt-mastodon
       - calibre_letsencrypt:/etc/letsencrypt-calibre
       - miniflux_letsencrypt:/etc/letsencrypt-miniflux
@@ -13,19 +12,48 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 8070:8070
     restart: always
-  
-  grafana:
-    image: grafana/grafana-oss:8.5.22
-    container_name: switchboard_grafana
+    networks:
+      - monitoring
+
+  nginx-prometheus-exporter:
+    image: nginx/nginx-prometheus-exporter:0.11
+    container_name: switchboard_exporter
     ports:
-      - 8070:3000
+      - 8071:9113
+    command:
+      - -nginx.scrape-uri
+      - http://127.0.0.1:8070
+      - -web.telemetry-path=/metrics
+    depends_on:
+      - nginx
+    restart: always
+    networks:
+      - monitoring
+
+  prometheus:
+    image: prom/prometheus:v2.43.0
+    container_name: switchboard_prometheus
+    expose:
+      - 9090
+    depends_on:
+      - nginx-prometheus-exporter
     restart: always
     volumes:
-      - grafana_storage:/var/lib/grafana
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    networks:
+      - monitoring
 
 volumes:
-  grafana_storage:
+  prometheus:
   mastodon_letsencrypt:
     external: true
   calibre_letsencrypt:
@@ -36,3 +64,6 @@ volumes:
     external: true
   notes_letsencrypt:
     external: true
+
+networks:
+  monitoring:

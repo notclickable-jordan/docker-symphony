@@ -9,13 +9,15 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 ## Services
 
 ### TCP
+- nginx (80, 443)
 - Mastodon (8010-8013)
 - Archivebox (8020-8022)
 - Jellyfin (8030)
 - Calibre (8040-8042)
 - Miniflux (8050-8052)
 - Trilium (8060-8062)
-- Grafana (8070)
+- Grafana
+    - nginx stub_status (8070)
 
 ### UDP
 - Minecraft (19132)
