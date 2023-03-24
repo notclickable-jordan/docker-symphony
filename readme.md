@@ -18,6 +18,9 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 - Trilium (8060-8062)
 - Grafana
     - nginx stub_status (8070)
+    - Prometheus (8071)
+    - Grafana (8072)
+- MeTube (8080)
 
 ### UDP
 - Minecraft (19132)
