@@ -15,7 +15,10 @@ services:
       - 8070:8070
     restart: always
     networks:
-      - monitoring
+      monitoring:
+        ipv4_address: 10.10.10.10
+        aliases:
+          - nginx
 
   nginx-prometheus-exporter:
     image: nginx/nginx-prometheus-exporter:0.11
@@ -24,13 +27,16 @@ services:
       - 8071:9113
     command:
       - -nginx.scrape-uri
-      - http://127.0.0.1:8070/status
+      - http://10.10.10.10:8070/status
       - -web.telemetry-path=/metrics
     depends_on:
       - nginx
     restart: always
     networks:
-      - monitoring
+      monitoring:
+        ipv4_address: 10.10.10.20
+        aliases:
+          - exporter
 
   prometheus:
     image: prom/prometheus:v2.43.0
@@ -50,10 +56,31 @@ services:
       - '--web.console.templates=/etc/prometheus/consoles'
       - '--web.enable-lifecycle'
     networks:
-      - monitoring
+      monitoring:
+        ipv4_address: 10.10.10.30
+        aliases:
+          - prometheus
+
+  grafana:
+    image: grafana/grafana-oss:9.4.7
+    container_name: switchboard_grafana
+    ports:
+      - 8072:3000
+    depends_on:
+      - prometheus
+    restart: always
+    volumes:
+      - ./grafana.ini:/etc/grafana/grafana.ini
+      - grafana:/var/lib/grafana
+    networks:
+      monitoring:
+        ipv4_address: 10.10.10.40
+        aliases:
+          - grafana
 
 volumes:
   prometheus:
+  grafana:
   mastodon_letsencrypt:
     external: true
   calibre_letsencrypt:
@@ -67,3 +94,7 @@ volumes:
 
 networks:
   monitoring:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.10.0/24
