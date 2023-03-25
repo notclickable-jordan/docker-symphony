@@ -120,8 +120,7 @@ It worked for me once, then I couldn't get it to work again.
 1. Restart the **top_nginx** services
     ``` powershell
     cd ./top_nginx
-    docker compose down
-    docker compose up -d
+    docker compose restart
     ```
 1. Start and shutdown the **my_app** services to grab the certificate
     ``` powershell
