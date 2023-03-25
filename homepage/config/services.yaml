@@ -17,7 +17,7 @@
 
     - Archivebox:
         icon: archivebox
-        href: http://starbase-80:8000/
+        href: http://starbase-80:8020/
         description: Store webpages for offline reading
         container: archivebox
 
@@ -25,7 +25,7 @@
         icon: calibre
         href: http://starbase-80:8040/
         description: eBook management
-        container: calibre
+        container: calibre_web
 
     - Miniflux:
         icon: miniflux

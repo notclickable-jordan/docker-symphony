@@ -2,7 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/bookmarks
 
-- Main:
+- Personal:
     - Outlook:
         - abbr: OL
           icon: mdi-email-outline
@@ -25,7 +25,7 @@
 
     - iCloud:
         - abbr: IC
-          icon: apple
+          icon: mdi-apple
           href: https://www.icloud.com/
 
 - Developer:
@@ -68,10 +68,11 @@
 
     - Disney+:
         - abbr: DS
-          icon: msi-spider-web
+          icon: mdi-rodent
           href: https://disneyplus.com/
 
     - Jellyfin:
-        icon: jellyfin
-        href: http://starbase-80:8030/
-        description: Media server
+        - abbr: JF
+          icon: jellyfin
+          href: http://starbase-80:8030/
+          description: Media server
