@@ -7,7 +7,10 @@ theme: light
 hideVersion: true
 
 layout:
-  Docker:
+  Services:
+    style: row
+    columns: 4
+  Games:
     style: row
     columns: 4
 
