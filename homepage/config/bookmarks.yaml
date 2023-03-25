@@ -3,30 +3,30 @@
 # https://gethomepage.dev/en/configs/bookmarks
 
 - Personal:
-    - Outlook:
-        - abbr: OL
-          icon: mdi-email-outline
-          href: https://outlook.live.com/mail/inbox
+    - Amazon:
+        - abbr: AM
+          icon: amazon
+          href: https://amazon.com/
+
+    - ChatGPT:
+        - abbr: CG
+          icon: mdi-chat
+          href: http://chat.openai.com/
+
+    - iCloud:
+        - abbr: IC
+          icon: mdi-apple
+          href: https://www.icloud.com/
 
     - Facebook:
         - abbr: FB
           icon: facebook
           href: https://facebook.com/
 
-    - Mastodon:
-        - abbr: MA
-          icon: mastodon
-          href: https://notclickable.social/
-
-    - Amazon:
-        - abbr: AM
-          icon: amazon
-          href: https://amazon.com/
-
-    - iCloud:
-        - abbr: IC
-          icon: mdi-apple
-          href: https://www.icloud.com/
+    - Outlook:
+        - abbr: OL
+          icon: mdi-email-outline
+          href: https://outlook.live.com/mail/inbox
 
 - Developer:
 
@@ -51,10 +51,21 @@
           href: https://proxmox:8006/
 
 - Entertainment:
-    - YouTube:
-        - abbr: YT
-          icon: youtube
-          href: https://youtube.com/
+
+    - Disney+:
+        - abbr: DS
+          icon: mdi-rodent
+          href: https://disneyplus.com/
+
+    - HBO Max:
+        - abbr: HM
+          icon: mdi-movie-roll
+          href: https://hbomax.com/
+
+    - Jellyfin:
+        - abbr: JF
+          icon: jellyfin
+          href: http://starbase-80:8030/
 
     - Netflix:
         - abbr: NF
@@ -66,18 +77,7 @@
           icon: mdi-star-three-points
           href: https://paramountplus.com/
 
-    - HBO Max:
-        - abbr: HM
-          icon: mdi-movie-roll
-          href: https://hbomax.com/
-
-    - Disney+:
-        - abbr: DS
-          icon: mdi-rodent
-          href: https://disneyplus.com/
-
-    - Jellyfin:
-        - abbr: JF
-          icon: jellyfin
-          href: http://starbase-80:8030/
-          description: Media server
+    - YouTube:
+        - abbr: YT
+          icon: youtube
+          href: https://youtube.com/

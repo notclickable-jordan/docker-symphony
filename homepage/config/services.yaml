@@ -2,42 +2,24 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/services
 
-- Docker:
-    - nginx:
-        icon: nginx
-        href: http://starbase-80:8072/
-        description: nginx Switchboard
-        container: switchboard
-
-    - Mastodon:
-        icon: mastodon
-        href: https://notclickable.social/
-        description: Mastodon instance
-        container: mastodon_web
-
+- Services:
     - Archivebox:
         icon: archivebox
         href: http://starbase-80:8020/
-        description: Store webpages for offline reading
+        description: Archive webpages
         container: archivebox
 
     - Calibre:
         icon: calibre
         href: http://starbase-80:8040/
-        description: eBook management
+        description: eBook reader
         container: calibre_web
 
-    - Miniflux:
-        icon: miniflux
-        href: http://starbase-80:8050/
-        description: RSS server
-        container: miniflux
-
-    - Trilium:
-        icon: trilium
-        href: http://starbase-80:8060/
-        description: Personal knowledge base
-        container: trilium
+    - Gitea:
+        icon: gitea
+        href: http://starbase-80:8100/
+        description: Git server
+        container: gitea
 
     - MeTube:
         icon: metube
@@ -45,8 +27,34 @@
         description: YouTube archiver
         container: metube
 
-    - Gitea:
-        icon: gitea
-        href: http://starbase-80:8100/
-        description: Git server
-        container: gitea
+    - nginx:
+        icon: grafana
+        href: http://starbase-80:8072/
+        description: nginx Switchboard
+        container: switchboard
+
+    - Miniflux:
+        icon: miniflux
+        href: http://starbase-80:8050/
+        description: RSS server
+        container: miniflux
+
+    - NotClickable.social:
+        icon: mastodon
+        href: https://notclickable.social/
+        description: Mastodon instance
+        container: mastodon_web
+
+    - Trilium:
+        icon: trilium
+        href: http://starbase-80:8060/
+        description: Personal knowledge base
+        container: trilium
+
+- Games:
+
+    - Minecraft:
+        icon: minecraft
+        href: https://www.minecraft.net/
+        description: 192.168.1.57:19132
+        container: minecraft
