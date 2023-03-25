@@ -2,17 +2,76 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/bookmarks
 
+- Main:
+    - Outlook:
+        - abbr: OL
+          icon: mdi-email-outline
+          href: https://outlook.live.com/mail/inbox
+
+    - Facebook:
+        - abbr: FB
+          icon: facebook
+          href: https://facebook.com/
+
+    - Mastodon:
+        - abbr: MA
+          icon: mastodon
+          href: https://notclickable.social/
+
+    - Amazon:
+        - abbr: AM
+          icon: amazon
+          href: https://amazon.com/
+
+    - iCloud:
+        - abbr: IC
+          icon: apple
+          href: https://www.icloud.com/
+
 - Developer:
-    - Github:
+
+    - AWS:
+        - abbr: AW
+          icon: aws
+          href: https://aws.amazon.com/
+
+    - GitHub:
         - abbr: GH
+          icon: github
           href: https://github.com/
 
-- Social:
-    - Reddit:
-        - abbr: RE
-          href: https://reddit.com/
+    - Hacker News:
+        - abbr: HN
+          icon: mdi-developer-board
+          href: https://news.ycombinator.com/
 
 - Entertainment:
     - YouTube:
         - abbr: YT
+          icon: youtube
           href: https://youtube.com/
+
+    - Netflix:
+        - abbr: NF
+          icon: netflix
+          href: https://netflix.com/
+    
+    - Paramount+:
+        - abbr: PP
+          icon: mdi-star-three-points
+          href: https://paramountplus.com/
+
+    - HBO Max:
+        - abbr: HM
+          icon: mdi-movie-roll
+          href: https://hbomax.com/
+
+    - Disney+:
+        - abbr: DS
+          icon: msi-spider-web
+          href: https://disneyplus.com/
+
+    - Jellyfin:
+        icon: jellyfin
+        href: http://starbase-80:8030/
+        description: Media server

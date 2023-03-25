@@ -2,17 +2,51 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/services
 
-- My First Group:
-    - My First Service:
-        href: http://localhost/
-        description: Homepage is awesome
+- Docker:
+    - nginx:
+        icon: nginx
+        href: http://starbase-80:8072/
+        description: nginx Switchboard
+        container: switchboard
 
-- My Second Group:
-    - My Second Service:
-        href: http://localhost/
-        description: Homepage is the best
+    - Mastodon:
+        icon: mastodon
+        href: https://notclickable.social/
+        description: Mastodon instance
+        container: mastodon_web
 
-- My Third Group:
-    - My Third Service:
-        href: http://localhost/
-        description: Homepage is 😎
+    - Archivebox:
+        icon: archivebox
+        href: http://starbase-80:8000/
+        description: Store webpages for offline reading
+        container: archivebox
+
+    - Calibre:
+        icon: calibre
+        href: http://starbase-80:8040/
+        description: eBook management
+        container: calibre
+
+    - Miniflux:
+        icon: miniflux
+        href: http://starbase-80:8050/
+        description: RSS server
+        container: miniflux
+
+    - Trilium:
+        icon: trilium
+        href: http://starbase-80:8060/
+        description: Personal knowledge base
+        container: trilium
+
+    - MeTube:
+        icon: metube
+        href: http://starbase-80:8080/
+        description: YouTube archiver
+        container: metube
+
+    - Gitea:
+        icon: gitea
+        href: http://starbase-80:8100/
+        description: Git server
+        container: gitea

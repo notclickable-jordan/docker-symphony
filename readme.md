@@ -11,11 +11,11 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 ### TCP
 - nginx (80, 443)
 - Mastodon (8010-8013)
-- Archivebox (8020-8022)
+- Archivebox (8020)
 - Jellyfin (8030)
-- Calibre (8040-8042)
-- Miniflux (8050-8052)
-- Trilium (8060-8062)
+- Calibre (8040)
+- Miniflux (8050)
+- Trilium (8060)
 - Grafana
     - nginx stub_status (8070)
     - Prometheus (8071)
