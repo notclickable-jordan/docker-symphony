@@ -45,6 +45,11 @@
           icon: mdi-developer-board
           href: https://news.ycombinator.com/
 
+    - Proxmox:
+        - abbr: PX
+          icon: proxmox
+          href: https://proxmox:8006/
+
 - Entertainment:
     - YouTube:
         - abbr: YT
