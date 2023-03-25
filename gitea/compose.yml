@@ -1,4 +1,13 @@
 services:
+  backup:
+    image: alpine:3.17.2
+    container_name: gitea_backup
+    entrypoint: "tail -f /dev/null"
+    restart: always
+    volumes:
+      - data:/data
+      - db:/var/lib/postgresql/data
+
   gitea:
     image: gitea/gitea:1.19.0
     container_name: gitea
