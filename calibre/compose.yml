@@ -5,8 +5,6 @@ services:
     entrypoint: "tail -f /dev/null"
     volumes:
       - config:/config:ro
-      - letsencrypt:/etc/letsencrypt:ro
-      - letsencrypt_lib:/var/lib/letsencrypt:ro
     restart: always
 
   calibre:

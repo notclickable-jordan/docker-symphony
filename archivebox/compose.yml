@@ -5,8 +5,6 @@ services:
     entrypoint: "tail -f /dev/null"
     volumes:
       - data:/data
-      - letsencrypt:/etc/letsencrypt:ro
-      - letsencrypt_lib:/var/lib/letsencrypt:ro
     restart: always
 
   archivebox:
