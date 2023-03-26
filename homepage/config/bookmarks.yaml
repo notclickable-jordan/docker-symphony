@@ -8,6 +8,11 @@
           icon: amazon
           href: https://amazon.com/
 
+    - Apple:
+        - abbr: AP
+          icon: apple
+          href: https://apple.com/
+
     - AWS:
         - abbr: AW
           icon: aws
@@ -104,7 +109,7 @@
 
     - The Villain:
         - abbr: TV
-          icon: mdi-knife
+          icon: mdi-sign-direction
           href: https://www.insanityink.com/
 
     - Xenobell:
@@ -112,7 +117,7 @@
           icon: mdi-star-outline
           href: https://www.xenobell.com/
 
-    - YouTube:
+    - Not Clickable:
         - abbr: YT
           icon: youtube
           href: https://youtube.com/@notclickable
