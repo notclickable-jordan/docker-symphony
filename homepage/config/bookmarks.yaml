@@ -2,16 +2,26 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/bookmarks
 
-- Personal:
+- Main:
     - Amazon:
         - abbr: AM
           icon: amazon
           href: https://amazon.com/
 
+    - AWS:
+        - abbr: AW
+          icon: aws
+          href: https://aws.amazon.com/
+
     - ChatGPT:
         - abbr: CG
           icon: mdi-chat
           href: http://chat.openai.com/
+
+    - Discord:
+        - abbr: DS
+          icon: discord
+          href: https://discord.com/
 
     - iCloud:
         - abbr: IC
@@ -23,32 +33,30 @@
           icon: facebook
           href: https://facebook.com/
 
-    - Outlook:
-        - abbr: OL
-          icon: mdi-email-outline
-          href: https://outlook.live.com/mail/inbox
-
-- Developer:
-
-    - AWS:
-        - abbr: AW
-          icon: aws
-          href: https://aws.amazon.com/
-
     - GitHub:
         - abbr: GH
           icon: github
           href: https://github.com/
+
+    - Google:
+        - abbr: GO
+          icon: google
+          href: https://google.com/
 
     - Hacker News:
         - abbr: HN
           icon: mdi-developer-board
           href: https://news.ycombinator.com/
 
-    - Proxmox:
-        - abbr: PX
-          icon: proxmox
-          href: https://proxmox:8006/
+    - Reddit:
+        - abbr: RD
+          icon: reddit
+          href: https://reddit.com/
+
+    - Outlook:
+        - abbr: OL
+          icon: mdi-email-outline
+          href: https://outlook.live.com/mail/inbox
 
 - Entertainment:
 
@@ -81,3 +89,30 @@
         - abbr: YT
           icon: youtube
           href: https://youtube.com/
+
+- Personal:
+
+    - Jordan Roher:
+        - abbr: JR
+          icon: mdi-account
+          href: https://jordan.roher.me/
+
+    - NotClickable.social:
+        - abbr: NC
+          icon: mastodon
+          href: https://notclickable.social/
+
+    - The Villain:
+        - abbr: TV
+          icon: mdi-knife
+          href: https://www.insanityink.com/
+
+    - Xenobell:
+        - abbr: XB
+          icon: mdi-star-outline
+          href: https://www.xenobell.com/
+
+    - YouTube:
+        - abbr: YT
+          icon: youtube
+          href: https://youtube.com/@notclickable

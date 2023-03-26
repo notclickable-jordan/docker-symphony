@@ -21,6 +21,11 @@
         description: Git server
         container: gitea
 
+    - Home Assistant:
+        icon: home-assistant
+        href: http://homeassistant.local:8123/
+        description: Home automation
+
     - MeTube:
         icon: metube
         href: http://starbase-80:8080/
@@ -44,6 +49,16 @@
         href: https://notclickable.social/
         description: Mastodon instance
         container: mastodon_web
+
+    - Proxmox:
+        icon: proxmox
+        href: https://proxmox:8006/
+        description: Virtualization host
+
+    - Synology:
+        icon: synology
+        href: https://192.168.1.3:5001/
+        description: NAS
 
     - Trilium:
         icon: trilium
