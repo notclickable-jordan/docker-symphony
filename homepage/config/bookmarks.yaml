@@ -10,7 +10,7 @@
 
     - Apple:
         - abbr: AP
-          icon: apple
+          icon: mdi-apple
           href: https://apple.com/
 
     - AWS:
