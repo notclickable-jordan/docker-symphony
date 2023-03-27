@@ -1,6 +1,6 @@
 services:
     app:
-      image: joplin/server:2.10.10-beta
+      image: joplin/server:2.2.10
       container_name: joplin_app
       depends_on:
           - db
@@ -8,8 +8,6 @@ services:
           - 8060:22300
       restart: always
       env_file: env.app
-      networks:
-          - joplin
 
     db:
       image: postgres:15
@@ -20,12 +18,6 @@ services:
           - 8061:5432
       restart: always
       env_file: env.db
-      command: -p 5432
-      networks:
-          - joplin
-
-networks:
-  joplin:
 
 volumes:
     data:
