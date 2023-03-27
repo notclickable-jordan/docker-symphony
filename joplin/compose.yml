@@ -1,0 +1,21 @@
+services:
+    app:
+        image: joplin/server:2.10.10-beta
+        depends_on:
+            - db
+        ports:
+            - 8060:22300
+        restart: always
+        env_file: env.app
+
+    db:
+        image: postgres:15
+        volumes:
+            - data:/var/lib/postgresql/data
+        ports:
+            - 8061:5432
+        restart: always
+        env_file: env.db
+
+volumes:
+    data:
