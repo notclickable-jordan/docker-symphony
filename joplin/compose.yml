@@ -8,6 +8,8 @@ services:
           - 8060:22300
       restart: always
       env_file: env.app
+      networks:
+          - joplin
 
     db:
       image: postgres:15
@@ -18,6 +20,11 @@ services:
           - 8061:5432
       restart: always
       env_file: env.db
+      networks:
+          - joplin
+
+networks:
+  joplin:
 
 volumes:
     data:
