@@ -9,12 +9,6 @@
         description: Backup webpages
         container: archivebox
 
-    - Bookstack:
-        icon: bookstack
-        href: http://starbase-80:8120/
-        description: Private wiki
-        container: bookstack
-
     - Calibre:
         icon: calibre
         href: http://starbase-80:8040/

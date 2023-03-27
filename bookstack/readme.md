@@ -1,5 +1,7 @@
 # Default login
 
+WARNING: Doesn't work under Windows
+
 - Email: admin@admin.com
 - Password: password
 
