@@ -1,4 +1,4 @@
-$sourceDirectory = "."
+$sourceDirectory = "C:\Not Clickable\docker\metube\downloads"
 $destinationDirectory = "G:\YouTube"
 
 # Create the destination directory if it doesn't already exist
