@@ -1,5 +1,7 @@
 # Installation
 
+WARNING: This service does not like to run under Windows.
+
 1. Gave the bootstrap script executable permissions
     ``` powershell
     chmod +x ./localstack_bootstrap.sh
