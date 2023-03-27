@@ -63,7 +63,7 @@
         container: mastodon_web
 
     - Standard Notes:
-        icon: standard-notes
+        icon: mdi-notebook-outline
         href: http://starbase-80:8060/
         description: Personal knowledge base
         container: standardnotes
