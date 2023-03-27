@@ -1,0 +1,28 @@
+services:
+  backup:
+    image: alpine:3.17.2
+    container_name: bookstack_backup
+    entrypoint: "tail -f /dev/null"
+    volumes:
+      - config:/config
+    restart: always
+
+  bookstack:
+    image: lscr.io/linuxserver/bookstack
+    container_name: bookstack
+    env_file: env.bookstack
+    volumes:
+      - config:/config
+    ports:
+      - 8120:80
+    restart: always
+    depends_on:
+      - bookstack_db
+
+  bookstack_db:
+    image: lscr.io/linuxserver/mariadb
+    container_name: bookstack_db
+    env_file: env.db
+    volumes:
+      - config:/config
+    restart: always
