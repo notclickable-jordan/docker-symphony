@@ -10,6 +10,9 @@ layout:
   Services:
     style: row
     columns: 4
+  Devices:
+    style: row
+    columns: 4
   Games:
     style: row
     columns: 4
