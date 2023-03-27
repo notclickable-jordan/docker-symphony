@@ -51,6 +51,12 @@
         description: Mastodon instance
         container: mastodon_web
 
+    - WikiJS:
+        icon: wikijs
+        href: http://starbase-80:8060/
+        description: Private Wiki
+        container: wikijs
+
 - Devices:
 
     - Home Assistant:

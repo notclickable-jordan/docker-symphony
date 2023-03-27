@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:11-alpine
+    container_name: wikijs_db
+    env_file: env.db
+    logging:
+      driver: "none"
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  wiki:
+    image: ghcr.io/requarks/wiki:2.5.117
+    container_name: wikijs
+    depends_on:
+      - db
+    env_file: env.wiki
+    restart: unless-stopped
+    ports:
+      - 8060:3000
+
+volumes:
+  db-data:
