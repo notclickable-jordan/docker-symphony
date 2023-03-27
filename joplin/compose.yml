@@ -17,7 +17,7 @@ services:
       volumes:
           - data:/var/lib/postgresql/data
       ports:
-          - 5432:5432
+          - 8061:5432
       restart: always
       env_file: env.db
       networks:
