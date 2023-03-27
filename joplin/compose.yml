@@ -1,6 +1,6 @@
 services:
     app:
-      image: joplin/server:2.10.10-beta
+      image: joplin/server:latest
       container_name: joplin_app
       depends_on:
           - db
