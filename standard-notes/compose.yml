@@ -1,0 +1,75 @@
+services:
+  web:
+    image: standardnotes/web:5ec8e9978137b809a1ebb892ef26ae3b7f892980
+    container_name: standardnotes_web
+    env_file: env.web
+    restart: always
+    depends_on:
+      - server
+    ports:
+      - 8060:3001
+
+  server:
+    image: standardnotes/server:f8a2892811ebb4d8f067e036fb9f54780a400535
+    env_file: env.server
+    container_name: standardnotes
+    restart: always
+    ports:
+      - 8061:3000
+      - 8062:3104
+    volumes:
+      - logs:/var/lib/server/logs
+      - uploads:/opt/bundled/files/packages/files/dist/uploads
+    networks:
+      - standardnotes_self_hosted
+
+  localstack:
+    image: localstack/localstack:1.3
+    container_name: standardnotes_localstack
+    expose:
+      - 4566
+    restart: always
+    environment:
+      - SERVICES=sns,sqs
+      - HOSTNAME_EXTERNAL=localstack
+      - LS_LOG=warn
+    volumes:
+      - ./localstack_bootstrap.sh:/etc/localstack/init/ready.d/localstack_bootstrap.sh
+    networks:
+      - standardnotes_self_hosted
+
+  db:
+    image: mysql:8
+    container_name: standardnotes_db
+    env_file: env.db
+    expose:
+      - 3306
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    volumes:
+      - mysql:/var/lib/mysql
+      - import:/docker-entrypoint-initdb.d
+    networks:
+      - standardnotes_self_hosted
+
+  cache:
+    image: redis:6.0-alpine
+    container_name: standardnotes_redis
+    volumes:
+      - redis:/data
+    expose:
+      - 6379
+    restart: always
+    networks:
+      - standardnotes_self_hosted
+
+networks:
+  standardnotes_self_hosted:
+    name: standardnotes_self_hosted
+
+volumes:
+  logs:
+  uploads:
+  mysql:
+  redis:
+  import:

@@ -62,11 +62,11 @@
         description: Mastodon instance
         container: mastodon_web
 
-    - Trilium:
-        icon: trilium
+    - Standard Notes:
+        icon: standard-notes
         href: http://starbase-80:8060/
         description: Personal knowledge base
-        container: trilium
+        container: standardnotes
 
 - Devices:
 

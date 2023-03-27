@@ -15,7 +15,7 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 - Jellyfin (8030)
 - Calibre (8040)
 - Miniflux (8050)
-- Trilium (8060)
+- Standard Notes (8060-8062)
 - Grafana
     - nginx stub_status (8070)
     - Prometheus (8071)
