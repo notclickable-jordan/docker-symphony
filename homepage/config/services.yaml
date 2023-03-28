@@ -51,6 +51,12 @@
         description: Mastodon instance
         container: mastodon_web
 
+    - Vaultwarden:
+        icon: vaultwarden
+        href: http://starbase-80:8130/
+        description: Password manager
+        container: vaultwarden
+
     - Visual Studio Code:
         icon: vscode
         href: http://starbase-80:8120
