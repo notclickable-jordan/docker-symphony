@@ -55,7 +55,7 @@
         icon: vscode
         href: http://starbase-80:8120
         description: Code editing
-        container: code-server
+        container: vscode
 
     - WikiJS:
         icon: wikijs
