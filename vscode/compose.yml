@@ -1,0 +1,14 @@
+services:
+  code-server:
+    image: linuxserver/code-server:4.11.0
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DEFAULT_WORKSPACE=/config
+    volumes:
+      - ../:/config
+    ports:
+      - 8120:8443
+    restart: always

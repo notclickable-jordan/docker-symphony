@@ -24,7 +24,7 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 - Homepage (8090)
 - Gitea (8100)
 - Mealie (8110)
-- Bookstack (8120)
+- VSCode (8120)
 
 ### UDP
 - Minecraft (19132)

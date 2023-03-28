@@ -64,11 +64,6 @@
         href: http://homeassistant.local:8123/
         description: Home automation
 
-    - Proxmox:
-        icon: proxmox
-        href: https://proxmox:8006/
-        description: Virtualization host
-
     - Router:
         icon: router
         href: http://192.168.1.1

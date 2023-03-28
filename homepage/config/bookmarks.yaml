@@ -31,7 +31,7 @@
     - iCloud:
         - abbr: IC
           icon: mdi-apple
-          href: https://www.icloud.com/
+          href: https://icloud.com/
 
     - Facebook:
         - abbr: FB
