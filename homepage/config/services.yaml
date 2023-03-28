@@ -51,6 +51,12 @@
         description: Mastodon instance
         container: mastodon_web
 
+    - Visual Studio Code:
+        icon: vscode
+        href: http://starbase-80:8120
+        description: Code editing
+        container: code-server
+
     - WikiJS:
         icon: wikijs
         href: http://starbase-80:8060/

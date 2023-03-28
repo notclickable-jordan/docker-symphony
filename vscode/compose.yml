@@ -6,9 +6,13 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - DEFAULT_WORKSPACE=/config
+      - DEFAULT_WORKSPACE=/config/workspace
     volumes:
-      - ../:/config
+      - config:/config
+      - ../:/config/workspace
     ports:
       - 8120:8443
     restart: always
+
+volumes:
+  config:
