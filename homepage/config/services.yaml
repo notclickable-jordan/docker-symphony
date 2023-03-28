@@ -33,10 +33,10 @@
         description: YouTube archiver
         container: metube
 
-    - nginx:
+    - Grafana:
         icon: grafana
         href: http://starbase-80:8072/
-        description: nginx Switchboard
+        description: nginx dashboard
         container: switchboard
 
     - Miniflux:
@@ -54,7 +54,7 @@
     - WikiJS:
         icon: wikijs
         href: http://starbase-80:8060/
-        description: Private Wiki
+        description: Private wiki
         container: wikijs
 
 - Devices:
