@@ -69,6 +69,11 @@
         href: https://proxmox:8006/
         description: Virtualization host
 
+    - Router:
+        icon: router
+        href: http://192.168.1.1
+        description: Netgear Orbi
+
     - Synology:
         icon: synology
         href: http://synology:5000
