@@ -7,6 +7,7 @@ services:
       - nginx_logs:/var/log/nginx
       - mastodon_letsencrypt:/etc/letsencrypt-mastodon
       - homepage_letsencrypt:/etc/letsencrypt-homepage
+      - vaultwarden_letsencrypt:/etc/letsencrypt-vaultwarden
     ports:
       - 80:80
       - 443:443
@@ -122,6 +123,8 @@ volumes:
   mastodon_letsencrypt:
     external: true
   homepage_letsencrypt:
+    external: true
+  vaultwarden_letsencrypt:
     external: true
 
 networks:
