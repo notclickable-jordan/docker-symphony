@@ -71,7 +71,7 @@
 
     - Synology:
         icon: synology
-        href: https://192.168.1.3:5001/
+        href: http://synology:5000
         description: NAS
 
 - Games:
