@@ -11,11 +11,11 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 ### TCP
 - nginx (80, 443)
 - Mastodon (8010-8013)
-- Archivebox (8020-8022)
+- Archivebox (8020)
 - Jellyfin (8030)
-- Calibre (8040-8042)
-- Miniflux (8050-8052)
-- Trilium (8060-8062)
+- Calibre (8040)
+- Miniflux (8050)
+- WikiJS (8060)
 - Grafana
     - nginx stub_status (8070)
     - Prometheus (8071)
@@ -23,6 +23,8 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 - MeTube (8080)
 - Homepage (8090)
 - Gitea (8100)
+- Mealie (8110)
+- VSCode (8120)
 
 ### UDP
 - Minecraft (19132)
@@ -120,8 +122,7 @@ It worked for me once, then I couldn't get it to work again.
 1. Restart the **top_nginx** services
     ``` powershell
     cd ./top_nginx
-    docker compose down
-    docker compose up -d
+    docker compose restart
     ```
 1. Start and shutdown the **my_app** services to grab the certificate
     ``` powershell

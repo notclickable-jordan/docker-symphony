@@ -4,11 +4,11 @@ $dateString = Get-Date -Format "yyyy-MM-dd"
 $Image = "alpine:3.17.2"
 
 # Set variables
-$BackupFolder = "D:\Backup\Not Clickable\docker\archivebox"
-$File1 = "backup-archivebox-data.tgz"
+$BackupFolder = "D:\Backup\Not Clickable\docker\wikijs"
+$File1 = "backup-wikijs-db-data.tgz"
 
 # Backup existing volumes by tarring and gzipping them
-docker run --rm --volumes-from archivebox_backup `
+docker run --rm --volumes-from wikijs_db_data `
     -v ${pwd}:/backup ${Image} sh -c `
     "tar cvzf /backup/${File1} /data"
 

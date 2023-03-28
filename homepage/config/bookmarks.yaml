@@ -1,0 +1,123 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/bookmarks
+
+- Main:
+    - Amazon:
+        - abbr: AM
+          icon: amazon
+          href: https://amazon.com/
+
+    - Apple:
+        - abbr: AP
+          icon: mdi-apple
+          href: https://apple.com/
+
+    - AWS:
+        - abbr: AW
+          icon: aws
+          href: https://aws.amazon.com/
+
+    - ChatGPT:
+        - abbr: CG
+          icon: mdi-chat
+          href: http://chat.openai.com/
+
+    - Discord:
+        - abbr: DS
+          icon: discord
+          href: https://discord.com/
+
+    - iCloud:
+        - abbr: IC
+          icon: mdi-apple
+          href: https://icloud.com/
+
+    - Facebook:
+        - abbr: FB
+          icon: facebook
+          href: https://facebook.com/
+
+    - GitHub:
+        - abbr: GH
+          icon: github
+          href: https://github.com/
+
+    - Google:
+        - abbr: GO
+          icon: google
+          href: https://google.com/
+
+    - Hacker News:
+        - abbr: HN
+          icon: mdi-developer-board
+          href: https://news.ycombinator.com/
+
+    - Reddit:
+        - abbr: RD
+          icon: reddit
+          href: https://reddit.com/
+
+    - Outlook:
+        - abbr: OL
+          icon: mdi-email-outline
+          href: https://outlook.live.com/mail/inbox
+
+- Entertainment:
+
+    - Disney+:
+        - abbr: DS
+          icon: mdi-rodent
+          href: https://disneyplus.com/
+
+    - HBO Max:
+        - abbr: HM
+          icon: mdi-movie-roll
+          href: https://hbomax.com/
+
+    - Jellyfin:
+        - abbr: JF
+          icon: jellyfin
+          href: http://starbase-80:8030/
+
+    - Netflix:
+        - abbr: NF
+          icon: netflix
+          href: https://netflix.com/
+    
+    - Paramount+:
+        - abbr: PP
+          icon: mdi-star-three-points
+          href: https://paramountplus.com/
+
+    - YouTube:
+        - abbr: YT
+          icon: youtube
+          href: https://youtube.com/
+
+- Personal:
+
+    - Jordan Roher:
+        - abbr: JR
+          icon: mdi-account
+          href: https://jordan.roher.me/
+
+    - NotClickable.social:
+        - abbr: NC
+          icon: mastodon
+          href: https://notclickable.social/
+
+    - The Villain:
+        - abbr: TV
+          icon: mdi-sign-direction
+          href: https://www.insanityink.com/
+
+    - Xenobell:
+        - abbr: XB
+          icon: mdi-star-outline
+          href: https://www.xenobell.com/
+
+    - Not Clickable:
+        - abbr: YT
+          icon: youtube
+          href: https://youtube.com/@notclickable

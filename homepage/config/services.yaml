@@ -1,0 +1,89 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/services
+
+- Services:
+    - Archivebox:
+        icon: archivebox
+        href: http://starbase-80:8020/
+        description: Backup webpages
+        container: archivebox
+
+    - Calibre:
+        icon: calibre
+        href: http://starbase-80:8040/
+        description: eBook reader
+        container: calibre_web
+
+    - Gitea:
+        icon: gitea
+        href: http://starbase-80:8100/
+        description: Git server
+        container: gitea
+
+    - Mealie:
+        icon: mealie
+        href: http://starbase-80:8110/
+        description: Recipe manager
+        container: mealie
+
+    - MeTube:
+        icon: metube
+        href: http://starbase-80:8080/
+        description: YouTube archiver
+        container: metube
+
+    - Grafana:
+        icon: grafana
+        href: http://starbase-80:8072/
+        description: nginx dashboard
+        container: switchboard
+
+    - Miniflux:
+        icon: miniflux
+        href: http://starbase-80:8050/
+        description: RSS server
+        container: miniflux
+
+    - NotClickable.social:
+        icon: mastodon
+        href: https://notclickable.social/
+        description: Mastodon instance
+        container: mastodon_web
+
+    - Visual Studio Code:
+        icon: vscode
+        href: http://starbase-80:8120
+        description: Code editing
+        container: vscode
+
+    - WikiJS:
+        icon: wikijs
+        href: http://starbase-80:8060/
+        description: Private wiki
+        container: wikijs
+
+- Devices:
+
+    - Home Assistant:
+        icon: home-assistant
+        href: http://homeassistant.local:8123/
+        description: Home automation
+
+    - Router:
+        icon: router
+        href: http://192.168.1.1
+        description: Netgear Orbi
+
+    - Synology:
+        icon: synology
+        href: http://synology:5000
+        description: NAS
+
+- Games:
+
+    - Minecraft:
+        icon: minecraft
+        href: https://www.minecraft.net/
+        description: 192.168.1.57:19132
+        container: minecraft

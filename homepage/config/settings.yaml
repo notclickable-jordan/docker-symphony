@@ -1,0 +1,22 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/settings
+
+title: Not Clickable
+theme: light
+hideVersion: true
+
+layout:
+  Services:
+    style: row
+    columns: 4
+  Devices:
+    style: row
+    columns: 4
+  Games:
+    style: row
+    columns: 4
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
