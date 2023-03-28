@@ -53,7 +53,7 @@
 
     - Vaultwarden:
         icon: vaultwarden
-        href: http://starbase-80:8130/
+        href: https://vaultwarden.notclickable.com/
         description: Password manager
         container: vaultwarden
 

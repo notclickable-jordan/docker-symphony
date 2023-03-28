@@ -1,4 +1,12 @@
 services:
+  backup:
+    image: alpine:3.17.2
+    container_name: vaultwarden_backup
+    entrypoint: "tail -f /dev/null"
+    volumes:
+      - data:/data
+    restart: always
+
   vaultwarden:
     image: vaultwarden/server:1.28.0
     container_name: vaultwarden
@@ -8,6 +16,34 @@ services:
     volumes:
       - data:/data
     env_file: env.server
+
+  nginx:
+      image: nginx:1.23.3
+      container_name: vaultwarden_nginx
+      volumes:
+          - ./default.conf:/etc/nginx/conf.d/default.conf
+          - letsencrypt:/etc/letsencrypt
+          - certbot:/var/www/certbot
+      ports:
+          - 8311:80
+          - 8132:443
+      depends_on:
+          - vaultwarden
+      restart: always
+
+  letsencrypt:
+      image: certbot/certbot:v2.4.0
+      container_name: my_app_letsencrypt
+      command: sh -c "certbot certonly --reinstall -v -d vaultwarden.notclickable.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
+      entrypoint: ""
+      depends_on:
+          - nginx
+      volumes:
+          - letsencrypt:/etc/letsencrypt
+          - certbot:/var/www/certbot
+          - letsencrypt_lib:/var/lib/letsencrypt
+      environment:
+          - TERM=xterm
 
 volumes:
   data:
