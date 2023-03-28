@@ -10,7 +10,7 @@ services:
       - db-data:/var/lib/postgresql/data
 
   wiki:
-    image: ghcr.io/requarks/wiki:2.5.117
+    image: requarks/wiki:2.5.297
     container_name: wikijs
     depends_on:
       - db
