@@ -6,9 +6,9 @@ The main reverse proxy is in `/nginx` and handles ports 80 and 443. It proxies t
 
 There are `env.*` files which you'll need to create if you want to replicate this setup. They contain environment variables for the services.
 
-## Services
+# Services
 
-### TCP
+## TCP
 - nginx (80, 443)
 - Mastodon (8010-8013)
 - Archivebox (8020)
@@ -25,13 +25,12 @@ There are `env.*` files which you'll need to create if you want to replicate thi
 - Gitea (8100)
 - Mealie (8110)
 - VSCode (8120)
+- Vaultwarden (8130-8132)
 
-### UDP
+## UDP
 - Minecraft (19132)
 
-# Discoveries
-
-## Map network share to Docker volume
+# Map network share to Docker volume
 
 Run this independently in the command line, then mount the volume in the docker-compose.yml file as `external: true`
 
@@ -41,15 +40,15 @@ docker volume create --driver local --opt type=cifs --opt device=//ip.address/fo
 
 It worked for me once, then I couldn't get it to work again.
 
-## Obtaining a SSL certificate for an nginx Docker container
+# Obtaining a SSL certificate for an nginx Docker container
 
-### Assumptions
+## Assumptions
 - Container is called **my_app**
 - App is on port 8080
 - Domain is website.com
 - There is a top level nginx reverse proxy service (**top_nginx**) sending traffic to **my_app**. If not, skip steps involving **top_nginx**.
 
-### Steps
+## Steps
 1. In **my_app**'s `docker-compose.yml`, add the following services and volumes
     ``` yaml
     services:
@@ -205,7 +204,7 @@ It worked for me once, then I couldn't get it to work again.
     docker compose up -d
     ```
 
-### Renewal
+## Renewal
 
 For a Windows host, here's how to create a script to renew the certificate and reload the nginx services.
 
