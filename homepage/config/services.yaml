@@ -39,6 +39,12 @@
         description: nginx dashboard
         container: switchboard
 
+    - Minecraft:
+        icon: minecraft
+        href: https://www.minecraft.net/
+        description: 192.168.1.57
+        container: minecraft
+
     - Miniflux:
         icon: miniflux
         href: http://starbase-80:8050/
@@ -85,11 +91,3 @@
         icon: synology
         href: http://synology:5000
         description: NAS
-
-- Games:
-
-    - Minecraft:
-        icon: minecraft
-        href: https://www.minecraft.net/
-        description: 192.168.1.57:19132
-        container: minecraft

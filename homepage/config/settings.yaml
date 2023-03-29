@@ -4,16 +4,15 @@
 
 title: Not Clickable
 theme: light
+color: gray
 hideVersion: true
+headerStyle: clean
 
 layout:
   Services:
     style: row
     columns: 4
   Devices:
-    style: row
-    columns: 4
-  Games:
     style: row
     columns: 4
 
