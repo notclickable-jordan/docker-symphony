@@ -10,13 +10,13 @@
         container: archivebox
 
     - Calibre:
-        icon: calibre
+        icon: /icons/calibre-web.svg
         href: http://starbase-80:8040/
         description: eBook reader
         container: calibre_web
 
     - Gitea:
-        icon: gitea
+        icon: /icons/gitea.svg
         href: http://starbase-80:8100/
         description: Git server
         container: gitea
@@ -40,7 +40,7 @@
         container: switchboard
 
     - Jellyfin:
-        icon: jellyfin
+        icon: /icons/jellyfin.svg
         href: http://starbase-80:8030/
         description: Media server
 
@@ -63,7 +63,7 @@
         container: mastodon_web
 
     - Vaultwarden:
-        icon: vaultwarden
+        icon: /icons/vaultwarden.svg
         href: https://vaultwarden.notclickable.com/
         description: Password manager
         container: vaultwarden
@@ -83,7 +83,7 @@
 - Devices:
 
     - Home Assistant:
-        icon: home-assistant
+        icon: /icons/home-assistant.svg
         href: http://homeassistant.local:8123/
         description: Home automation
 

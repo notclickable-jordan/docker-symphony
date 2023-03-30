@@ -7,6 +7,7 @@ services:
       - 8090:3000
     volumes:
       - ./config:/app/config
+      - ./icons:/app/public/icons
       - //var/run/docker.sock:/var/run/docker.sock:ro
     restart: always
 
