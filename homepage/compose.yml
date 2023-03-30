@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   homepage:
-    image: jordanroher/homepage:0.1.4
+    image: jordanroher/homepage:0.1.5
     container_name: homepage
     ports:
       - 8090:3000

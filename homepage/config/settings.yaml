@@ -6,7 +6,6 @@ title: Not Clickable
 theme: light
 color: gray
 hideVersion: true
-headerStyle: clean
 
 layout:
   Services:

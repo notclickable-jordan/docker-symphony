@@ -18,7 +18,7 @@
     - Gitea:
         icon: /icons/gitea.svg
         href: http://starbase-80:8100/
-        description: Git server
+        description: Code hosting and CI/CD
         container: gitea
 
     - Mealie:
@@ -30,7 +30,7 @@
     - MeTube:
         icon: metube
         href: http://starbase-80:8080/
-        description: YouTube archiver
+        description: Archive YouTube
         container: metube
 
     - Grafana:
@@ -46,8 +46,8 @@
 
     - Minecraft:
         icon: minecraft
-        href: https://www.minecraft.net/
-        description: 192.168.1.57
+        href: http://192.168.1.57
+        description: Bedrock server
         container: minecraft
 
     - Miniflux:

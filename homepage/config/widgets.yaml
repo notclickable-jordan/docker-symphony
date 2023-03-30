@@ -3,5 +3,5 @@
 # https://gethomepage.dev/en/configs/widgets
 
 - greeting:
-    text_size: 2xl
+    text_size: 3xl
     text: Not Clickable
