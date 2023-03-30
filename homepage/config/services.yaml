@@ -75,7 +75,7 @@
         container: vscode
 
     - WikiJS:
-        icon: wikijs
+        icon: /icons/wikijs.svg
         href: http://starbase-80:8060/
         description: Private wiki
         container: wikijs
