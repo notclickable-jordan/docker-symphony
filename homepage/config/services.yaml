@@ -44,6 +44,12 @@
         href: http://starbase-80:8030/
         description: Media server
 
+    - Mastodon:
+        icon: mastodon
+        href: https://notclickable.social/
+        description: NotClickable.social
+        container: mastodon_web
+
     - Minecraft:
         icon: minecraft
         href: http://192.168.1.57
@@ -55,12 +61,6 @@
         href: http://starbase-80:8050/
         description: RSS server
         container: miniflux
-
-    - NotClickable.social:
-        icon: mastodon
-        href: https://notclickable.social/
-        description: Mastodon instance
-        container: mastodon_web
 
     - Vaultwarden:
         icon: /icons/vaultwarden.svg
