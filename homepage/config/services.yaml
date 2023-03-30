@@ -39,6 +39,11 @@
         description: nginx dashboard
         container: switchboard
 
+    - Jellyfin:
+        icon: jellyfin
+        href: http://starbase-80:8030/
+        description: Media server
+
     - Minecraft:
         icon: minecraft
         href: https://www.minecraft.net/
