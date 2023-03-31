@@ -10,7 +10,7 @@
         container: archivebox
 
     - Calibre:
-        icon: /icons/calibre-web.svg
+        icon: /icons/calibre.jpg
         href: http://starbase-80:8040/
         description: eBook reader
         container: calibre_web
@@ -51,13 +51,13 @@
         container: mastodon_web
 
     - Minecraft:
-        icon: minecraft
+        icon: /icons/minecraft.jpg
         href: http://192.168.1.57
         description: Bedrock server
         container: minecraft
 
     - Miniflux:
-        icon: miniflux
+        icon: /icons/miniflux.jpg
         href: http://starbase-80:8050/
         description: RSS server
         container: miniflux
@@ -69,7 +69,7 @@
         container: vaultwarden
 
     - Visual Studio Code:
-        icon: vscode
+        icon: /icons/vscode.jpg
         href: http://starbase-80:8120
         description: Code editing
         container: vscode
