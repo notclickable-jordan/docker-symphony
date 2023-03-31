@@ -21,18 +21,6 @@
         description: Code hosting and CI/CD
         container: gitea
 
-    - Mealie:
-        icon: /icons/mealie.jpg
-        href: http://starbase-80:8110/
-        description: Recipe manager
-        container: mealie
-
-    - MeTube:
-        icon: /icons/metube.jpg
-        href: http://starbase-80:8080/
-        description: Archive YouTube
-        container: metube
-
     - Grafana:
         icon: /icons/grafana.jpg
         href: http://starbase-80:8072/
@@ -49,6 +37,18 @@
         href: https://notclickable.social/
         description: NotClickable.social
         container: mastodon_web
+
+    - Mealie:
+        icon: /icons/mealie.jpg
+        href: http://starbase-80:8110/
+        description: Recipe manager
+        container: mealie
+
+    - MeTube:
+        icon: /icons/metube.jpg
+        href: http://starbase-80:8080/
+        description: Archive YouTube
+        container: metube
 
     - Minecraft:
         icon: /icons/minecraft.jpg
@@ -82,15 +82,15 @@
 
 - Devices:
 
-    - Home Assistant:
-        icon: /icons/home-assistant.svg
-        href: http://homeassistant.local:8123/
-        description: Home automation
-
     - Router:
         icon: router
         href: http://192.168.1.1
         description: Netgear Orbi
+
+    - Home Assistant:
+        icon: /icons/home-assistant.svg
+        href: http://homeassistant.local:8123/
+        description: Home automation
 
     - Synology:
         icon: synology
