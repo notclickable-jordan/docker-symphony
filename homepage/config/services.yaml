@@ -10,31 +10,31 @@
         container: archivebox
 
     - Calibre:
-        icon: /icons/calibre.jpg
+        icon: /icons/calibre-web.svg
         href: http://starbase-80:8040/
         description: eBook reader
         container: calibre_web
 
     - Gitea:
-        icon: /icons/gitea.jpg
+        icon: /icons/gitea.svg
         href: http://starbase-80:8100/
         description: Code hosting and CI/CD
         container: gitea
 
     - Mealie:
-        icon: mealie
+        icon: /icons/mealie.jpg
         href: http://starbase-80:8110/
         description: Recipe manager
         container: mealie
 
     - MeTube:
-        icon: metube
+        icon: /icons/metube.jpg
         href: http://starbase-80:8080/
         description: Archive YouTube
         container: metube
 
     - Grafana:
-        icon: grafana
+        icon: /icons/grafana.jpg
         href: http://starbase-80:8072/
         description: nginx dashboard
         container: switchboard
@@ -45,7 +45,7 @@
         description: Media server
 
     - Mastodon:
-        icon: mastodon
+        icon: /icons/mastodon.jpg
         href: https://notclickable.social/
         description: NotClickable.social
         container: mastodon_web
