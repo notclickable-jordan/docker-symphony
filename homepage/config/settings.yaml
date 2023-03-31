@@ -6,6 +6,7 @@ title: Not Clickable
 theme: light
 color: gray
 hideVersion: true
+favicon: /icons/not-clickable.ico
 
 layout:
   Services:
