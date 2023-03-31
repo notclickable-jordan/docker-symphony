@@ -4,4 +4,10 @@
 
 - greeting:
     text_size: 3xl
-    text: Not Clickable
+    text: Starbase 80
+
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: long
+      timeStyle: short
