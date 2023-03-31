@@ -4,19 +4,19 @@
 
 - Services:
     - Archivebox:
-        icon: archivebox
+        icon: /icons/archivebox.jpg
         href: http://starbase-80:8020/
         description: Backup webpages
         container: archivebox
 
     - Calibre:
-        icon: /icons/calibre-web.svg
+        icon: /icons/calibre.jpg
         href: http://starbase-80:8040/
         description: eBook reader
         container: calibre_web
 
     - Gitea:
-        icon: /icons/gitea.svg
+        icon: /icons/gitea.jpg
         href: http://starbase-80:8100/
         description: Code hosting and CI/CD
         container: gitea
