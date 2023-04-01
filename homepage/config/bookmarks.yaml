@@ -33,6 +33,38 @@
           icon: mdi-email-outline
           href: https://outlook.live.com/mail/inbox
 
+- Shopping:
+
+    - Amazon:
+        - abbr: AM
+          icon: amazon
+          href: https://amazon.com/
+
+    - Apple:
+        - abbr: AP
+          icon: mdi-apple
+          href: https://apple.com/
+
+    - Best Buy:
+        - abbr: BB
+          href: https://bestbuy.com/
+
+    - eBay:
+        - abbr: EB
+          href: https://ebay.com/
+
+    - Newegg:
+        - abbr: NE
+          href: https://newegg.com/
+
+    - Target:
+        - abbr: TG
+          href: https://target.com/
+
+    - Walmart:
+        - abbr: WM
+          href: https://walmart.com/
+
 - Entertainment:
 
     - Disney+:
@@ -110,39 +142,12 @@
           icon: mdi-developer-board
           href: https://news.ycombinator.com/
 
+    - Mastodon:
+        - abbr: MT
+          icon: mastodon
+          href: https://notclickable.social/
+
     - Reddit:
         - abbr: RD
           icon: reddit
           href: https://reddit.com/
-
-- Shopping:
-
-    - Amazon:
-        - abbr: AM
-          icon: amazon
-          href: https://amazon.com/
-
-    - Apple:
-        - abbr: AP
-          icon: mdi-apple
-          href: https://apple.com/
-
-    - Best Buy:
-        - abbr: BB
-          href: https://bestbuy.com/
-
-    - eBay:
-        - abbr: EB
-          href: https://ebay.com/
-
-    - Newegg:
-        - abbr: NE
-          href: https://newegg.com/
-
-    - Target:
-        - abbr: TG
-          href: https://target.com/
-
-    - Walmart:
-        - abbr: WM
-          href: https://walmart.com/
