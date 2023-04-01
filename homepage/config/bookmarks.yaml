@@ -2,17 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/bookmarks
 
-- Main:
-    - Amazon:
-        - abbr: AM
-          icon: amazon
-          href: https://amazon.com/
-
-    - Apple:
-        - abbr: AP
-          icon: mdi-apple
-          href: https://apple.com/
-
+- Essentials:
     - AWS:
         - abbr: AW
           icon: aws
@@ -23,20 +13,10 @@
           icon: mdi-chat
           href: http://chat.openai.com/
 
-    - Discord:
-        - abbr: DS
-          icon: discord
-          href: https://discord.com/
-
     - iCloud:
         - abbr: IC
           icon: mdi-apple
           href: https://icloud.com/
-
-    - Facebook:
-        - abbr: FB
-          icon: facebook
-          href: https://facebook.com/
 
     - GitHub:
         - abbr: GH
@@ -47,16 +27,6 @@
         - abbr: GO
           icon: google
           href: https://google.com/
-
-    - Hacker News:
-        - abbr: HN
-          icon: mdi-developer-board
-          href: https://news.ycombinator.com/
-
-    - Reddit:
-        - abbr: RD
-          icon: reddit
-          href: https://reddit.com/
 
     - Outlook:
         - abbr: OL
@@ -95,7 +65,7 @@
           icon: youtube
           href: https://youtube.com/
 
-- Personal:
+- My Sites:
 
     - Jordan Roher:
         - abbr: JR
@@ -121,3 +91,58 @@
         - abbr: YT
           icon: youtube
           href: https://youtube.com/@notclickable
+
+
+- Social:
+
+    - Discord:
+        - abbr: DS
+          icon: discord
+          href: https://discord.com/
+
+    - Facebook:
+        - abbr: FB
+          icon: facebook
+          href: https://facebook.com/
+
+    - Hacker News:
+        - abbr: HN
+          icon: mdi-developer-board
+          href: https://news.ycombinator.com/
+
+    - Reddit:
+        - abbr: RD
+          icon: reddit
+          href: https://reddit.com/
+
+- Shopping:
+
+    - Amazon:
+        - abbr: AM
+          icon: amazon
+          href: https://amazon.com/
+
+    - Apple:
+        - abbr: AP
+          icon: mdi-apple
+          href: https://apple.com/
+
+    - Best Buy:
+        - abbr: BB
+          href: https://bestbuy.com/
+
+    - eBay:
+        - abbr: EB
+          href: https://ebay.com/
+
+    - Newegg:
+        - abbr: NE
+          href: https://newegg.com/
+
+    - Target:
+        - abbr: TG
+          href: https://target.com/
+
+    - Walmart:
+        - abbr: WM
+          href: https://walmart.com/
