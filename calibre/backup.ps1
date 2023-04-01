@@ -1,8 +1,3 @@
-# Static
-Import-Module -Name "..\helpers.psm1"
-$dateString = Get-Date -Format "yyyy-MM-dd"
-$Image = "alpine:3.17.2"
-
 # Set variables
 $BackupFolder = "D:\Backup\Not Clickable\docker\calibre"
 $File1 = "backup-calibre-config.tgz"
