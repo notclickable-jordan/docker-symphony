@@ -1,10 +1,9 @@
 # Set variables
-$BackupFolder = "D:\Backup\Not Clickable\docker\mastodon"
-$File1 = "backup-mastodon-web.tgz"
-$File2 = "backup-redis-redis.tgz"
-$File3 = "backup-db-db.tgz"
-$File4 = "backup-letsencrypt-letsencrypt.tgz"
-$File5 = "backup-letsencrypt-letsencrypt_lib.tgz"
+$File1 = "mastodon-web.tgz"
+$File2 = "mastodon-redis.tgz"
+$File3 = "mastodon-db.tgz"
+$File4 = "mastodon-letsencrypt.tgz"
+$File5 = "mastodon-letsencrypt_lib.tgz"
 
 # Backup existing volumes by tarring and gzipping them
 docker run --rm --volumes-from mastodon_backup `
@@ -16,12 +15,8 @@ docker run --rm --volumes-from mastodon_backup `
     tar cvzf /backup/${File5} /var/lib/letsencrypt"
 
 # Copy to external drive and overwrite if files already exist
-Create-DatedDirectory -folderPath $BackupFolder
 Move-Item ".\${File1}" "${BackupFolder}\${dateString}\${File1}" -Force
 Move-Item ".\${File2}" "${BackupFolder}\${dateString}\${File2}" -Force
 Move-Item ".\${File3}" "${BackupFolder}\${dateString}\${File3}" -Force
 Move-Item ".\${File4}" "${BackupFolder}\${dateString}\${File4}" -Force
 Move-Item ".\${File5}" "${BackupFolder}\${dateString}\${File5}" -Force
-
-# Delete backups older than 7 days
-Get-ChildItem -Path $BackupFolder -Recurse | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Force -Recurse

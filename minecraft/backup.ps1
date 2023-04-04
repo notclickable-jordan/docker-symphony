@@ -1,6 +1,5 @@
 # Set variables
-$BackupFolder = "D:\Backup\Not Clickable\docker\minecraft"
-$File1 = "backup-minecraft-data.tgz"
+$File1 = "minecraft-data.tgz"
 
 # Backup existing volumes by tarring and gzipping them
 docker run --rm --volumes-from minecraft_backup `
@@ -8,8 +7,4 @@ docker run --rm --volumes-from minecraft_backup `
     "tar cvzf /backup/${File1} /data"
 
 # Copy to external drive and overwrite if files already exist
-Create-DatedDirectory -folderPath $BackupFolder
 Move-Item ".\${File1}" "${BackupFolder}\${dateString}\${File1}" -Force
-
-# Delete backups older than 7 days
-Get-ChildItem -Path $BackupFolder -Recurse | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Force -Recurse
