@@ -6,7 +6,6 @@ services:
     volumes:
       - data:/data:ro
       - letsencrypt:/etc/letsencrypt:ro
-      - letsencrypt_lib:/var/lib/letsencrypt:ro
     restart: always
 
   vaultwarden:
