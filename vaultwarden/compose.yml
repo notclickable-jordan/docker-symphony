@@ -35,7 +35,7 @@ services:
 
   letsencrypt:
     image: certbot/certbot:v2.4.0
-    container_name: my_app_letsencrypt
+    container_name: vaultwarden_letsencrypt
     command: sh -c "certbot certonly --reinstall -v -d vaultwarden.notclickable.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
     entrypoint: ""
     depends_on:
