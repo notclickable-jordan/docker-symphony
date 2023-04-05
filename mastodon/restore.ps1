@@ -7,7 +7,7 @@ $File2 = "mastodon-redis.tgz"
 $Volume2 = "mastodon_redis"
 $Folder2 = "/restore/${Volume2}"
 
-$File3 = "mastodon-dbs.tgz"
+$File3 = "mastodon-db.tgz"
 $Volume3 = "mastodon_db"
 $Folder3 = "/restore/${Volume3}}"
 

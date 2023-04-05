@@ -9,7 +9,6 @@ services:
       - redis:/data:ro
       - db:/var/lib/postgresql/data:ro
       - letsencrypt:/etc/letsencrypt:ro
-      - letsencrypt_lib:/var/lib/letsencrypt:ro
 
   nginx:
     image: nginx:1.23.3
@@ -36,8 +35,8 @@ services:
       - nginx
       - web
     volumes:
-      - letsencrypt:/etc/letsencrypt
       - certbot:/var/www/certbot
+      - letsencrypt:/etc/letsencrypt
       - letsencrypt_lib:/var/lib/letsencrypt
     environment:
       - TERM=xterm
