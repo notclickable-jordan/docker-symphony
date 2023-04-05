@@ -2,7 +2,7 @@
 $File1 = "mealie-data.tgz"
 
 # Backup existing volumes by tarring and gzipping them
-docker run --rm --volumes-from mealie_data `
+docker run --rm --volumes-from mealie_backup `
     -v ${pwd}:/backup ${Image} sh -c `
     "tar cvzf /backup/${File1} /app/data"
 
