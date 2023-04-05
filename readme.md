@@ -227,11 +227,6 @@ For a Windows host, here's how to create a script to renew the certificate and r
     docker exec nginx nginx -s reload
     ```
 1. Make a scheduled task to run that script every day. Here's a sample XML file:
-    <dl>
-        <dt>Command</dt>
-        <dd>powershell.exe</dd>
-        <dt>Arguments</dt>
-        <dd>-ExecutionPolicy Bypass -File backup.ps1</dd>
-        <dt>Working Directory</dt>
-        <dd>C:\Sites\my_app\</dd>
-    </dl>
+    - Command: `powershell.exe`
+    - Arguments: `-ExecutionPolicy Bypass -File backup.ps1`
+    - Working Directory: `C:\Sites\my_app\`
