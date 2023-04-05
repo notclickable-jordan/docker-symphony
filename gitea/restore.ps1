@@ -5,7 +5,7 @@ $Folder1 = "/restore/${Volume1}}"
 
 $File2 = "gitea-db.tgz"
 $Volume2 = "gitea_db"
-$Folder2 = "/restore/${Volume1}}"
+$Folder2 = "/restore/${Volume2}}"
 
 # Bring down the existing site
 docker compose down -v
