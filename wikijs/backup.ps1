@@ -2,7 +2,7 @@
 $File1 = "wikijs-data.tgz"
 
 # Backup existing volumes by tarring and gzipping them
-docker run --rm --volumes-from wikijs_db_data `
+docker run --rm --volumes-from wikijs_backup `
     -v ${pwd}:/backup ${Image} sh -c `
     "tar -C /var/lib/postgresql/data -cvzf /backup/${File1} ."
 

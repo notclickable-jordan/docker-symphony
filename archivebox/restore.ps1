@@ -1,6 +1,6 @@
 # Variables
-$File1 = "mealie-data.tgz"
-$Volume1 = "mealie_data"
+$File1 = "archivebox-data.tgz"
+$Volume1 = "archivebox_data"
 $Folder1 = "/restore/${Volume1}}"
 
 # Bring down the existing site

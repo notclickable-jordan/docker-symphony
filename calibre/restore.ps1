@@ -1,5 +1,7 @@
 # Variables
-$File1 = "calibre-config.tar.gz"
+$File1 = "calibre-config.tgz"
+$Volume1 = "calibre_config"
+$Folder1 = "/restore/${Volume1}}"
 
 # Bring down the existing site
 docker compose down -v
@@ -11,9 +13,9 @@ docker compose down
 # Restore the volume data from the backups
 docker run --rm `
     -v ${pwd}/${File1}:/backup/${File1} `
-    -v calibre_config:/restore/calibre_config `
-    alpine sh -c `
-        "tar -xvzf /backup/${File1} -C /restore/calibre_config"
+    -v ${Volume1}:${Folder1} `
+    alpine:3.17.2 sh -c `
+        "tar -xvzf /backup/${File1} -C ${Folder1}"
 
 # Restore the site with the data
 docker compose up -d
