@@ -32,7 +32,6 @@ docker run --rm `
     -v ${Volume2}:${Folder2} `
     -v ${Volume3}:${Folder3} `
     -v ${Volume4}:${Folder4} `
-    -v ${Volume5}:${Folder5} `
     alpine:3.17.2 sh -c `
         "tar -xvzf /backup/${File1} -C ${Folder1} && `
         tar -xvzf /backup/${File2} -C ${Folder2} && `
