@@ -1,7 +1,4 @@
-# Get all PowerShell scripts in subfolders
-$scripts = Get-ChildItem -Path "." -Recurse -Include "renew.ps1"
-
-# Loop through each script and execute it
-foreach ($script in $scripts) {
-    Invoke-Expression "& `"$($script.FullName)`""
-}
+# Renew all SSL certificates
+& "$PSScriptRoot/homepage/renew.ps1"
+& "$PSScriptRoot/mastodon/renew.ps1"
+& "$PSScriptRoot/vaultwarden/renew.ps1"
