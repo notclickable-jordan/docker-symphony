@@ -8,11 +8,11 @@ $File5 = "mastodon-letsencrypt_lib.tgz"
 # Backup existing volumes by tarring and gzipping them
 docker run --rm --volumes-from mastodon_backup `
     -v ${pwd}:/backup ${Image} sh -c `
-    "tar cvzf /backup/${File1} /mastodon/public/system && `
-    tar cvzf /backup/${File2} /data && `
-    tar cvzf /backup/${File3} /var/lib/postgresql/data && `
-    tar cvzf /backup/${File4} /etc/letsencrypt && `
-    tar cvzf /backup/${File5} /var/lib/letsencrypt"
+    "tar -C /mastodon/public/system cvzf /backup/${File1} . && `
+    tar -C /data cvzf /backup/${File2} . && `
+    tar -C /var/lib/postgresql/data cvzf /backup/${File3} . && `
+    tar -C /etc/letsencrypt cvzf /backup/${File4} . && `
+    tar -C /var/lib/letsencrypt cvzf /backup/${File5} ."
 
 # Copy to external drive and overwrite if files already exist
 Move-Item ".\${File1}" "${BackupFolder}\${dateString}\${File1}" -Force
