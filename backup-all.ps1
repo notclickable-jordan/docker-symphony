@@ -1,10 +1,28 @@
-# Helpers and variables
-Import-Module -Name ".\helpers.psm1"
+# Helper
+function Create-DatedDirectory {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$folderPath
+    )
+
+    # Get the current date and format it as YYYY-MM-DD
+    $dateString = Get-Date -Format "yyyy-MM-dd"
+
+    # Combine the folder path and date string to create the directory path
+    $directoryPath = Join-Path -Path $folderPath -ChildPath $dateString
+
+    # Check if the directory already exists, if not, create it
+    if (-not (Test-Path -Path $directoryPath -PathType Container)) {
+        New-Item -ItemType Directory -Path $directoryPath
+    }
+}
+
+# Variables
 $dateString = Get-Date -Format "yyyy-MM-dd"
 $Image = "alpine:3.17.2"
 
 # Create backup folder
-$BackupFolder = "D:\Backup\Not Clickable\docker\"
+$BackupFolder = "H:\Backup\"
 Create-DatedDirectory -folderPath $BackupFolder
 
 # Run all backup scripts

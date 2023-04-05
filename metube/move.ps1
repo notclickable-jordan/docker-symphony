@@ -1,5 +1,5 @@
-$sourceDirectory = "C:\Not Clickable\docker\metube\downloads"
-$destinationDirectory = "G:\YouTube"
+$sourceDirectory = ".\downloads"
+$destinationDirectory = "V:\YouTube"
 
 # Create the destination directory if it doesn't already exist
 if(!(Test-Path -Path $destinationDirectory)){
