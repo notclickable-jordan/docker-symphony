@@ -1,5 +1,5 @@
 # Set variables
-$File1 = "wikijs-data.tgz"
+$File1 = "wikijs-db.tgz"
 
 # Backup existing volumes by tarring and gzipping them
 docker run --rm --volumes-from wikijs_backup `

@@ -1,6 +1,6 @@
 # Variables
-$File1 = "wikijs-data.tgz"
-$Volume1 = "wikijs_db_data"
+$File1 = "wikijs-db.tgz"
+$Volume1 = "wikijs_db"
 $Folder1 = "/restore/${Volume1}}"
 
 # Bring down the existing site
