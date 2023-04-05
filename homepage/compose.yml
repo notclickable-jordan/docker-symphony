@@ -1,5 +1,13 @@
 version: "3.3"
 services:
+  backup:
+    image: alpine:3.17.2
+    container_name: homepage_backup
+    entrypoint: "tail -f /dev/null"
+    volumes:
+      - letsencrypt:/etc/letsencrypt:ro
+    restart: always
+
   homepage:
     image: jordanroher/homepage:0.1.8
     container_name: homepage

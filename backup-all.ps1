@@ -29,6 +29,7 @@ Create-DatedDirectory -folderPath $BackupFolder
 & "$PSScriptRoot/archivebox/backup.ps1"
 & "$PSScriptRoot/calibre/backup.ps1"
 & "$PSScriptRoot/gitea/backup.ps1"
+& "$PSScriptRoot/homepage/backup.ps1"
 & "$PSScriptRoot/mastodon/backup.ps1"
 & "$PSScriptRoot/mealie/backup.ps1"
 & "$PSScriptRoot/minecraft/backup.ps1"

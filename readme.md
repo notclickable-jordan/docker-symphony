@@ -1,11 +1,12 @@
 # About
 
-Docker compose files for personal services. Some services are exposed to the Internet, others are served to the local network and any devices using Tailscale.
+Docker compose files for personal services. Some services are exposed to the Internet, others are served to the local network and any devices using Tailscale. DNS records are updated using DirectUpdate.
 
 ## Prerequisites
 
 - [Docker](https://www.docker.com/products/docker-desktop/)
 - [Tailscale](https://tailscale.com/download/)
+- [DirectUpdate](https://www.directupdate.net/)
 
 ## Environment variables
 
@@ -75,3 +76,13 @@ Since MeTube isn't able to access the network share, its move files script shoul
 ``` powershell
 ./metube/powershell.exe -ExecutionPolicy Bypass -File move.ps1
 ```
+
+# DirectUpdate
+
+Create a new DNS account:
+
+- **Account Type:** NameCheap.com
+- **User name/Login:** your-domain.tld (e.g.: mydomain.com)
+- **Password:** the 25+ charater namecheap DDNS key your-domain.com (e.g. 78bb2321f2b777ff8c24c59234mkm3)
+- **Domain/Host:** your-subdomain.your-domain.tld (e.g. mysubdomain.mydomain.com)
+- Uncheck **Disable/ignore this account**
