@@ -67,3 +67,11 @@ Use the `renew-all.ps1` script to renew the SSL certificates for services expose
 ``` powershell
 powershell.exe -ExecutionPolicy Bypass -File renew-all.ps1
 ```
+
+## MeTube move files
+
+Since MeTube isn't able to access the network share, its move files script should be run as a scheduled task (e.g. every 5 minutes).
+
+``` powershell
+./metube/powershell.exe -ExecutionPolicy Bypass -File move.ps1
+```
