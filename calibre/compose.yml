@@ -16,7 +16,6 @@ services:
       - TZ=America/Los_Angeles
     volumes:
       - config:/config
-      - C:\Apps\Calibre:/library
     ports:
       - 8040:8083
     restart: unless-stopped

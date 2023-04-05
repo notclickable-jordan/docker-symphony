@@ -4,7 +4,7 @@ services:
     container_name: vscode_backup
     entrypoint: "tail -f /dev/null"
     volumes:
-      - config:/config
+      - config:/config:ro
     restart: always
 
   vscode:
@@ -14,10 +14,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       - config:/config
-      - ../:/config/workspace
     ports:
       - 8120:8443
     restart: always

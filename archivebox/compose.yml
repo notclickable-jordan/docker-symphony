@@ -4,7 +4,7 @@ services:
     container_name: archivebox_backup
     entrypoint: "tail -f /dev/null"
     volumes:
-      - data:/data
+      - data:/data:ro
     restart: always
 
   archivebox:

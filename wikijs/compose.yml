@@ -4,7 +4,7 @@ services:
     container_name: wikijs_backup
     entrypoint: "tail -f /dev/null"
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db:/var/lib/postgresql/data
     restart: always
 
   db:
@@ -15,7 +15,7 @@ services:
       driver: "none"
     restart: always
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db:/var/lib/postgresql/data
 
   wiki:
     image: requarks/wiki:2.5.297
@@ -28,4 +28,4 @@ services:
       - 8060:3000
 
 volumes:
-  db-data:
+  db:

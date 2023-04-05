@@ -5,8 +5,8 @@ services:
     entrypoint: "tail -f /dev/null"
     restart: always
     volumes:
-      - data:/data
-      - db:/var/lib/postgresql/data
+      - data:/data:ro
+      - db:/var/lib/postgresql/data:ro
 
   gitea:
     image: gitea/gitea:1.19.0
