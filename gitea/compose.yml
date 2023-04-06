@@ -7,6 +7,7 @@ services:
     volumes:
       - data:/data:ro
       - db:/var/lib/postgresql/data:ro
+      - woodpecker:/var/lib/woodpecker:ro
 
   gitea:
     image: gitea/gitea:1.19.0
@@ -28,9 +29,29 @@ services:
     expose:
       - 5432
 
+  woodpecker-server:
+    image: woodpeckerci/woodpecker-server:v0.15.7-alpine
+    container_name: gitea_woodpecker
+    restart: always
+    env_file: env.woodpecker_agent
+    depends_on:
+      - gitea
+    ports:
+      - 8101:8000
+    volumes:
+      - woodpecker:/var/lib/woodpecker
+
+  woodpecker-agent:
+    image: woodpeckerci/woodpecker-agent:v0.15.7-alpine
+    container_name: gitea_woodpecker_agent
+    command: agent
+    restart: always
+    depends_on:
+      - woodpecker-server
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+
 volumes:
   db:
   data:
-  
-  
-    
+  woodpecker:
