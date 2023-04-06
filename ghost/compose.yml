@@ -1,0 +1,31 @@
+services:
+  backup:
+    image: alpine:3.17.2
+    container_name: ghost_backup
+    entrypoint: "tail -f /dev/null"
+    restart: always
+    volumes:
+      - content:/var/lib/ghost/content:ro
+      - db:/var/lib/mysql:ro
+
+  ghost:
+    image: ghost:5.42-alpine
+    container_name: ghost
+    restart: always
+    ports:
+      - 8150:2368
+    env_file: env.ghost
+    volumes:
+      - content:/var/lib/ghost/content
+
+  db:
+    image: mysql:8.0
+    container_name: ghost_db
+    restart: always
+    env_file: env.db
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  content:
+  db:
