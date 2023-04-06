@@ -33,7 +33,7 @@ services:
     image: woodpeckerci/woodpecker-server:v0.15.7-alpine
     container_name: gitea_woodpecker
     restart: always
-    env_file: env.woodpecker_agent
+    env_file: env.woodpecker
     depends_on:
       - gitea
     ports:
