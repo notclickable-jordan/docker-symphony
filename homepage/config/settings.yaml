@@ -6,7 +6,7 @@ title: Starbase 80
 theme: light
 color: gray
 hideVersion: true
-favicon: /icons/not-clickable.ico
+favicon: /icons/favicon.ico
 
 layout:
   Services:
