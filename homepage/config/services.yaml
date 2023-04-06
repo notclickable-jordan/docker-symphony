@@ -15,6 +15,12 @@
         description: eBook reader
         container: calibre_web
 
+    - Ghost:
+        icon: ghost
+        href: http://starbase-80:8150/
+        description: Blogging platform
+        container: ghost
+
     - Gitea:
         icon: /icons/gitea.svg
         href: http://starbase-80:8100/
