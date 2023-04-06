@@ -32,6 +32,7 @@ Many services mention `env_file` in their `compose.yml`. These are stored in 1Pa
 - Mealie (8110)
 - Visual Studio Code (8120)
 - Vaultwarden (8130-8132)
+- N8N (8140)
 
 ## UDP
 - Minecraft (19132)

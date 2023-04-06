@@ -1,0 +1,19 @@
+services:
+  backup:
+    image: alpine:3.17.2
+    container_name: n8n_backup
+    entrypoint: "tail -f /dev/null"
+    volumes:
+      - data:/home/node/.n8n
+    restart: always
+
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:0.222.1
+    container_name: n8n
+    ports:
+      - 8140:5678
+    volumes:
+      - data:/home/node/.n8n
+
+volumes:
+  data:

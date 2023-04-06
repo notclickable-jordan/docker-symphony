@@ -44,6 +44,12 @@
         description: Recipe manager
         container: mealie
 
+    - N8N:
+        icon: n8n
+        href: http://starbase-80:8140/
+        description: Workflow automation
+        container: n8n
+
     - MeTube:
         icon: /icons/metube.jpg
         href: http://starbase-80:8080/

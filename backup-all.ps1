@@ -34,6 +34,7 @@ Create-DatedDirectory -folderPath $BackupFolder
 & "$PSScriptRoot/mealie/backup.ps1"
 & "$PSScriptRoot/minecraft/backup.ps1"
 & "$PSScriptRoot/miniflux/backup.ps1"
+& "$PSScriptRoot/n8n/backup.ps1"
 & "$PSScriptRoot/vaultwarden/backup.ps1"
 & "$PSScriptRoot/vscode/backup.ps1"
 & "$PSScriptRoot/wikijs/backup.ps1"
