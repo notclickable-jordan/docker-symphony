@@ -38,12 +38,14 @@ services:
       - gitea
     ports:
       - 8101:8000
+      - 8102:9000
     volumes:
       - woodpecker:/var/lib/woodpecker
 
   woodpecker-agent:
     image: woodpeckerci/woodpecker-agent:v0.15.7-alpine
     container_name: gitea_woodpecker_agent
+    env_file: env.woodpecker_agent
     command: agent
     restart: always
     depends_on:
