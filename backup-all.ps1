@@ -22,7 +22,7 @@ $dateString = Get-Date -Format "yyyy-MM-dd"
 $Image = "alpine:3.17.2"
 
 # Create backup folder
-$BackupFolder = "H:\Backup\"
+$BackupFolder = "H:\Backup\docker-symphony"
 Create-DatedDirectory -folderPath $BackupFolder
 
 # Run all backup scripts
