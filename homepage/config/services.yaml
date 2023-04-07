@@ -10,7 +10,7 @@
         container: archivebox
 
     - Ghost:
-        icon: ghost
+        icon: /icons/ghost.jpg
         href: http://starbase-80:8150/
         description: Blogging platform
         container: ghost
@@ -45,7 +45,7 @@
         container: mealie
 
     - N8N:
-        icon: n8n
+        icon: /icons/n8n.jpg
         href: http://starbase-80:8140/
         description: Workflow automation
         container: n8n
@@ -87,7 +87,7 @@
         container: wikijs
 
     - Woodpecker:
-        icon: drone
+        icon: /icons/woodpecker.jpg
         href: http://starbase-80:8101/
         description: Continuous integration
         container: gitea_woodpecker
