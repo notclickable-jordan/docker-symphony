@@ -9,12 +9,6 @@
         description: Backup webpages
         container: archivebox
 
-    - Calibre:
-        icon: /icons/calibre.jpg
-        href: http://starbase-80:8040/
-        description: eBook reader
-        container: calibre_web
-
     - Ghost:
         icon: ghost
         href: http://starbase-80:8150/

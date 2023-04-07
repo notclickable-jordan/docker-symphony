@@ -27,7 +27,6 @@ Create-DatedDirectory -folderPath $BackupFolder
 
 # Run all backup scripts
 & "$PSScriptRoot/archivebox/backup.ps1"
-& "$PSScriptRoot/calibre/backup.ps1"
 & "$PSScriptRoot/ghost/backup.ps1"
 & "$PSScriptRoot/gitea/backup.ps1"
 & "$PSScriptRoot/homepage/backup.ps1"
