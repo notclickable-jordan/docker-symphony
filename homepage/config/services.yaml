@@ -9,12 +9,6 @@
         description: Backup webpages
         container: archivebox
 
-    - Calibre:
-        icon: /icons/calibre.jpg
-        href: http://starbase-80:8040/
-        description: eBook reader
-        container: calibre_web
-
     - Ghost:
         icon: ghost
         href: http://starbase-80:8150/
@@ -24,7 +18,7 @@
     - Gitea:
         icon: /icons/gitea.svg
         href: http://starbase-80:8100/
-        description: Code hosting and CI/CD
+        description: Code hosting
         container: gitea
 
     - Grafana:
@@ -91,6 +85,12 @@
         href: http://starbase-80:8060/
         description: Private wiki
         container: wikijs
+
+    - Woodpecker:
+        icon: drone
+        href: http://starbase-80:8101/
+        description: Continuous integration
+        container: gitea_woodpecker
 
 - Devices:
 
