@@ -66,7 +66,7 @@ services:
       - redis:/data
 
   web:
-    image: tootsuite/mastodon:v4.1.0
+    image: tootsuite/mastodon:v4.1.2
     container_name: mastodon_web
     restart: always
     env_file: env.production
@@ -91,7 +91,7 @@ services:
       - certbot:/var/www/certbot:ro
 
   streaming:
-    image: tootsuite/mastodon:v4.1.0
+    image: tootsuite/mastodon:v4.1.2
     container_name: mastodon_streaming
     restart: always
     env_file: env.production
@@ -113,7 +113,7 @@ services:
       - redis
 
   sidekiq:
-    image: tootsuite/mastodon:v4.1.0
+    image: tootsuite/mastodon:v4.1.2
     container_name: mastodon_sidekiq
     restart: always
     env_file: env.production
