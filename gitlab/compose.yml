@@ -16,3 +16,8 @@ services:
       - logs:/var/log/gitlab
       - data:/var/opt/gitlab
     shm_size: 256m
+
+volumes:
+  config:
+  logs:
+  data:
