@@ -14,6 +14,7 @@ services:
       - 8140:5678
     volumes:
       - data:/home/node/.n8n
+    restart: always
 
 volumes:
   data:
