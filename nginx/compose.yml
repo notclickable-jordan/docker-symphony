@@ -1,4 +1,12 @@
 services:
+  # editor:
+  #   image: ubuntu:latest
+  #   entrypoint: "tail -f /dev/null"
+  #   restart: always
+  #   volumes:
+  #     - certbot:/var/www/certbot
+  #     - letsencrypt:/etc/letsencrypt
+    
   backup:
     image: alpine:3.17.2
     container_name: switchboard_backup
@@ -19,6 +27,7 @@ services:
       - ./sites:/etc/nginx/conf.d
       - logs:/var/log/nginx
       - letsencrypt:/etc/letsencrypt
+      - certbot:/var/www/certbot
     ports:
       - 80:80
       - 443:443
@@ -33,8 +42,11 @@ services:
   letsencrypt:
       image: certbot/certbot:v2.4.0
       container_name: switchboard_letsencrypt
-      command: sh -c "certbot certonly --reinstall -v -d notclickable.social -d www.notclickable.social -d notclickable.com -d www.notclickable.com -d vaultwarden.notclickable.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
       entrypoint: ""
+      command: >
+        sh -c "certbot certonly --reinstall -n -v -d notclickable.social -d www.notclickable.social --cert-name notclickable.social  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com &&
+        certbot certonly --reinstall -v -n -d notclickable.com -d www.notclickable.com --cert-name notclickable.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com &&
+        certbot certonly --reinstall -v -n -d vaultwarden.notclickable.com --cert-name vaultwarden.notclickable.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
       depends_on:
           - nginx
       volumes:
