@@ -40,7 +40,6 @@ services:
       volumes:
           - letsencrypt:/etc/letsencrypt
           - certbot:/var/www/certbot
-          - letsencrypt_lib:/var/lib/letsencrypt
       environment:
           - TERM=xterm
 
