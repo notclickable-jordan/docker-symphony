@@ -1,23 +1,47 @@
 services:
+  backup:
+    image: alpine:3.17.2
+    container_name: switchboard_backup
+    entrypoint: "tail -f /dev/null"
+    restart: always
+    volumes:
+      - certbot:/var/www/certbot:ro
+      - grafana:/var/lib/grafana:ro
+      - letsencrypt:/etc/letsencrypt:ro
+      - logs:/var/log/nginx:ro
+      - loki:/loki:ro
+      - prometheus:/prometheus:ro
+
   nginx:
     image: nginx:1.23.3
     container_name: switchboard
     volumes:
-      - ./default.conf:/etc/nginx/conf.d/default.conf
-      - nginx_logs:/var/log/nginx
-      - mastodon_letsencrypt:/etc/letsencrypt-mastodon
-      - homepage_letsencrypt:/etc/letsencrypt-homepage
-      - vaultwarden_letsencrypt:/etc/letsencrypt-vaultwarden
+      - ./sites:/etc/nginx/conf.d
+      - logs:/var/log/nginx
+      - letsencrypt:/etc/letsencrypt
     ports:
       - 80:80
       - 443:443
-      - 8070:8070
+      - 8070:8070 # for prometheus
     restart: always
     networks:
       monitoring:
         ipv4_address: 10.10.10.10
         aliases:
           - nginx
+
+  letsencrypt:
+      image: certbot/certbot:v2.4.0
+      container_name: switchboard_letsencrypt
+      command: sh -c "certbot certonly --reinstall -v -d notclickable.social -d www.notclickable.social -d notclickable.com -d www.notclickable.com -d vaultwarden.notclickable.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
+      entrypoint: ""
+      depends_on:
+          - nginx
+      volumes:
+          - letsencrypt:/etc/letsencrypt
+          - certbot:/var/www/certbot
+      environment:
+          - TERM=xterm
 
   nginx-prometheus-exporter:
     image: nginx/nginx-prometheus-exporter:0.11
@@ -103,7 +127,7 @@ services:
     container_name: switchboard_promtail
     volumes:
       - ./promtail.yml:/etc/promtail/promtail.yml
-      - nginx_logs:/var/log/nginx
+      - logs:/var/log/nginx
     command:
       - '-config.file=/etc/promtail/promtail.yml'
     depends_on:
@@ -116,16 +140,12 @@ services:
           - promtail
 
 volumes:
-  prometheus:
+  certbot:
   grafana:
-  nginx_logs:
+  letsencrypt:
+  logs:
   loki:
-  mastodon_letsencrypt:
-    external: true
-  homepage_letsencrypt:
-    external: true
-  vaultwarden_letsencrypt:
-    external: true
+  prometheus:
 
 networks:
   monitoring:

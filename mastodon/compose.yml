@@ -8,38 +8,6 @@ services:
       - web:/mastodon/public/system:ro
       - redis:/data:ro
       - db:/var/lib/postgresql/data:ro
-      - letsencrypt:/etc/letsencrypt:ro
-
-  nginx:
-    image: nginx:1.23.3
-    container_name: mastodon_nginx
-    restart: always
-    ports:
-      - 8010:80
-      - 8011:443
-    depends_on:
-      - web
-      - sidekiq
-      - streaming
-    volumes:
-      - ./default.conf:/etc/nginx/conf.d/default.conf
-      - letsencrypt:/etc/letsencrypt
-      - certbot:/var/www/certbot
-
-  letsencrypt:
-    image: certbot/certbot:v2.4.0
-    container_name: mastodon_letsencrypt
-    command: sh -c "certbot certonly --reinstall -v -d notclickable.social -d www.notclickable.social --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
-    entrypoint: ""
-    depends_on:
-      - nginx
-      - web
-    volumes:
-      - certbot:/var/www/certbot
-      - letsencrypt:/etc/letsencrypt
-      - letsencrypt_lib:/var/lib/letsencrypt
-    environment:
-      - TERM=xterm
 
   db:
     image: postgres:14-alpine
@@ -88,7 +56,6 @@ services:
       - redis
     volumes:
       - web:/mastodon/public/system
-      - certbot:/var/www/certbot:ro
 
   streaming:
     image: tootsuite/mastodon:v4.1.2
@@ -139,6 +106,3 @@ volumes:
   db:
   redis:
   web:
-  letsencrypt:
-  letsencrypt_lib:
-  certbot:
