@@ -52,7 +52,7 @@
 
     - MeTube:
         icon: /icons/metube.jpg
-        href: http://starbase-80:8080/
+        href: https://metube.starbase80.dev/
         description: Archive YouTube
         container: metube
 
@@ -64,7 +64,7 @@
 
     - Miniflux:
         icon: /icons/miniflux.jpg
-        href: http://starbase-80:8050/
+        href: https://miniflux.starbase80.dev/
         description: RSS server
         container: miniflux
 
@@ -76,13 +76,13 @@
 
     - Visual Studio Code:
         icon: /icons/vscode.jpg
-        href: http://starbase-80:8120
+        href: https://vscode.starbase80.dev/
         description: Code editing
         container: vscode
 
     - WikiJS:
         icon: /icons/wikijs.svg
-        href: http://starbase-80:8060/
+        href: https://wiki.starbase80.dev/
         description: Private wiki
         container: wikijs
 
