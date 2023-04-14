@@ -12,11 +12,49 @@ services:
       - loki:/loki:ro
       - prometheus:/prometheus:ro
 
+  authelia:
+    image: authelia/authelia:4.37.5
+    container_name: switchboard_authelia
+    restart: always
+    environment:
+      - TZ=America/Los_Angeles
+    ports:
+      - 8000:9091
+    volumes:
+      - ./env.authelia_configuration.yml:/config/configuration.yml
+      - ./env.authelia_users_database.yml:/config/users_database.yml
+      - authelia_logs:/logs
+    networks:
+      monitoring:
+        ipv4_address: 10.10.10.70
+        aliases:
+          - authelia
+
+  redis:
+    image: redis:alpine
+    container_name: switchboard_authelia_redis
+    security_opt:
+      - no-new-privileges:true
+    expose:
+      - 6379
+    restart: unless-stopped
+    environment:
+      - TZ=America/Los_Angeles
+    command: redis-server --appendonly yes
+    volumes:
+      - authelia_redis:/data
+    networks:
+      monitoring:
+        ipv4_address: 10.10.10.80
+        aliases:
+          - authelia_redis
+
   nginx:
     image: nginx:1.23.3
     container_name: switchboard
     volumes:
       - ./sites:/etc/nginx/conf.d
+      - ./snippets:/etc/nginx/snippets
       - logs:/var/log/nginx
       - letsencrypt:/etc/letsencrypt
       - certbot:/var/www/certbot
@@ -31,15 +69,31 @@ services:
         aliases:
           - nginx
 
-  # Get initial certificates
-  # letsencrypt:
+  # Get one certificate
+  # letsencrypt_one:
   #     image: certbot/certbot:v2.4.0
-  #     container_name: switchboard_letsencrypt
+  #     container_name: switchboard_letsencrypt_one
+  #     entrypoint: ""
+  #     command: >
+  #       sh -c "certbot certonly --reinstall -n -v -d auth.notclickable.com --cert-name auth.notclickable.com  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
+  #     depends_on:
+  #         - nginx
+  #     volumes:
+  #         - letsencrypt:/etc/letsencrypt
+  #         - certbot:/var/www/certbot
+  #     environment:
+  #         - TERM=xterm
+
+  # Get initial certificates
+  # letsencrypt_initial:
+  #     image: certbot/certbot:v2.4.0
+  #     container_name: switchboard_letsencrypt_initial
   #     entrypoint: ""
   #     command: >
   #       sh -c "certbot certonly --reinstall -n -v -d notclickable.social -d www.notclickable.social --cert-name notclickable.social  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com &&
   #       certbot certonly --reinstall -v -n -d notclickable.com -d www.notclickable.com --cert-name notclickable.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com &&
-  #       certbot certonly --reinstall -v -n -d vaultwarden.notclickable.com --cert-name vaultwarden.notclickable.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
+  #       certbot certonly --reinstall -v -n -d vaultwarden.notclickable.com --cert-name vaultwarden.notclickable.com --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com &&
+  #       certbot certonly --reinstall -n -v -d auth.notclickable.com --cert-name auth.notclickable.com  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
   #     depends_on:
   #         - nginx
   #     volumes:
@@ -166,6 +220,8 @@ volumes:
   logs:
   loki:
   prometheus:
+  authelia_redis:
+  authelia_logs:
 
 networks:
   monitoring:
