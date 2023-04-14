@@ -5,19 +5,19 @@
 - Services:
     - Archivebox:
         icon: /icons/archivebox.jpg
-        href: http://archivebox.starbase80.dev/
+        href: https://archivebox.starbase80.dev/
         description: Backup webpages
         container: archivebox
 
     - Ghost:
         icon: /icons/ghost.jpg
-        href: http://rohertwins.starbase80.dev/
+        href: https://rohertwins.starbase80.dev/
         description: The Roher Twins
-        container: roher_twins
+        container: rohertwins
 
     - Gitea:
         icon: /icons/gitea.svg
-        href: http://starbase-80:8100/
+        href: https://git.starbase80.dev/
         description: Code hosting
         container: gitea
 
