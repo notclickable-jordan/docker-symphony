@@ -70,7 +70,7 @@
 
     - Vaultwarden:
         icon: /icons/vaultwarden.svg
-        href: https://vaultwarden.notclickable.com/
+        href: https://vaultwarden.starbase80.dev/
         description: Password manager
         container: vaultwarden
 
