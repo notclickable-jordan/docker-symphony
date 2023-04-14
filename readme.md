@@ -65,10 +65,10 @@ powershell.exe -ExecutionPolicy Bypass -File restore.ps1
 
 ## SSL certificate renewal
 
-Use the `renew-all.ps1` script to renew the SSL certificates for services exposed to the Internet. New services must be added manually to this file. Individual renewal scripts may be run in isolation.
+Use the `nginx/renew.ps1` script to renew the SSL certificates for services exposed to the Internet.
 
 ``` powershell
-powershell.exe -ExecutionPolicy Bypass -File renew-all.ps1
+powershell.exe -ExecutionPolicy Bypass -File renew.ps1
 ```
 
 ## MeTube move files
