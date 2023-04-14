@@ -12,8 +12,8 @@
     - Ghost:
         icon: /icons/ghost.jpg
         href: http://starbase-80:8150/
-        description: Blogging platform
-        container: ghost
+        description: The Roher Twins
+        container: roher_twins
 
     - Gitea:
         icon: /icons/gitea.svg

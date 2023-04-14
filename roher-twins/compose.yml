@@ -1,7 +1,7 @@
 services:
   backup:
     image: alpine:3.17.2
-    container_name: ghost_backup
+    container_name: roher_twins_backup
     entrypoint: "tail -f /dev/null"
     restart: always
     volumes:
@@ -10,7 +10,7 @@ services:
 
   ghost:
     image: ghost:5.42-alpine
-    container_name: ghost
+    container_name: roher_twins
     restart: always
     ports:
       - 8150:2368
@@ -20,7 +20,7 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: ghost_db
+    container_name: roher_twins_db
     restart: always
     env_file: env.db
     volumes:
