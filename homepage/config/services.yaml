@@ -23,7 +23,7 @@
 
     - Grafana:
         icon: /icons/grafana.jpg
-        href: http://starbase-80:8072/
+        href: https://grafana.starbase80.dev/
         description: nginx dashboard
         container: switchboard
 
