@@ -85,30 +85,15 @@ services:
   #         - TERM=xterm
 
   # Get initial certificates
-  letsencrypt_initial:
-      image: certbot/certbot:v2.4.0
-      container_name: switchboard_letsencrypt_initial
-      entrypoint: ""
-      command: >
-        sh -c "certbot certonly --reinstall -n -v -d notclickable.social -d www.notclickable.social --cert-name notclickable.social  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@starbase80.dev &&
-        certbot certonly --reinstall -v -n -d starbase80.dev -d www.starbase80.dev --cert-name starbase80.dev --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@starbase80.dev &&
-        certbot certonly --reinstall -v -n -d vaultwarden.starbase80.dev --cert-name vaultwarden.starbase80.dev --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@starbase80.dev &&
-        certbot certonly --reinstall -n -v -d auth.starbase80.dev --cert-name auth.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@starbase80.dev"
-      depends_on:
-          - nginx
-      volumes:
-          - letsencrypt:/etc/letsencrypt
-          - certbot:/var/www/certbot
-      environment:
-          - TERM=xterm
-
-  # Renew certificates
-  # letsencrypt:
+  # letsencrypt_initial:
   #     image: certbot/certbot:v2.4.0
-  #     container_name: switchboard_letsencrypt
+  #     container_name: switchboard_letsencrypt_initial
   #     entrypoint: ""
   #     command: >
-  #       sh -c "certbot renew --keep-until-expiring -n -v"
+  #       sh -c "certbot certonly --reinstall -n -v -d notclickable.social -d www.notclickable.social --cert-name notclickable.social  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@starbase80.dev &&
+  #       certbot certonly --reinstall -v -n -d starbase80.dev -d www.starbase80.dev --cert-name starbase80.dev --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@starbase80.dev &&
+  #       certbot certonly --reinstall -v -n -d vaultwarden.starbase80.dev --cert-name vaultwarden.starbase80.dev --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@starbase80.dev &&
+  #       certbot certonly --reinstall -n -v -d auth.starbase80.dev --cert-name auth.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@starbase80.dev"
   #     depends_on:
   #         - nginx
   #     volumes:
@@ -116,6 +101,21 @@ services:
   #         - certbot:/var/www/certbot
   #     environment:
   #         - TERM=xterm
+
+  # Renew certificates
+  letsencrypt:
+      image: certbot/certbot:v2.4.0
+      container_name: switchboard_letsencrypt
+      entrypoint: ""
+      command: >
+        sh -c "certbot renew --keep-until-expiring -n -v"
+      depends_on:
+          - nginx
+      volumes:
+          - letsencrypt:/etc/letsencrypt
+          - certbot:/var/www/certbot
+      environment:
+          - TERM=xterm
 
   nginx-prometheus-exporter:
     image: nginx/nginx-prometheus-exporter:0.11
