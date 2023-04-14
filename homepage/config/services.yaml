@@ -40,13 +40,13 @@
 
     - Mealie:
         icon: /icons/mealie.jpg
-        href: http://starbase-80:8110/
+        href: https://mealie.starbase80.dev/
         description: Recipe manager
         container: mealie
 
     - N8N:
         icon: /icons/n8n.jpg
-        href: http://starbase-80:8140/
+        href: https://n8n.starbase80.dev/
         description: Workflow automation
         container: n8n
 
@@ -88,7 +88,7 @@
 
     - Woodpecker:
         icon: /icons/woodpecker.jpg
-        href: http://starbase-80:8101/
+        href: https://woodpecker.starbase80.dev/
         description: Continuous integration
         container: gitea_woodpecker
 
