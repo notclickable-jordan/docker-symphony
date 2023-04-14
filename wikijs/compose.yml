@@ -26,6 +26,9 @@ services:
     restart: unless-stopped
     ports:
       - 8060:3000
+    volumes:
+      - content:/wiki/data/content
 
 volumes:
   db:
+  content:
