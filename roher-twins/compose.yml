@@ -12,6 +12,8 @@ services:
     image: ghost:5.42-alpine
     container_name: roher_twins
     restart: always
+    depends_on:
+      - db
     ports:
       - 8150:2368
     env_file: env.ghost

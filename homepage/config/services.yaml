@@ -11,7 +11,7 @@
 
     - Ghost:
         icon: /icons/ghost.jpg
-        href: http://starbase-80:8150/
+        href: http://rohertwins.starbase80.dev/
         description: The Roher Twins
         container: roher_twins
 
