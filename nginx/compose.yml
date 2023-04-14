@@ -12,11 +12,49 @@ services:
       - loki:/loki:ro
       - prometheus:/prometheus:ro
 
+  authelia:
+    image: authelia/authelia:4.37.5
+    container_name: switchboard_authelia
+    restart: always
+    environment:
+      - TZ=America/Los_Angeles
+    ports:
+      - 8000:9091
+    volumes:
+      - ./env.authelia_configuration.yml:/config/configuration.yml
+      - ./env.authelia_users_database.yml:/config/users_database.yml
+      - authelia_logs:/logs
+    networks:
+      monitoring:
+        ipv4_address: 10.10.10.70
+        aliases:
+          - authelia
+
+  redis:
+    image: redis:alpine
+    container_name: switchboard_authelia_redis
+    security_opt:
+      - no-new-privileges:true
+    expose:
+      - 6379
+    restart: unless-stopped
+    environment:
+      - TZ=America/Los_Angeles
+    command: redis-server --appendonly yes
+    volumes:
+      - authelia_redis:/data
+    networks:
+      monitoring:
+        ipv4_address: 10.10.10.70
+        aliases:
+          - authelia_redis
+
   nginx:
     image: nginx:1.23.3
     container_name: switchboard
     volumes:
       - ./sites:/etc/nginx/conf.d
+      - ./snippets:/etc/nginx/snippets
       - logs:/var/log/nginx
       - letsencrypt:/etc/letsencrypt
       - certbot:/var/www/certbot
@@ -166,6 +204,8 @@ volumes:
   logs:
   loki:
   prometheus:
+  authelia_redis:
+  authelia_logs:
 
 networks:
   monitoring:
