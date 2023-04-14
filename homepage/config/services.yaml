@@ -5,7 +5,7 @@
 - Services:
     - Archivebox:
         icon: /icons/archivebox.jpg
-        href: http://starbase-80:8020/
+        href: http://archivebox.starbase80.dev/
         description: Backup webpages
         container: archivebox
 
