@@ -45,7 +45,7 @@ services:
       - authelia_redis:/data
     networks:
       monitoring:
-        ipv4_address: 10.10.10.70
+        ipv4_address: 10.10.10.80
         aliases:
           - authelia_redis
 
