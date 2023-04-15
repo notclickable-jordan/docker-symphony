@@ -18,8 +18,8 @@ services:
     restart: always
     environment:
       - TZ=America/Los_Angeles
-    ports:
-      - 8000:9091
+    expose:
+      - 9091
     volumes:
       - ./env.authelia_configuration.yml:/config/configuration.yml
       - ./env.authelia_users_database.yml:/config/users_database.yml
