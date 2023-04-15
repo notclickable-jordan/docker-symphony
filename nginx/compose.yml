@@ -24,11 +24,6 @@ services:
       - ./env.authelia_configuration.yml:/config/configuration.yml
       - ./env.authelia_users_database.yml:/config/users_database.yml
       - authelia_logs:/logs
-    networks:
-      monitoring:
-        ipv4_address: 10.10.10.70
-        aliases:
-          - authelia
 
   redis:
     image: redis:alpine
@@ -43,17 +38,12 @@ services:
     command: redis-server --appendonly yes
     volumes:
       - authelia_redis:/data
-    networks:
-      monitoring:
-        ipv4_address: 10.10.10.80
-        aliases:
-          - authelia_redis
 
   nginx:
-    image: nginx:1.23.3
+    image: linuxserver/nginx
     container_name: switchboard
     volumes:
-      - ./sites:/etc/nginx/conf.d
+      - ./sites:/config/nginx/site-confs
       - ./snippets:/etc/nginx/snippets
       - logs:/var/log/nginx
       - letsencrypt:/etc/letsencrypt
@@ -63,11 +53,6 @@ services:
       - 443:443
       - 8070:8070 # for prometheus
     restart: always
-    networks:
-      monitoring:
-        ipv4_address: 10.10.10.10
-        aliases:
-          - nginx
 
   # Get one certificate
   # letsencrypt_one:
@@ -99,101 +84,101 @@ services:
       environment:
           - TERM=xterm
 
-  nginx-prometheus-exporter:
-    image: nginx/nginx-prometheus-exporter:0.11
-    container_name: switchboard_status_exporter
-    ports:
-      - 8071:9113
-    command:
-      - -nginx.scrape-uri
-      - http://10.10.10.10:8070/status
-      - -web.telemetry-path=/metrics
-    depends_on:
-      - nginx
-    restart: always
-    networks:
-      monitoring:
-        ipv4_address: 10.10.10.20
-        aliases:
-          - exporter
+  # nginx-prometheus-exporter:
+  #   image: nginx/nginx-prometheus-exporter:0.11
+  #   container_name: switchboard_status_exporter
+  #   ports:
+  #     - 8071:9113
+  #   command:
+  #     - -nginx.scrape-uri
+  #     - http://10.10.10.10:8070/status
+  #     - -web.telemetry-path=/metrics
+  #   depends_on:
+  #     - nginx
+  #   restart: always
+  #   networks:
+  #     monitoring:
+  #       ipv4_address: 10.10.10.20
+  #       aliases:
+  #         - exporter
 
-  prometheus:
-    image: prom/prometheus:v2.43.0
-    container_name: switchboard_prometheus
-    expose:
-      - 9090
-    depends_on:
-      - nginx-prometheus-exporter
-    restart: always
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-      - prometheus:/prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--web.console.libraries=/etc/prometheus/console_libraries'
-      - '--web.console.templates=/etc/prometheus/consoles'
-      - '--web.enable-lifecycle'
-    networks:
-      monitoring:
-        ipv4_address: 10.10.10.30
-        aliases:
-          - prometheus
+  # prometheus:
+  #   image: prom/prometheus:v2.43.0
+  #   container_name: switchboard_prometheus
+  #   expose:
+  #     - 9090
+  #   depends_on:
+  #     - nginx-prometheus-exporter
+  #   restart: always
+  #   volumes:
+  #     - ./prometheus.yml:/etc/prometheus/prometheus.yml
+  #     - prometheus:/prometheus
+  #   command:
+  #     - '--config.file=/etc/prometheus/prometheus.yml'
+  #     - '--storage.tsdb.path=/prometheus'
+  #     - '--web.console.libraries=/etc/prometheus/console_libraries'
+  #     - '--web.console.templates=/etc/prometheus/consoles'
+  #     - '--web.enable-lifecycle'
+  #   networks:
+  #     monitoring:
+  #       ipv4_address: 10.10.10.30
+  #       aliases:
+  #         - prometheus
 
-  grafana:
-    image: grafana/grafana-oss:9.4.7
-    container_name: switchboard_grafana
-    ports:
-      - 8072:3000
-    depends_on:
-      - prometheus
-      - loki
-    restart: always
-    volumes:
-      - ./grafana.ini:/etc/grafana/grafana.ini
-      - ./loki-data-source.yml:/etc/grafana/provisioning/datasources/loki.yml
-      - grafana:/var/lib/grafana
-    networks:
-      monitoring:
-        ipv4_address: 10.10.10.40
-        aliases:
-          - grafana
+  # grafana:
+  #   image: grafana/grafana-oss:9.4.7
+  #   container_name: switchboard_grafana
+  #   ports:
+  #     - 8072:3000
+  #   depends_on:
+  #     - prometheus
+  #     - loki
+  #   restart: always
+  #   volumes:
+  #     - ./grafana.ini:/etc/grafana/grafana.ini
+  #     - ./loki-data-source.yml:/etc/grafana/provisioning/datasources/loki.yml
+  #     - grafana:/var/lib/grafana
+  #   networks:
+  #     monitoring:
+  #       ipv4_address: 10.10.10.40
+  #       aliases:
+  #         - grafana
 
-  loki:
-    image: grafana/loki:main-1c012d6
-    container_name: switchboard_loki
-    ports:
-      - 3100
-    volumes:
-      - loki:/loki
-      - ./loki-config.yml:/etc/loki/local-config.yml
-    command: 
-      - '-config.file=/etc/loki/local-config.yml'
-    depends_on:
-      - nginx
-    restart: always
-    networks:
-      monitoring:
-        ipv4_address: 10.10.10.50
-        aliases:
-          - loki
+  # loki:
+  #   image: grafana/loki:main-1c012d6
+  #   container_name: switchboard_loki
+  #   ports:
+  #     - 3100
+  #   volumes:
+  #     - loki:/loki
+  #     - ./loki-config.yml:/etc/loki/local-config.yml
+  #   command: 
+  #     - '-config.file=/etc/loki/local-config.yml'
+  #   depends_on:
+  #     - nginx
+  #   restart: always
+  #   networks:
+  #     monitoring:
+  #       ipv4_address: 10.10.10.50
+  #       aliases:
+  #         - loki
 
-  promtail:
-    image: grafana/promtail:main-1c012d6
-    container_name: switchboard_promtail
-    volumes:
-      - ./promtail.yml:/etc/promtail/promtail.yml
-      - logs:/var/log/nginx
-    command:
-      - '-config.file=/etc/promtail/promtail.yml'
-    depends_on:
-      - loki
-    restart: always
-    networks:
-      monitoring:
-        ipv4_address: 10.10.10.60
-        aliases:
-          - promtail
+  # promtail:
+    # image: grafana/promtail:main-1c012d6
+    # container_name: switchboard_promtail
+    # volumes:
+    #   - ./promtail.yml:/etc/promtail/promtail.yml
+    #   - logs:/var/log/nginx
+    # command:
+    #   - '-config.file=/etc/promtail/promtail.yml'
+    # depends_on:
+    #   - loki
+    # restart: always
+    # networks:
+    #   monitoring:
+    #     ipv4_address: 10.10.10.60
+    #     aliases:
+    #       - promtail
 
 volumes:
   certbot:
@@ -204,10 +189,3 @@ volumes:
   prometheus:
   authelia_redis:
   authelia_logs:
-
-networks:
-  monitoring:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.10.10.0/24

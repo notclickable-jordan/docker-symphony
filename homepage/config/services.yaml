@@ -21,11 +21,11 @@
         description: Code hosting
         container: gitea
 
-    - Grafana:
-        icon: /icons/grafana.jpg
-        href: https://grafana.starbase80.dev/
-        description: nginx dashboard
-        container: switchboard
+    # - Grafana:
+    #     icon: /icons/grafana.jpg
+    #     href: https://grafana.starbase80.dev/
+    #     description: nginx dashboard
+    #     container: switchboard
 
     - Jellyfin:
         icon: /icons/jellyfin.svg
