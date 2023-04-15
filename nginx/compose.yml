@@ -24,9 +24,6 @@ services:
       - ./env.authelia_configuration.yml:/config/configuration.yml
       - ./env.authelia_users_database.yml:/config/users_database.yml
       - authelia_logs:/logs
-    networks:
-      outside:
-        aliases: []
 
   redis:
     image: redis:alpine
@@ -41,9 +38,6 @@ services:
     command: redis-server --appendonly yes
     volumes:
       - authelia_redis:/data
-    networks:
-      outside:
-        aliases: []
 
   nginx:
     image: linuxserver/nginx
@@ -59,9 +53,6 @@ services:
       - 443:443
       - 8070:8070 # for prometheus
     restart: always
-    networks:
-      outside:
-        aliases: []
 
   # Get one certificate
   # letsencrypt_one:
@@ -92,9 +83,6 @@ services:
         - certbot:/var/www/certbot
     environment:
         - TERM=xterm
-    networks:
-      outside:
-        aliases: []
 
   # nginx-prometheus-exporter:
   #   image: nginx/nginx-prometheus-exporter:0.11
@@ -201,7 +189,3 @@ volumes:
   prometheus:
   authelia_redis:
   authelia_logs:
-
-networks:
-  outside:
-    driver: bridge
