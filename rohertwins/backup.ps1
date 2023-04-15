@@ -1,9 +1,9 @@
 # Set variables
-$File1 = "ghost-content.tgz"
-$File2 = "ghost-db.tgz"
+$File1 = "rohertwins-content.tgz"
+$File2 = "rohertwins-db.tgz"
 
 # Backup existing volumes by tarring and gzipping them
-docker run --rm --volumes-from ghost_backup `
+docker run --rm --volumes-from rohertwins_backup `
     -v ${pwd}:/backup ${Image} sh -c `
     "tar -C /var/lib/ghost/content -cvzf /backup/${File1} . && `
     tar -C /var/lib/mysql -cvzf /backup/${File2} ."

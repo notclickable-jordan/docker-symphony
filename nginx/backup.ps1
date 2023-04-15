@@ -7,7 +7,7 @@ $File5 = "nginx-loki.tgz"
 $File6 = "nginx-prometheus.tgz"
 
 # Backup existing volumes by tarring and gzipping them
-docker run --rm --volumes-from mastodon_backup `
+docker run --rm --volumes-from switchboard_backup `
     -v ${pwd}:/backup ${Image} sh -c `
     "tar -C /var/www/certbot -cvzf /backup/${File1} . && `
     tar -C /var/lib/grafana -cvzf /backup/${File2} . && `
