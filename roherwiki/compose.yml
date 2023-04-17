@@ -1,7 +1,7 @@
 services:
   backup:
     image: alpine:3.17.2
-    container_name: wikijs_backup
+    container_name: roherwiki_backup
     entrypoint: "tail -f /dev/null"
     volumes:
       - db:/var/lib/postgresql/data
@@ -9,7 +9,7 @@ services:
 
   db:
     image: postgres:11-alpine
-    container_name: wikijs_db
+    container_name: roherwiki_db
     env_file: env.db
     logging:
       driver: "none"
@@ -19,7 +19,7 @@ services:
 
   wiki:
     image: requarks/wiki:2.5.297
-    container_name: wikijs
+    container_name: roherwiki
     depends_on:
       - db
     env_file: env.wiki

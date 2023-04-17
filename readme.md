@@ -34,6 +34,7 @@ Many services mention `env_file` in their `compose.yml`. These are stored in 1Pa
 - Vaultwarden (8130)
 - N8N (8140)
 - Ghost (8150)
+- Portainer (8160)
 
 ## UDP
 - Minecraft (19132)

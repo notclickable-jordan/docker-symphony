@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Variables
-File1="nginx-letsencrypt.tgz"
-VolumeName="nginx_letsencrypt"
-FolderName="/restore/${VolumeName}"
+File1="mealie-data.tgz"
+Volume1="mealie_data"
+Folder1="/restore/${Volume1}"
 
 # Bring down the existing site
 docker compose down -v
@@ -15,9 +15,9 @@ docker compose down
 # Restore the volume data from the backups
 docker run --rm \
     -v "$(pwd)/${File1}:/backup/${File1}" \
-    -v "${VolumeName}:${FolderName}" \
-    ubuntu:latest sh -c \
-        "tar -xvzf /backup/${File1} -C ${FolderName} --skip-old-files"
+    -v "${Volume1}:${Folder1}" \
+    alpine:3.17.2 sh -c \
+        "tar -xvzf /backup/${File1} -C ${Folder1}"
 
 # Restore the site with the data
 docker compose up -d

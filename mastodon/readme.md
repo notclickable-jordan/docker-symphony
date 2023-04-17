@@ -42,7 +42,7 @@ Copy what's in the terminal and paste it into .env.production
 
 ```conf
 upstream backend {
-    server host.docker.internal:3000 fail_timeout=0;
+    server localhost:3000 fail_timeout=0;
 }
 ```
 

@@ -64,17 +64,17 @@
             proxy_set_header Host $http_host;
             proxy_set_header X-NginX-Proxy true;
 
-            proxy_pass http://host.docker.internal:8080;
+            proxy_pass http://localhost:8080;
         }
     }
     ```
 1. Modify the **top_nginx** `conf.default` to point to the new HTTP port
     ``` conf
     # Instead of
-    proxy_pass http://host.docker.internal:8080;
+    proxy_pass http://localhost:8080;
 
     # replace with
-    proxy_pass http://host.docker.internal:8081;
+    proxy_pass http://localhost:8081;
     ```
 1. Restart the **top_nginx** services
     ``` powershell
@@ -91,14 +91,14 @@
 1. Modify **my_app** `default.conf` to add a HTTPS redirect and add a HTTPS block
     ``` conf
     # Instead of
-    proxy_pass http://host.docker.internal:8080;
+    proxy_pass http://localhost:8080;
 
     # replace with
     return 301 https://$host$request_uri;
 
     # Then add at the bottom of the file
     upstream backend {
-        server host.docker.internal:8080;
+        server localhost:8080;
     }
 
     server {
@@ -146,7 +146,7 @@
         location / {
             proxy_set_header   X-Forwarded-For $remote_addr;
             proxy_set_header   Host $http_host;
-            proxy_pass         https://host.docker.internal:8082;
+            proxy_pass         https://localhost:8082;
         }
     }
     ```

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Untested
-
 # Variables
 File1="nginx-certbot.tgz"
 Volume1="nginx_certbot"

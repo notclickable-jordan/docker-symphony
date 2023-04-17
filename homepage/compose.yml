@@ -8,5 +8,11 @@ services:
     volumes:
       - ./config:/app/config
       - ./icons:/app/public/icons
-      - //var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: always
+    networks:
+      - net
+
+networks:
+  net:
+    external: true
