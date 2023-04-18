@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-BackupContainer="jellyfin_backup"
+BackupContainer="mastodon_backup"
 
 File1="mastodon-web.tgz"
 Folder1="/mastodon/public/system"
