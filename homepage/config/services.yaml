@@ -9,11 +9,11 @@
         description: Backup webpages
         container: archivebox
 
-    - Ghost:
-        icon: /icons/ghost.jpg
-        href: https://rohertwins.starbase80.dev/
-        description: The Roher Twins
-        container: rohertwins
+    - Calibre:
+        icon: calibre
+        href: https://calibre.starbase80.dev/
+        description: Ebook library
+        container: calibre
 
     - Gitea:
         icon: /icons/gitea.svg
@@ -68,6 +68,24 @@
         description: RSS server
         container: miniflux
 
+    - Portainer:
+        icon: portainer
+        href: https://portainer.starbase80.dev/
+        description: Docker management
+        container: portainer
+
+    - Roher Twins:
+        icon: /icons/ghost.jpg
+        href: https://rohertwins.starbase80.dev/
+        description: Weekly newsletter
+        container: rohertwins
+
+    - Roher Wiki:
+        icon: /icons/wikijs.svg
+        href: https://wiki.starbase80.dev/
+        description: Private wiki
+        container: roherwiki
+
     - Vaultwarden:
         icon: /icons/vaultwarden.svg
         href: https://vaultwarden.starbase80.dev/
@@ -79,12 +97,6 @@
         href: https://vscode.starbase80.dev/
         description: Code editing
         container: vscode
-
-    - WikiJS:
-        icon: /icons/wikijs.svg
-        href: https://wiki.starbase80.dev/
-        description: Private wiki
-        container: wikijs
 
     - Woodpecker:
         icon: /icons/woodpecker.jpg
