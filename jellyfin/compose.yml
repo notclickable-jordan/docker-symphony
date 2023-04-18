@@ -1,4 +1,12 @@
 services:
+  backup:
+    image: alpine:3.17.2
+    container_name: jellyfin_backup
+    entrypoint: "tail -f /dev/null"
+    restart: always
+    volumes:
+      - config:/config:ro
+
   jellyfin:
     image: jellyfin/jellyfin
     container_name: jellyfin
