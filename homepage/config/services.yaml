@@ -29,7 +29,7 @@
 
     - Jellyfin:
         icon: /icons/jellyfin.svg
-        href: http://starbase-80:8030/
+        href: https://jellyfin.starbase80.dev/
         description: Media server
 
     - Mastodon:
