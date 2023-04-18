@@ -61,6 +61,13 @@ services:
       - miniflux_default
       - rohertwins_default
       - mealie_default
+      - metube_default
+      - vaultwarden_default
+      - vscode_default
+      - roherwiki_default
+      - calibre_default
+      - jellyfin_default
+      - portainer_default
 
   # Get one certificate
   # letsencrypt_one:
@@ -68,7 +75,7 @@ services:
   #     container_name: switchboard_letsencrypt_one
   #     entrypoint: ""
   #     command: >
-  #       sh -c "certbot certonly --reinstall -n -v -d grafana.starbase80.dev --cert-name grafana.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
+  #       sh -c "certbot certonly --reinstall -n -v -d roherwiki.starbase80.dev --cert-name roherwiki.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
   #     depends_on:
   #         - nginx
   #     volumes:
@@ -111,4 +118,18 @@ networks:
   rohertwins_default:
     external: true
   mealie_default:
+    external: true
+  metube_default:
+    external: true
+  vaultwarden_default:
+    external: true
+  vscode_default:
+    external: true
+  roherwiki_default:
+    external: true
+  calibre_default:
+    external: true
+  jellyfin_default:
+    external: true
+  portainer_default:
     external: true

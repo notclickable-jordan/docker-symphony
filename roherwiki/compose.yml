@@ -17,15 +17,15 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
 
-  wiki:
+  roherwiki:
     image: requarks/wiki:2.5.297
     container_name: roherwiki
     depends_on:
       - db
     env_file: env.wiki
     restart: unless-stopped
-    ports:
-      - 8060:3000
+    expose:
+      - 3000
     volumes:
       - content:/wiki/data/content
 
