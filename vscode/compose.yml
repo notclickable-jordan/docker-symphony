@@ -16,8 +16,8 @@ services:
       - TZ=Etc/UTC
     volumes:
       - config:/config
-    expose:
-      - 8443
+    ports:
+      - 8120:8443
     restart: always
 
 volumes:

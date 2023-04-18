@@ -24,8 +24,8 @@ services:
       - db
     env_file: env.wiki
     restart: unless-stopped
-    expose:
-      - 3000
+    ports:
+      - 8060:3000
     volumes:
       - content:/wiki/data/content
 

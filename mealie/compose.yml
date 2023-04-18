@@ -11,8 +11,8 @@ services:
     container_name: mealie
     image: hkotel/mealie:latest
     restart: always
-    expose:
-      - 80
+    ports:
+      - 8110:80
     environment:
       PUID: 1000
       PGID: 1000

@@ -21,7 +21,7 @@ Many services mention `env_file` in their `compose.yml`. These are stored in 1Pa
 - Jellyfin (8030)
 - Calibre (8040)
 - Miniflux (8050)
-- WikiJS (8060)
+- WikiJS - Roher Wiki (8060)
 - Grafana
     - nginx stub_status (8070)
     - Prometheus (8071)
@@ -33,8 +33,9 @@ Many services mention `env_file` in their `compose.yml`. These are stored in 1Pa
 - Visual Studio Code (8120)
 - Vaultwarden (8130)
 - N8N (8140)
-- Ghost (8150)
+- Ghost - Roher Twins (8150)
 - Portainer (8160)
+- Calibre (8170)
 
 ## UDP
 - Minecraft (19132)

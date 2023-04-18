@@ -11,8 +11,8 @@ services:
     image: vaultwarden/server:1.28.0
     container_name: vaultwarden
     restart: always
-    expose:
-      - 80
+    ports:
+      - 8130:80
     volumes:
       - data:/data
     env_file: env.server

@@ -14,8 +14,8 @@ services:
     restart: always
     depends_on:
       - db
-    expose:
-      - 2368
+    ports:
+      - 8150:2368
     env_file: env.ghost
     volumes:
       - content:/var/lib/ghost/content

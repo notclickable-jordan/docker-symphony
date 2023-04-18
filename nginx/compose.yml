@@ -59,7 +59,6 @@ services:
       - archivebox_default
       - gitea_default
       - miniflux_default
-      - rohertwins_default
       - mealie_default
       - vaultwarden_default
       - vscode_default
@@ -67,6 +66,7 @@ services:
       - calibre_default
       - jellyfin_default
       - portainer_default
+    network_mode: "bridge"
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
@@ -115,8 +115,6 @@ networks:
   gitea_default:
     external: true
   miniflux_default:
-    external: true
-  rohertwins_default:
     external: true
   mealie_default:
     external: true

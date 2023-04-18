@@ -11,9 +11,9 @@ services:
     volumes:
       - config:/config
       - /mnt/synology/downloads/Calibre:/books:ro
-    expose:
-      - 8083
-    restart: unless-stopped
+    ports:
+      - 8170:8083
+    restart: always
 
 volumes:
   config:

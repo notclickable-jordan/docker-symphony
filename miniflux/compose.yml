@@ -12,8 +12,8 @@ services:
     container_name: miniflux
     env_file: env.miniflux
     restart: always
-    expose:
-      - 8080
+    ports:
+      - 8050:8080
     depends_on:
       db:
         condition: service_healthy

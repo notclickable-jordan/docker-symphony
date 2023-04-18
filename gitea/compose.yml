@@ -16,8 +16,8 @@ services:
     restart: always
     volumes:
       - data:/data
-    expose:
-      - 3000
+    ports:
+      - 8100:3000
 
   db:
     image: postgres:alpine
@@ -37,8 +37,8 @@ services:
     depends_on:
       - gitea
     expose:
-      - 8000
-      - 9000
+      - 8101:8000
+      - 8102:9000
     volumes:
       - woodpecker:/var/lib/woodpecker
 
