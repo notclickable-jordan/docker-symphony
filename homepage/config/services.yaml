@@ -76,7 +76,7 @@
 
     - Roher Wiki:
         icon: /icons/wikijs.svg
-        href: https://wiki.starbase80.dev/
+        href: https://roherwiki.starbase80.dev/
         description: Private wiki
         container: roherwiki
 
