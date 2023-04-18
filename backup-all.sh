@@ -28,10 +28,11 @@ Create-DatedDirectory "$BackupFolder"
 
 # Run all backup scripts
 "$PSScriptRoot/archivebox/backup.ps1"
+"$PSScriptRoot/calibre/backup.ps1"
 "$PSScriptRoot/gitea/backup.ps1"
+"$PSScriptRoot/jellyfin/backup.ps1"
 "$PSScriptRoot/mastodon/backup.ps1"
 "$PSScriptRoot/mealie/backup.ps1"
-#"$PSScriptRoot/minecraft/backup.ps1"
 "$PSScriptRoot/miniflux/backup.ps1"
 "$PSScriptRoot/nginx/backup.ps1"
 "$PSScriptRoot/n8n/backup.ps1"
