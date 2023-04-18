@@ -5,6 +5,7 @@ services:
     entrypoint: "tail -f /dev/null"
     volumes:
       - db:/var/lib/postgresql/data
+      - content:/wiki/data/content
     restart: always
 
   db:

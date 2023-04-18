@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Variables
-BackupContainer="db"
+BackupContainer="vaultwarden"
 
-File1="miniflux-db.tgz"
-Volume1="miniflux_db"
+File1="vaultwarden-data.tgz"
+Volume1="vaultwarden_data"
 Folder1="/restore/${Volume1}"
 
 # Bring down the existing site

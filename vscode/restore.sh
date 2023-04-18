@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Variables
-BackupContainer="db"
+BackupContainer="vscode"
 
-File1="miniflux-db.tgz"
-Volume1="miniflux_db"
+File1="vscode-config.tgz"
+Volume1="vscode_config"
 Folder1="/restore/${Volume1}"
 
 # Bring down the existing site

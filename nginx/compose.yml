@@ -6,7 +6,6 @@ services:
     restart: always
     volumes:
       - letsencrypt:/etc/letsencrypt:ro
-      - logs:/var/log/nginx:ro
 
   authelia:
     image: authelia/authelia:4.37.5

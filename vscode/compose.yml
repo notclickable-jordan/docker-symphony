@@ -1,19 +1,11 @@
 services:
-  backup:
-    image: alpine:3.17.2
-    container_name: vscode_backup
-    entrypoint: "tail -f /dev/null"
-    volumes:
-      - config:/config:ro
-    restart: always
-
   vscode:
     image: linuxserver/code-server:4.11.0
     container_name: vscode
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=America/Los_Angeles
     volumes:
       - config:/config
     ports:

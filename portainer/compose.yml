@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: portainer/portainer
+    image: portainer/portainer-ce:linux-amd64-2.18.1
     container_name: portainer
     restart: always
     volumes:

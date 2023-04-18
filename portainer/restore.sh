@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Variables
-BackupContainer="db"
+BackupContainer="portainer"
 
-File1="miniflux-db.tgz"
-Volume1="miniflux_db"
+File1="portainer-data.tgz"
+Volume1="portainer_data"
 Folder1="/restore/${Volume1}"
 
 # Bring down the existing site

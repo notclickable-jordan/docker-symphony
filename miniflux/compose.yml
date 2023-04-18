@@ -1,12 +1,4 @@
 services:
-  backup:
-    image: alpine:3.17.2
-    container_name: miniflux_backup
-    entrypoint: "tail -f /dev/null"
-    volumes:
-      - db:/var/lib/postgresql/data
-    restart: always
-
   miniflux:
     image: miniflux/miniflux:2.0.42
     container_name: miniflux
