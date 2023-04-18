@@ -21,6 +21,7 @@ services:
       - ./env.authelia_users_database.yml:/config/users_database.yml
       - ./env.authelia_notification.txt:/config/notification.txt
       - authelia_logs:/logs
+    network_mode: host
 
   redis:
     image: redis:alpine
@@ -35,6 +36,7 @@ services:
     command: redis-server --appendonly yes
     volumes:
       - authelia_redis:/data
+    network_mode: host
 
   nginx:
     image: linuxserver/nginx
