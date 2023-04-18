@@ -1,7 +1,7 @@
 services:
-  calibre-web:
+  calibre:
     image: lscr.io/linuxserver/calibre-web:latest
-    container_name: calibre-web
+    container_name: calibre
     environment:
       - PUID=1000
       - PGID=1000

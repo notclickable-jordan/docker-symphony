@@ -61,43 +61,44 @@ services:
       - miniflux_default
       - rohertwins_default
       - mealie_default
-      - metube_default
       - vaultwarden_default
       - vscode_default
       - roherwiki_default
       - calibre_default
       - jellyfin_default
       - portainer_default
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   # Get one certificate
   # letsencrypt_one:
-  #     image: certbot/certbot:v2.4.0
-  #     container_name: switchboard_letsencrypt_one
-  #     entrypoint: ""
-  #     command: >
-  #       sh -c "certbot certonly --reinstall -n -v -d roherwiki.starbase80.dev --cert-name roherwiki.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
-  #     depends_on:
-  #         - nginx
-  #     volumes:
-  #         - letsencrypt:/etc/letsencrypt
-  #         - certbot:/var/www/certbot
-  #     environment:
-  #         - TERM=xterm
+  #   image: certbot/certbot:v2.4.0
+  #   container_name: switchboard_letsencrypt_one
+  #   entrypoint: ""
+  #   command: >
+  #     sh -c "certbot certonly --reinstall -n -v -d portainer.starbase80.dev --cert-name portainer.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
+  #   depends_on:
+  #     - nginx
+  #   volumes:
+  #     - letsencrypt:/etc/letsencrypt
+  #     - certbot:/var/www/certbot
+  #   environment:
+  #     - TERM=xterm
 
   # Renew certificates
-  letsencrypt:
-    image: certbot/certbot:v2.4.0
-    container_name: switchboard_letsencrypt
-    entrypoint: ""
-    command: >
-      sh -c "certbot renew --keep-until-expiring -n -v"
-    depends_on:
-        - nginx
-    volumes:
-        - letsencrypt:/etc/letsencrypt
-        - certbot:/var/www/certbot
-    environment:
-        - TERM=xterm
+  # letsencrypt:
+  #   image: certbot/certbot:v2.4.0
+  #   container_name: switchboard_letsencrypt
+  #   entrypoint: ""
+  #   command: >
+  #     sh -c "certbot renew --keep-until-expiring -n -v"
+  #   depends_on:
+  #       - nginx
+  #   volumes:
+  #       - letsencrypt:/etc/letsencrypt
+  #       - certbot:/var/www/certbot
+  #   environment:
+  #       - TERM=xterm
 
 volumes:
   certbot:
@@ -118,8 +119,6 @@ networks:
   rohertwins_default:
     external: true
   mealie_default:
-    external: true
-  metube_default:
     external: true
   vaultwarden_default:
     external: true

@@ -5,8 +5,8 @@ services:
     restart: always
     environment:
       - YTDL_OPTIONS={"format":"bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4","cookiefile":"/cookies/cookies.txt"}
-    expose:
-      - 8081
+    ports:
+      - 8080:8081
     volumes:
       - /mnt/synology/video/YouTube:/downloads
       # - ./env.cookies:/cookies/cookies.txt
