@@ -45,11 +45,12 @@ services:
       - logs:/var/log/nginx
       - letsencrypt:/etc/letsencrypt
       - certbot:/var/www/certbot
-    ports:
-      - 80:80
-      - 443:443
-      - 8070:8070 # for prometheus
+    # ports:
+    #   - 80:80
+    #   - 443:443
+    #   - 8070:8070 # for prometheus
     restart: always
+    network_mode: host
 
   # Get one certificate
   # letsencrypt_one:

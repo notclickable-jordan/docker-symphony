@@ -1,5 +1,5 @@
 .DS_Store
 */env.*
 */*.tgz
-metube/downloads
 homepage/config/logs
+nginx/sites/default.*
