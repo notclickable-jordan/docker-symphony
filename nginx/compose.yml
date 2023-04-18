@@ -59,6 +59,8 @@ services:
       - archivebox_default
       - gitea_default
       - miniflux_default
+      - rohertwins_default
+      - mealie_default
 
   # Get one certificate
   # letsencrypt_one:
@@ -105,4 +107,8 @@ networks:
   gitea_default:
     external: true
   miniflux_default:
+    external: true
+  rohertwins_default:
+    external: true
+  mealie_default:
     external: true
