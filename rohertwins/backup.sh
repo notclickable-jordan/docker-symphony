@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-BackupContainer="backup"
+BackupContainer="rohertwins_backup"
 
 File1="rohertwins-content.tgz"
 Folder1="/var/lib/ghost/content"

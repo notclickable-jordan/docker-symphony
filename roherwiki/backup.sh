@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-BackupContainer="backup"
+BackupContainer="roherwiki_backup"
 
 File1="roherwiki-content.tgz"
 Folder1="/wiki/data/content"
