@@ -1,5 +1,5 @@
 .DS_Store
 */env.*
-*/*.tgz
+*.tgz
 homepage/config/logs
 nginx/sites/default.*

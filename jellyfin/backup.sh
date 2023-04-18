@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-BackupContainer="jellyfin_backup"
+BackupContainer="jellyfin"
 
 File1="jellyfin-config.tgz"
 Folder1="/config"

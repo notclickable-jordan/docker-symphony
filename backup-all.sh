@@ -19,11 +19,11 @@ function Create-DatedDirectory {
 }
 
 # Variables
-dateString=$(date +"%Y-%m-%d")
-Image="alpine:3.17.2"
+export dateString=$(date +"%Y-%m-%d")
+export Image="alpine:3.17.2"
 
 # Create backup folder
-BackupFolder="/mnt/synology/home/Backup/docker-symphony"
+export BackupFolder="/mnt/synology/home/Backup/docker-symphony"
 Create-DatedDirectory "$BackupFolder"
 
 # Run all backup scripts
@@ -40,7 +40,7 @@ Create-DatedDirectory "$BackupFolder"
 "./roherwiki/backup.sh"
 "./vaultwarden/backup.sh"
 "./vscode/backup.sh"
-"./wikijs/backup.sh"
 
 # Delete backups older than 7 days
 find "$BackupFolder" -type d -mtime +7 -exec rm -rf {} \;
+rm *.tgz
