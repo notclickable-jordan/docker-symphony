@@ -21,8 +21,6 @@ services:
       - ./env.authelia_users_database.yml:/config/users_database.yml
       - ./env.authelia_notification.txt:/config/notification.txt
       - authelia_logs:/logs
-    networks:
-      - net
 
   redis:
     image: redis:alpine
@@ -37,8 +35,6 @@ services:
     command: redis-server --appendonly yes
     volumes:
       - authelia_redis:/data
-    networks:
-      - net
 
   nginx:
     image: linuxserver/nginx
@@ -54,21 +50,6 @@ services:
       - 443:443
       - 8070:8070 # for prometheus
     restart: always
-    networks:
-      - net
-      - archivebox_default
-      - gitea_default
-      - miniflux_default
-      - mealie_default
-      - vaultwarden_default
-      - vscode_default
-      - roherwiki_default
-      - calibre_default
-      - jellyfin_default
-      - portainer_default
-    network_mode: "bridge"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
   # Get one certificate
   # letsencrypt_one:
@@ -106,27 +87,3 @@ volumes:
   logs:
   authelia_logs:
   authelia_redis:
-
-networks:
-  net:
-    external: true
-  archivebox_default:
-    external: true
-  gitea_default:
-    external: true
-  miniflux_default:
-    external: true
-  mealie_default:
-    external: true
-  vaultwarden_default:
-    external: true
-  vscode_default:
-    external: true
-  roherwiki_default:
-    external: true
-  calibre_default:
-    external: true
-  jellyfin_default:
-    external: true
-  portainer_default:
-    external: true
