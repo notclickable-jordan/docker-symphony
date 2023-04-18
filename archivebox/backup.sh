@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-BackupContainer="archivebox_backup"
+BackupContainer="archivebox"
 
 File1="archivebox-data.tgz"
 Folder1="/data"

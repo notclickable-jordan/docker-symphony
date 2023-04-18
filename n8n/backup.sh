@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-BackupContainer="n8n_backup"
+BackupContainer="n8n"
 
 File1="n8n-data.tgz"
 Folder1="/home/node/.n8n"

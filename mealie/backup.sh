@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-BackupContainer="mealie_backup"
+BackupContainer="mealie"
 
 File1="mealie-data.tgz"
 Folder1="/app/data"

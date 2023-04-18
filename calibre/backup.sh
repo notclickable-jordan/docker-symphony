@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-BackupContainer="calibre_backup"
+BackupContainer="calibre"
 
 File1="calibre-config.tgz"
 Folder1="/config"

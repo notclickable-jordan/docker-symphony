@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-BackupContainer="miniflux_backup"
+BackupContainer="miniflux_db"
 
 File1="miniflux-db.tgz"
 Folder1="/var/lib/postgresql/data"

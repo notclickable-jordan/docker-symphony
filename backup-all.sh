@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Untested
-
 # Helper
 function Create-DatedDirectory {
     folderPath="$1"
@@ -30,7 +28,6 @@ Create-DatedDirectory "$BackupFolder"
 "./archivebox/backup.sh"
 "./calibre/backup.sh"
 "./gitea/backup.sh"
-"./jellyfin/backup.sh"
 "./mastodon/backup.sh"
 "./mealie/backup.sh"
 "./miniflux/backup.sh"

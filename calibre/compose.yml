@@ -1,12 +1,4 @@
 services:
-  backup:
-    image: alpine:3.17.2
-    container_name: calibre_backup
-    entrypoint: "tail -f /dev/null"
-    volumes:
-      - config:/config
-    restart: always
-
   calibre:
     image: linuxserver/calibre-web:0.6.20
     container_name: calibre
