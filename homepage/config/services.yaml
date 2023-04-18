@@ -56,12 +56,6 @@
         description: Archive YouTube
         container: metube
 
-#    - Minecraft:
-#        icon: /icons/minecraft.jpg
-#        href: http://192.168.1.57
-#        description: 192.168.1.3 (Bedrock)
-#        container: minecraft
-
     - Miniflux:
         icon: /icons/miniflux.jpg
         href: https://miniflux.starbase80.dev/
