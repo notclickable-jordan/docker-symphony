@@ -10,7 +10,7 @@ services:
       - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
     volumes:
       - config:/config
-      - /mnt/synology/downloads/Calibre:/books:ro
+      - /mnt/synology/downloads/Calibre:/books
     ports:
       - 8170:8083
     restart: always
