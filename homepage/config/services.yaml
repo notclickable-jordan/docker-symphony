@@ -87,7 +87,7 @@
         container: roherwiki
 
     - Standard Notes:
-        icon: standardnotes
+        icon: benotes
         href: https://standardnotes.starbase80.dev/
         description: Knowledge base
         container: standardnotes_web
