@@ -3,11 +3,11 @@
 # https://gethomepage.dev/en/configs/services
 
 - Services:
-    - Authify:
-        icon: authify
+    - Authelia:
+        icon: authelia
         href: https://auth.starbase80.dev/
         description: Authentication
-        container: switchboard_authify
+        container: switchboard_authelia
 
     - Archivebox:
         icon: /icons/archivebox.jpg
