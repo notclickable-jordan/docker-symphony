@@ -37,48 +37,15 @@ Many services mention `env_file` in their `compose.yml`. These are stored in 1Pa
 - Portainer (8160)
 - Calibre (8170)
 
-## UDP
-- Minecraft (19132)
+# Automation
 
-## Exposed to the Internet
+## Cron jobs
 
-- nginx
-- Mastodon ([notclickable.social](https://notclickable.social))
-- Homepage ([notclickable.com](https://notclickable.com))
-- Vaultwarden ([vaultwarden.notclickable.com](https://vaultwarden.notclickable.com))
+``` bash
+crontab -e -u jordan
 
-# Scripts
-
-## Backup
-
-Use the `backup-all.ps1` script to backup all services. New services must be added manually to this file. Individual backup scripts may not be run in isolation.
-
-``` powershell
-powershell.exe -ExecutionPolicy Bypass -File backup-all.ps1
-```
-
-## Restore
-
-Paste the appropriate `.tgz` files into the folder for each service and run the restore script to load data into Docker volumes.
-
-``` powershell
-powershell.exe -ExecutionPolicy Bypass -File restore.ps1
-```
-
-## SSL certificate renewal
-
-Use the `nginx/renew.ps1` script to renew the SSL certificates for services exposed to the Internet.
-
-``` powershell
-powershell.exe -ExecutionPolicy Bypass -File renew.ps1
-```
-
-## MeTube move files
-
-Since MeTube isn't able to access the network share, its move files script should be run as a scheduled task (e.g. every 5 minutes).
-
-``` powershell
-./metube/powershell.exe -ExecutionPolicy Bypass -File move.ps1
+0 2 * * * /bin/bash /home/jordan/docker-symphony/nginx/renew.sh
+0 3 * * * /bin/bash /home/jordan/docker-symphony/backup-all.sh
 ```
 
 # DirectUpdate
