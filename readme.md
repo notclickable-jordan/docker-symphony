@@ -36,6 +36,7 @@ Many services mention `env_file` in their `compose.yml`. These are stored in 1Pa
 - Ghost - Roher Twins (8150)
 - Portainer (8160)
 - Calibre (8170)
+- Wallabag (8180)
 
 # Automation
 

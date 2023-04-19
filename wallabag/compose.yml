@@ -1,0 +1,39 @@
+services:
+  wallabag:
+    image: wallabag/wallabag
+    container_name: wallabag
+    env_file: env.wallabag
+    ports:
+      - 8180:80
+    volumes:
+      - images:/var/www/wallabag/web/assets/images
+    healthcheck:
+      test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost"]
+      interval: 1m
+      timeout: 3s
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: mariadb
+    container_name: wallabag_db
+    env_file: env.db
+    volumes:
+      - data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 20s
+      timeout: 3s
+
+  redis:
+    image: redis:alpine
+    container_name: wallabag_redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 20s
+      timeout: 3s
+
+volumes:
+  images:
+  data:

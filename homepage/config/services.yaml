@@ -98,6 +98,12 @@
         description: Code editing
         container: vscode
 
+    - Wallabag:
+        icon: wallabag
+        href: https://wallabag.starbase80.dev/
+        description: Read later
+        container: wallabag
+
     - Woodpecker:
         icon: /icons/woodpecker.jpg
         href: https://woodpecker.starbase80.dev/
