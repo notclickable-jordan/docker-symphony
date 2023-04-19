@@ -46,27 +46,8 @@ services:
       - logs:/var/log/nginx
       - letsencrypt:/etc/letsencrypt
       - certbot:/var/www/certbot
-    # ports:
-    #   - 80:80
-    #   - 443:443
-    #   - 8070:8070 # for prometheus
     restart: always
     network_mode: host
-
-  # Get one certificate
-  # letsencrypt_one:
-  #   image: certbot/certbot:v2.4.0
-  #   container_name: switchboard_letsencrypt_one
-  #   entrypoint: ""
-  #   command: >
-  #     sh -c "certbot certonly --reinstall -n -v -d roherwiki.starbase80.dev --cert-name roherwiki.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
-  #   depends_on:
-  #     - nginx
-  #   volumes:
-  #     - letsencrypt:/etc/letsencrypt
-  #     - certbot:/var/www/certbot
-  #   environment:
-  #     - TERM=xterm
 
   # Renew certificates
   # letsencrypt:

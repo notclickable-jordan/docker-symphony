@@ -37,6 +37,7 @@ Create-DatedDirectory "$BackupFolder"
 "./roherwiki/backup.sh"
 "./vaultwarden/backup.sh"
 "./vscode/backup.sh"
+"./wallabag/backup.sh"
 
 # Delete backups older than 7 days
 find "$BackupFolder" -type d -mtime +7 -exec rm -rf {} \;
