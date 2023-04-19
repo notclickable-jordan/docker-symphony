@@ -86,6 +86,12 @@
         description: Private wiki
         container: roherwiki
 
+    - Standard Notes:
+        icon: standardnotes
+        href: https://standardnotes.starbase80.dev/
+        description: Knowledge base
+        container: standardnotes_web
+
     - Vaultwarden:
         icon: /icons/vaultwarden.svg
         href: https://vaultwarden.starbase80.dev/
