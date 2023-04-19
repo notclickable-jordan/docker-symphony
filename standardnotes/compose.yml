@@ -45,7 +45,7 @@ services:
   db:
     image: mysql:8
     container_name: standardnotes_db
-    env_file: env.sb
+    env_file: env.db
     expose:
       - 3306
     restart: unless-stopped
