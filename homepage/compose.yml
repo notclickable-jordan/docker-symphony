@@ -1,11 +1,7 @@
 services:
   homepage:
-    image: jordanroher/homepage:0.1.8
+    image: jordanroher/sb80:1
     container_name: homepage
     ports:
-      - 8090:3000
-    volumes:
-      - ./config:/app/config
-      - ./icons:/app/public/icons
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - 8090:4173
     restart: always
