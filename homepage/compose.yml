@@ -1,6 +1,6 @@
 services:
   homepage:
-    image: jordanroher/sb80:1
+    image: sb80:1.1
     container_name: homepage
     ports:
       - 8090:4173
