@@ -1,10 +1,13 @@
 services:
   homepage:
-    image: sb80:1.2
+    image: jordanroher/starbase-80
     container_name: homepage
     ports:
       - 8090:4173
     restart: always
+    environment:
+      - TITLE=Starbase 80
+      - LOGO=/logo.png
     volumes:
         - ./config.json:/app/src/config.json
         - ./public/favicon.ico:/app/public/favicon.ico
