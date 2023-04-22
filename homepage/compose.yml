@@ -1,6 +1,6 @@
 services:
   homepage:
-    image: jordanroher/starbase-80
+    image: jordanroher/starbase-80:latest
     container_name: homepage
     ports:
       - 8090:4173
