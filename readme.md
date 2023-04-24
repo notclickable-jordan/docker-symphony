@@ -38,6 +38,7 @@ Many services mention `env_file` in their `compose.yml`. These are stored in 1Pa
 - Calibre (8170)
 - Wallabag (8180)
 - Standard Notes (8190-8192)
+- Shamir's Secret Sharing Scheme (8200)
 
 # Automation
 

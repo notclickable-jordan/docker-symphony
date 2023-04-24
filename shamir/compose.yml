@@ -1,0 +1,6 @@
+services:
+    shamir:
+        image: jordanroher/shamirs-secret-sharing-scheme
+        ports:
+            - 8200:80
+        restart: always
