@@ -81,7 +81,7 @@
 				"icon": "/icons/wikijs.svg"
 			},
 			{
-				"name": "Shamir's Secret Sharing",
+				"name": "Shamir's Secrets",
 				"uri": "https://shamir.starbase80.dev",
 				"description": "Secret distribution",
 				"icon": "mdi-multicast"
