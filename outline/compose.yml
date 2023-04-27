@@ -44,7 +44,7 @@ services:
     image: minio/minio
     env_file: ./env.outline
     ports:
-      - "9000:9000"
+      - 8211:9000
     entrypoint: sh
     command: -c 'minio server'
     deploy:
