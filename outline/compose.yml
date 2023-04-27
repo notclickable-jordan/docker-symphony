@@ -11,12 +11,8 @@ services:
 
   redis:
     image: redis
-    env_file: ./env.outline
     ports:
       - 8212:6379
-    # volumes:
-    #   - ./redis.conf:/redis.conf
-    command: ["redis-server", "/redis.conf"]
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -25,7 +21,6 @@ services:
 
   postgres:
     image: postgres
-    env_file: ./env.outline
     ports:
       - 8213:5432
     volumes:
@@ -42,7 +37,6 @@ services:
 
   storage:
     image: minio/minio
-    env_file: ./env.outline
     ports:
       - 8211:9000
     entrypoint: sh
