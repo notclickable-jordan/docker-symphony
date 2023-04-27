@@ -63,6 +63,12 @@
 				"icon": "/icons/miniflux.jpg"
 			},
 			{
+				"name": "Outline",
+				"uri": "https://outline.starbase80.dev",
+				"description": "Documentation",
+				"icon": "/icons/outline.png"
+			},
+			{
 				"name": "Portainer",
 				"uri": "https://portainer.starbase80.dev",
 				"description": "Docker management",
