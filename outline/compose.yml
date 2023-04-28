@@ -9,7 +9,7 @@ services:
     depends_on:
       - postgres
       - redis
-      - storage
+      - minio
 
   redis:
     image: redis
@@ -38,7 +38,7 @@ services:
       retries: 3
     env_file: env.postgres
 
-  storage:
+  minio:
     image: minio/minio
     container_name: outline_minio
     env_file: env.minio
@@ -57,6 +57,20 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
+
+  minioserver:
+    image: minio/mc
+    container_name: outline_minio_server
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc config host add myminio http://minio:9000 ACCESSKEY SECRETKEY;
+      /usr/bin/mc rm -r --force myminio/outline;
+      /usr/bin/mc mb myminio/outline;
+      /usr/bin/mc anonymous set download myminio/outline;
+      exit 0;
+      "
 
 volumes:
   data:
