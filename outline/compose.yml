@@ -36,7 +36,7 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
-    env_file: env.outline
+    env_file: env.postgres
 
   storage:
     image: minio/minio
