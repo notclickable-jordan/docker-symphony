@@ -45,7 +45,7 @@ services:
     ports:
       - 8211:9000
     entrypoint: sh
-    command: -c 'minio server'
+    command: -c 'minio server /data --console-address ":9001"'
     restart: always
     deploy:
       restart_policy:
