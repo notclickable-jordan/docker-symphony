@@ -1,9 +1,11 @@
 services:
   outline:
     image: docker.getoutline.com/outlinewiki/outline:latest
+    container_name: outline
     env_file: ./env.outline
     ports:
       - 8210:3000
+    restart: always
     depends_on:
       - postgres
       - redis
@@ -11,8 +13,10 @@ services:
 
   redis:
     image: redis
+    container_name: outline_redis
     ports:
       - 8212:6379
+    restart: always
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -21,8 +25,10 @@ services:
 
   postgres:
     image: postgres
+    container_name: outline_postgres
     ports:
       - 8213:5432
+    restart: always
     volumes:
       - db:/var/lib/postgresql/data
     healthcheck:
@@ -30,22 +36,22 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
-    environment:
-      POSTGRES_USER: 'user'
-      POSTGRES_PASSWORD: 'pass'
-      POSTGRES_DB: 'outline'
+    env_file: env.outline
 
   storage:
     image: minio/minio
+    container_name: outline_minio
+    env_file: env.minio
     ports:
       - 8211:9000
     entrypoint: sh
     command: -c 'minio server'
+    restart: always
     deploy:
       restart_policy:
         condition: on-failure
     volumes:
-      - storage:/data
+      - data:/data
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
       interval: 30s
@@ -53,5 +59,5 @@ services:
       retries: 3
 
 volumes:
-  storage:
+  data:
   db:
