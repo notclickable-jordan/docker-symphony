@@ -1,4 +1,13 @@
 services:
+  backup:
+    image: alpine:3.17.2
+    container_name: outline_backup
+    entrypoint: "tail -f /dev/null"
+    restart: always
+    volumes:
+      - db:/var/lib/postgresql/data
+      - data:/data
+
   outline:
     image: docker.getoutline.com/outlinewiki/outline:latest
     container_name: outline

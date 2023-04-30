@@ -81,12 +81,6 @@
 				"icon": "/icons/rohertwins.jpg"
 			},
 			{
-				"name": "Roher Wiki",
-				"uri": "https://roherwiki.starbase80.dev",
-				"description": "Family wiki",
-				"icon": "/icons/wikijs.svg"
-			},
-			{
 				"name": "Shamir's Secrets",
 				"uri": "https://shamir.starbase80.dev",
 				"description": "Secret distribution",
@@ -135,7 +129,7 @@
 			},
 			{
 				"name": "Home Assistant",
-				"uri": "http://homeassistant.local:8123/",
+				"uri": "http://192.168.1.4:8123/",
 				"description": "Home automation",
 				"icon": "/icons/home-assistant.svg"
 			},
