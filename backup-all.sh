@@ -25,14 +25,12 @@ export BackupFolder="/mnt/synology/home/Backup/docker-symphony"
 Create-DatedDirectory "$BackupFolder"
 
 # Run all backup scripts
-"./archivebox/backup.sh"
 "./calibre/backup.sh"
 "./gitea/backup.sh"
 "./mastodon/backup.sh"
 "./mealie/backup.sh"
 "./miniflux/backup.sh"
 "./nginx/backup.sh"
-"./n8n/backup.sh"
 "./outline/backup.sh"
 "./rohertwins/backup.sh"
 "./standardnotes/backup.sh"
@@ -42,4 +40,6 @@ Create-DatedDirectory "$BackupFolder"
 
 # Delete backups older than 7 days
 find "$BackupFolder" -type d -mtime +7 -exec rm -rf {} \;
-rm *.tgz
+
+# Delete local backups
+rm -rf *.tgz

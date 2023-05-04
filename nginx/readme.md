@@ -15,3 +15,11 @@ Setting up OIDC for Outline authentication
     openssl genrsa -out authelia-private.pem 4096
     openssl rsa -in authelia-private.pem -outform PEM -pubout -out authelia-public.pem
     ```
+
+# nginx conf file override
+
+When pulling updates to nginx conf files, the site may fail with a permissions issue. Run this command to fix it:
+
+``` bash
+sudo chown -R $USER:$USER ./sites
+```
