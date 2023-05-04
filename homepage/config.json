@@ -18,7 +18,7 @@
 				"name": "Draw.io",
 				"uri": "https://draw.starbase80.dev",
 				"description": "Graphs and charts",
-				"icon": "drawio"
+				"icon": "/icons/drawio.png"
 			},
 			{
 				"name": "Gitea",
