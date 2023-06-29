@@ -1,6 +1,5 @@
 #!/bin/bash
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
-cd /home/jordan
 
 # Log file path
 LOG_FILE="/home/jordan/cron/backup-all.log"
@@ -33,18 +32,18 @@ export BackupFolder="/mnt/synology/home/Backup/docker-symphony"
 Create-DatedDirectory "$BackupFolder"
 
 # Run all backup scripts
-"./calibre/backup.sh"
-"./gitea/backup.sh"
-"./mastodon/backup.sh"
-"./mealie/backup.sh"
-"./miniflux/backup.sh"
-"./nginx/backup.sh"
-"./outline/backup.sh"
-"./rohertwins/backup.sh"
-"./standardnotes/backup.sh"
-"./vaultwarden/backup.sh"
-"./vscode/backup.sh"
-"./wallabag/backup.sh"
+"/home/jordan/docker-symphony/calibre/backup.sh"
+"/home/jordan/docker-symphony/gitea/backup.sh"
+"/home/jordan/docker-symphony/mastodon/backup.sh"
+"/home/jordan/docker-symphony/mealie/backup.sh"
+"/home/jordan/docker-symphony/miniflux/backup.sh"
+"/home/jordan/docker-symphony/nginx/backup.sh"
+"/home/jordan/docker-symphony/outline/backup.sh"
+"/home/jordan/docker-symphony/rohertwins/backup.sh"
+"/home/jordan/docker-symphony/standardnotes/backup.sh"
+"/home/jordan/docker-symphony/vaultwarden/backup.sh"
+"/home/jordan/docker-symphony/vscode/backup.sh"
+"/home/jordan/docker-symphony/wallabag/backup.sh"
 
 # Delete backups older than 7 days
 find "$BackupFolder" -type d -mtime +7 -exec rm -rf {} \;
