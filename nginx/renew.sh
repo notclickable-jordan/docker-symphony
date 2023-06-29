@@ -7,8 +7,10 @@ LOG_FILE="/home/jordan/cron/renew.log"
 # Redirect stdout and stderr to the log file
 exec &>> "$LOG_FILE"
 
+echo "nginx/renew.sh: $(date)"
+
 # Run letsencrypt container and remove it after it exits
-docker compose run --rm --workdir /home/jordan/docker-symphony/nginx letsencrypt
+docker compose -f /home/jordan/docker-symphony/nginx/compose.yml run --rm --workdir /home/jordan/docker-symphony/nginx letsencrypt
 
 # Reload nginx configuration in the switchboard container
-docker exec switchboard nginx -s reload
+cd /home/jordan/docker-symphony/nginx;docker exec switchboard nginx -s reload

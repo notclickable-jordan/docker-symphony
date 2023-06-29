@@ -7,6 +7,8 @@ LOG_FILE="/home/jordan/cron/backup-all.log"
 # Redirect stdout and stderr to the log file
 exec &>> "$LOG_FILE"
 
+echo "backup-all.sh: $(date)"
+
 # Helper
 function Create-DatedDirectory {
     folderPath="$1"
