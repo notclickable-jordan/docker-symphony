@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Log file path
+LOG_FILE="/home/jordan/cron/backup-all.log"
+
+# Redirect stdout and stderr to the log file
+exec &>> "$LOG_FILE"
+
 # Helper
 function Create-DatedDirectory {
     folderPath="$1"
