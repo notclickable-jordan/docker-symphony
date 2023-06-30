@@ -8,9 +8,9 @@ services:
     volumes:
       - config:/config
       - cache:/cache
-      - /mnt/synology/video:/video:ro
-      - /mnt/synology/manga:/manga:ro
-      - /mnt/synology/downloads/Calibre:/calibre:ro
+      - /mnt/synology/video:/video
+      - /mnt/synology/manga:/manga
+      - /mnt/synology/downloads/Calibre:/calibre
     restart: always
     # Optional - alternative address used for autodiscovery
     environment:
