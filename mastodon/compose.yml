@@ -34,7 +34,7 @@ services:
       - redis:/data
 
   web:
-    image: tootsuite/mastodon:v4.1.4
+    image: tootsuite/mastodon:v4.1.6
     container_name: mastodon_web
     restart: always
     env_file: env.production
@@ -60,7 +60,7 @@ services:
       - "host.docker.internal:host-gateway"
 
   streaming:
-    image: tootsuite/mastodon:v4.1.4
+    image: tootsuite/mastodon:v4.1.6
     container_name: mastodon_streaming
     restart: always
     env_file: env.production
@@ -84,7 +84,7 @@ services:
       - "host.docker.internal:host-gateway"
 
   sidekiq:
-    image: tootsuite/mastodon:v4.1.4
+    image: tootsuite/mastodon:v4.1.6
     container_name: mastodon_sidekiq
     restart: always
     env_file: env.production
