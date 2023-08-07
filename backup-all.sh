@@ -4,6 +4,9 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # Log file path
 LOG_FILE="/home/jordan/cron/backup-all.log"
 
+# Truncate log file to 1 megabyte
+truncate -s 1M "$LOG_FILE"
+
 # Redirect stdout and stderr to the log file
 exec &>> "$LOG_FILE"
 
