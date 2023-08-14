@@ -16,4 +16,5 @@ echo "nginx/renew.sh: $(date)"
 docker compose -f /home/jordan/docker-symphony/nginx/compose.yml run --rm --workdir /home/jordan/docker-symphony/nginx letsencrypt
 
 # Reload nginx configuration in the switchboard container
-cd /home/jordan/docker-symphony/nginx;docker exec switchboard nginx -s reload
+cd /home/jordan/docker-symphony/nginx
+docker exec switchboard nginx -s reload
