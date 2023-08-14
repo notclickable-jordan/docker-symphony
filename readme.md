@@ -16,6 +16,8 @@ Many services mention `env_file` in their `compose.yml`. These are stored in 1Pa
 
 ## Cloudflare
 
+Run `systemctl restart cloudflared` after updating any Cloudflare config.
+
 - NotClickable.social (7010, 7011)
 
 ## TCP
