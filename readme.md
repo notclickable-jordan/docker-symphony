@@ -14,6 +14,10 @@ Many services mention `env_file` in their `compose.yml`. These are stored in 1Pa
 
 # Services and ports
 
+## Cloudflare
+
+- NotClickable.social (7010, 7011)
+
 ## TCP
 - nginx (80, 443)
 - Mastodon (8010-8013)
