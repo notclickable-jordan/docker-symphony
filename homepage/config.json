@@ -64,7 +64,7 @@
 			},
 			{
 				"name": "Portainer",
-				"uri": "https://portainer.starbase80.dev",
+				"uri": "http://starbase-80:8160",
 				"description": "Docker management",
 				"icon": "/icons/portainer.png"
 			},
