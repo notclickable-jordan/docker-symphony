@@ -10,7 +10,7 @@
 			},
 			{
 				"name": "Calibre",
-				"uri": "https://calibre.starbase80.dev",
+				"uri": "http://starbase-80:8170",
 				"description": "eBook library",
 				"icon": "/icons/calibre.png"
 			},
@@ -28,7 +28,7 @@
 			},
 			{
 				"name": "Jellyfin",
-				"uri": "https://jellyfin.starbase80.dev",
+				"uri": "http://starbase-80:8030",
 				"description": "Media server",
 				"icon": "/icons/jellyfin.svg"
 			},
@@ -46,7 +46,7 @@
 			},
 			{
 				"name": "MeTube",
-				"uri": "https://metube.starbase80.dev",
+				"uri": "http://starbase-80:8080",
 				"description": "Archive YouTube",
 				"icon": "/icons/metube.jpg"
 			},
