@@ -125,7 +125,8 @@
 				"name": "Federation",
 				"uri": "https://federation:8006",
 				"description": "Proxmox",
-				"icon": "proxmox"
+				"icon": "proxmox",
+				"iconBubble": false
 			}
 		]
 	}
