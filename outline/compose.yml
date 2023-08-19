@@ -5,8 +5,8 @@ services:
     entrypoint: "tail -f /dev/null"
     restart: always
     volumes:
-      - db:/var/lib/postgresql/data
-      - data:/data
+      - db:/var/lib/postgresql/data:ro
+      - data:/data:ro
 
   outline:
     image: docker.getoutline.com/outlinewiki/outline:latest
