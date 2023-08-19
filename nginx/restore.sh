@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Variables
-File3="nginx-letsencrypt.tgz"
-Volume3="nginx_letsencrypt"
-Folder3="/restore/${Volume3}"
+File1="nginx-letsencrypt.tgz"
+Volume1="nginx_letsencrypt"
+Folder1="/restore/${Volume1}"
 
 # Bring down the existing site
 docker-compose down -v
