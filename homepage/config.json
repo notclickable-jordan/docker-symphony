@@ -120,6 +120,12 @@
 				"uri": "http://synology:5000",
 				"description": "Network storage",
 				"icon": "/icons/synology.png"
+			},
+			{
+				"name": "Federation",
+				"uri": "https://federation:8006",
+				"description": "Proxmox",
+				"icon": "proxmox"
 			}
 		]
 	}
