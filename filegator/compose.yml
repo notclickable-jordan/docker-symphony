@@ -3,7 +3,7 @@ services:
     image: filegator/filegator
     container_name: filegator
     volumes:
-      - dist:filegator/dist
+      - dist:/filegator/dist
     ports:
       - 8240:8080
     restart: "unless-stopped"
