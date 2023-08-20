@@ -50,19 +50,19 @@ services:
     network_mode: host
 
   # Get one certificate
-  # letsencrypt_one:
-  #   image: certbot/certbot:v2.4.0
-  #   container_name: switchboard_letsencrypt_one
-  #   entrypoint: ""
-  #   command: >
-  #     sh -c "certbot certonly --reinstall -n -v -d draw.starbase80.dev --cert-name draw.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
-  #   depends_on:
-  #     - nginx
-  #   volumes:
-  #     - letsencrypt:/etc/letsencrypt
-  #     - certbot:/var/www/certbot
-  #   environment:
-  #     - TERM=xterm
+  letsencrypt_one:
+    image: certbot/certbot:v2.4.0
+    container_name: switchboard_letsencrypt_one
+    entrypoint: ""
+    command: >
+      sh -c "certbot certonly --reinstall -n -v -d filegator.starbase80.dev --cert-name filegator.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
+    depends_on:
+      - nginx
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - certbot:/var/www/certbot
+    environment:
+      - TERM=xterm
 
   # Renew certificates
   letsencrypt:
