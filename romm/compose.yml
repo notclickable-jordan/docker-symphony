@@ -5,7 +5,7 @@ services:
     env_file: env.romm
     volumes:
       - ./config.yml:/romm/config.yml
-      - library:/romm/library
+      - /mnt/synology/downloads/Games/ROMs/Personal:/romm/library
       - resources:/romm/resources
       - database:/romm/database
       - logs:/romm/logs
@@ -21,7 +21,6 @@ services:
       test: [ 'CMD', 'redis-cli', 'ping' ]
 
 volumes:
-  library:
   resources:
   database:
   logs:
