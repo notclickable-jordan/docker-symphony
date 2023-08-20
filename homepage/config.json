@@ -75,6 +75,12 @@
 				"icon": "/icons/rohertwins.jpg"
 			},
 			{
+				"name": "ROMM",
+				"uri": "http://starbase-80:8230",
+				"description": "Classic games",
+				"icon": "romm"
+			},
+			{
 				"name": "Shamir's Secrets",
 				"uri": "https://shamir.starbase80.dev",
 				"description": "Secret distribution",

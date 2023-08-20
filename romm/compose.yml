@@ -1,0 +1,27 @@
+services:
+  romm:
+    image: zurdi15/romm:latest
+    container_name: romm
+    env_file: env.romm
+    volumes:
+      - ./config.yml:/romm/config.yml
+      - library:/romm/library
+      - resources:/romm/resources
+      - database:/romm/database
+      - logs:/romm/logs
+    ports:
+      - 8230:80
+    restart: "unless-stopped"
+
+  redis:
+    image: redis:7-alpine
+    container_name: romm_redis
+    restart: "unless-stopped"
+    healthcheck:
+      test: [ 'CMD', 'redis-cli', 'ping' ]
+
+volumes:
+  library:
+  resources:
+  database:
+  logs:
