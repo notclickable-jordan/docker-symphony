@@ -17,7 +17,7 @@ Folder4="/restore/${Volume4}"
 docker compose down -v
 
 # Bring up the containers to recreate the volumes
-docker compose up -d --build backup
+docker compose up -d --build romm
 docker compose down
 
 # Restore the volume data from the backups

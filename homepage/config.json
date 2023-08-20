@@ -24,7 +24,7 @@
 				"name": "FileGator",
 				"uri": "http://starbase-80:8240",
 				"description": "File server",
-				"icon": "filegator"
+				"icon": "/icons/filegator.png"
 			},
 			{
 				"name": "Gitea",
