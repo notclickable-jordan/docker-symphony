@@ -22,7 +22,7 @@
 			},
 			{
 				"name": "FileGator",
-				"uri": "http://starbase-80:8240",
+				"uri": "https://filegator.starbase80.dev",
 				"description": "File server",
 				"icon": "/icons/filegator.png"
 			},
