@@ -26,6 +26,5 @@ docker run --rm \
         "tar -xvzf /backup/${File1} -C ${Folder1} && \
         tar -xvzf /backup/${File2} -C ${Folder2}"
 
-
 # Restore the site with the data
 docker compose up -d
