@@ -5,7 +5,7 @@ services:
     env_file: env.romm
     volumes:
       - ./config.yml:/romm/config.yml
-      - /mnt/synology/downloads/Games/ROMs/Personal:/romm/library
+      - /mnt/synology/downloads/Games/ROMs/Personal:/romm/library/roms
       - resources:/romm/resources
       - database:/romm/database
       - logs:/romm/logs
