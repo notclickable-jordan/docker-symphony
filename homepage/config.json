@@ -21,6 +21,12 @@
 				"icon": "/icons/drawio.png"
 			},
 			{
+				"name": "FileGator",
+				"uri": "http://starbase-80:8240",
+				"description": "File server",
+				"icon": "filegator"
+			},
+			{
 				"name": "Gitea",
 				"uri": "https://git.starbase80.dev",
 				"description": "Code hosting",
