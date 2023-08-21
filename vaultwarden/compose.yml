@@ -1,6 +1,6 @@
 services:
   vaultwarden:
-    image: vaultwarden/server:1.28.0
+    image: vaultwarden/server:1.29.1
     container_name: vaultwarden
     restart: always
     ports:

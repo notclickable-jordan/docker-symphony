@@ -63,6 +63,12 @@
 				"icon": "/icons/miniflux.jpg"
 			},
 			{
+				"name": "N8N",
+				"uri": "https://n8n.starbase80.dev",
+				"description": "Workflow automation",
+				"icon": "/icons/n8n.jpg"
+			},
+			{
 				"name": "Outline",
 				"uri": "https://outline.starbase80.dev",
 				"description": "Documentation",
@@ -84,7 +90,7 @@
 				"name": "ROMM",
 				"uri": "http://starbase-80:8230",
 				"description": "Classic games",
-				"icon": "romm"
+				"icon": "/icons/romm.png"
 			},
 			{
 				"name": "Shamir's Secrets",
@@ -97,6 +103,18 @@
 				"uri": "https://standardnotes.starbase80.dev",
 				"description": "Knowledge base",
 				"icon": "/icons/standardnotes.png"
+			},
+			{
+				"name": "Vaultwarden",
+				"uri": "https://vaultwarden.starbase80.dev",
+				"description": "Password manager",
+				"icon": "/icons/vaultwarden.svg"
+			},
+			{
+				"name": "VSCode",
+				"uri": "https://vscode.starbase80.dev",
+				"description": "Code editor",
+				"icon": "/icons/vscode.jpg"
 			},
 			{
 				"name": "Wallabag",
@@ -137,7 +155,7 @@
 				"name": "Federation",
 				"uri": "https://federation:8006",
 				"description": "Proxmox",
-				"icon": "proxmox",
+				"icon": "/icons/proxmox.png",
 				"iconBubble": false
 			}
 		]

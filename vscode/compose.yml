@@ -1,6 +1,6 @@
 services:
   vscode:
-    image: linuxserver/code-server:4.11.0
+    image: linuxserver/code-server
     container_name: vscode
     environment:
       - PUID=1000
