@@ -38,8 +38,8 @@ Create-DatedDirectory "$BackupFolder"
 
 # Run all backup scripts
 "/home/jordan/docker-symphony/calibre/backup.sh"
-"/home/jordan/docker-symphony/gitea/backup.sh"
 "/home/jordan/docker-symphony/filegator/backup.sh"
+"/home/jordan/docker-symphony/gitea/backup.sh"
 "/home/jordan/docker-symphony/jellyfin/backup.sh"
 "/home/jordan/docker-symphony/mastodon/backup.sh"
 "/home/jordan/docker-symphony/mealie/backup.sh"
