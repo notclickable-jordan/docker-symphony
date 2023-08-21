@@ -36,7 +36,7 @@
 				"name": "Gramps",
 				"uri": "https://gramps.starbase80.dev",
 				"description": "Genealogy",
-				"icon": "gramps"
+				"icon": "/icons/gramps.jpg"
 			},
 			{
 				"name": "Jellyfin",
