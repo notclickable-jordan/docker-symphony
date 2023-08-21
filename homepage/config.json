@@ -96,7 +96,7 @@
 				"name": "Shamir's Secrets",
 				"uri": "https://shamir.starbase80.dev",
 				"description": "Secret distribution",
-				"icon": "mdi-multicast"
+				"icon": "/icons/shamirs-secrets.png"
 			},
 			{
 				"name": "Standard Notes",
