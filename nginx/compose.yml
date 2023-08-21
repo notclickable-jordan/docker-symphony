@@ -49,35 +49,35 @@ services:
     restart: always
     network_mode: host
 
-  # # Get one certificate
-  letsencrypt_one:
-    image: certbot/certbot:v2.4.0
-    container_name: switchboard_letsencrypt_one
-    entrypoint: ""
-    command: >
-      sh -c "certbot certonly --reinstall -n -v -d gramps.starbase80.dev --cert-name gramps.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
-    depends_on:
-      - nginx
-    volumes:
-      - letsencrypt:/etc/letsencrypt
-      - certbot:/var/www/certbot
-    environment:
-      - TERM=xterm
-
-  # Renew certificates
-  # letsencrypt:
+  # Get one certificate
+  # letsencrypt_one:
   #   image: certbot/certbot:v2.4.0
-  #   container_name: switchboard_letsencrypt
+  #   container_name: switchboard_letsencrypt_one
   #   entrypoint: ""
   #   command: >
-  #     sh -c "certbot renew --keep-until-expiring -n -v"
+  #     sh -c "certbot certonly --reinstall -n -v -d gramps.starbase80.dev --cert-name gramps.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
   #   depends_on:
-  #       - nginx
+  #     - nginx
   #   volumes:
-  #       - letsencrypt:/etc/letsencrypt
-  #       - certbot:/var/www/certbot
+  #     - letsencrypt:/etc/letsencrypt
+  #     - certbot:/var/www/certbot
   #   environment:
-  #       - TERM=xterm
+  #     - TERM=xterm
+
+  # Renew certificates
+  letsencrypt:
+    image: certbot/certbot:v2.4.0
+    container_name: switchboard_letsencrypt
+    entrypoint: ""
+    command: >
+      sh -c "certbot renew --keep-until-expiring -n -v"
+    depends_on:
+        - nginx
+    volumes:
+        - letsencrypt:/etc/letsencrypt
+        - certbot:/var/www/certbot
+    environment:
+        - TERM=xterm
 
 volumes:
   certbot:
