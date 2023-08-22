@@ -1,6 +1,6 @@
 services:
   miniflux:
-    image: miniflux/miniflux:2.0.47
+    image: miniflux/miniflux:2.0.42
     container_name: miniflux
     env_file: env.miniflux
     restart: always
