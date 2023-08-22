@@ -16,8 +16,6 @@ services:
     database:
         image: postgres:14.2
         container_name: coder_database
-        ports:
-            - 8261:5432
         env_file: env.postgres
         volumes:
             - data:/var/lib/postgresql/data
