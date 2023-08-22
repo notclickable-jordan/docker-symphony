@@ -33,7 +33,7 @@ export dateString=$(date +"%Y-%m-%d")
 export Image="alpine:3.17.2"
 
 # Create backup folder
-export BackupFolder="/mnt/synology/home/Backup/docker-symphony"
+export BackupFolder="/mnt/synology/home/docker-symphony"
 Create-DatedDirectory "$BackupFolder"
 
 # Run all backup scripts
