@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+    coder:
+        image: ghcr.io/coder/coder:v2.1.1
+        container_name: coder
+        ports:
+            - 8260:7080
+        env_file: env.coder
+        restart: unless-stopped
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        depends_on:
+            database:
+                condition: service_healthy
+
+    database:
+        image: postgres:14.2
+        container_name: coder_database
+        ports:
+            - 8261:5432
+        env_file: env.postgres
+        volumes:
+            - data:/var/lib/postgresql/data
+        healthcheck:
+            test:
+                [
+                    "CMD-SHELL",
+                    "pg_isready -U ${POSTGRES_USER:-username} -d ${POSTGRES_DB:-coder}",
+                ]
+            interval: 5s
+            timeout: 5s
+            retries: 5
+
+volumes:
+    data:

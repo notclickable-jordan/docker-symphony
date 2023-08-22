@@ -15,6 +15,12 @@
 				"icon": "/icons/calibre.png"
 			},
 			{
+				"name": "Coder",
+				"uri": "https://coder.starbase80.dev",
+				"description": "Remote development",
+				"icon": "/icons/coder.png"
+			},
+			{
 				"name": "Draw.io",
 				"uri": "https://draw.starbase80.dev",
 				"description": "Graphs and charts",

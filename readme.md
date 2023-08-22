@@ -16,7 +16,7 @@ Many services mention `env_file` in their `compose.yml`. These are stored in 1Pa
 
 ## Cloudflare
 
-Run `systemctl restart cloudflared` after updating any Cloudflare config.
+Run `systemctl restart cloudflared` after updating any Cloudflare config. Not necessary when adding public hostnames.
 
 - NotClickable.social (7010, 7011)
 
@@ -44,6 +44,7 @@ Run `systemctl restart cloudflared` after updating any Cloudflare config.
 - ROMM (8230)
 - FileGator (8240)
 - Gramps (8250)
+- Coder (8260)
 
 # Automation
 
