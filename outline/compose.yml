@@ -55,9 +55,7 @@ services:
       - 8211:9000
     entrypoint: sh
     command: -c 'minio server'
-    deploy:
-      restart_policy:
-        condition: on-failure
+    restart: always
     volumes:
       - data:/data
     healthcheck:
