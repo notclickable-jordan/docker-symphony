@@ -46,6 +46,14 @@ Run `systemctl restart cloudflared` after updating any Cloudflare config. Not ne
 - Gramps (8250)
 - Coder (8260)
 
+# File permissions
+
+When adding .sh files, run `chmod +x <filename>` to make them executable. Or run this from the root:
+
+``` bash
+sudo find . -name "*.sh" -exec chmod +x {} \;
+```
+
 # Automation
 
 ## Cron jobs
@@ -56,13 +64,3 @@ crontab -e -u jordan
 0 2 * * * /bin/bash /home/jordan/docker-symphony/nginx/renew.sh
 0 3 * * * /bin/bash /home/jordan/docker-symphony/backup-all.sh
 ```
-
-# DirectUpdate
-
-Create a new DNS account:
-
-- **Account Type:** NameCheap.com
-- **User name/Login:** your-domain.tld (e.g.: mydomain.com)
-- **Password:** the 25+ charater namecheap DDNS key your-domain.com (e.g. 78bb2321f2b777ff8c24c59234mkm3)
-- **Domain/Host:** your-subdomain.your-domain.tld (e.g. mysubdomain.mydomain.com)
-- Uncheck **Disable/ignore this account**
