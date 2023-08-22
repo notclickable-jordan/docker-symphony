@@ -9,6 +9,8 @@ services:
         restart: unless-stopped
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
+        group_add:
+            - "998" # docker group on host
         depends_on:
             database:
                 condition: service_healthy
