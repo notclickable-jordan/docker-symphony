@@ -8,7 +8,7 @@ LOG_FILE="/home/jordan/cron/backup-all.log"
 truncate -s 1M "$LOG_FILE"
 
 # Redirect stdout and stderr to the log file
-exec &>> "$LOG_FILE"
+exec &> >(tee -a "$LOG_FILE")
 
 echo "backup-all.sh: $(date)"
 
