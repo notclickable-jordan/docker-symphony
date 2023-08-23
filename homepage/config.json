@@ -33,12 +33,6 @@
 				"icon": "/icons/gitea.svg"
 			},
 			{
-				"name": "Gramps",
-				"uri": "https://gramps.starbase80.dev",
-				"description": "Genealogy",
-				"icon": "/icons/gramps.jpg"
-			},
-			{
 				"name": "Jellyfin",
 				"uri": "http://starbase-80:8030",
 				"description": "Media server",
