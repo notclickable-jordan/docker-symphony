@@ -64,6 +64,23 @@ services:
       timeout: 20s
       retries: 3
 
+  # Create the initial bucket
+  # create_bucket:
+  #   image: minio/mc
+  #   container_name: outline_create_bucket
+  #   depends_on:
+  #     - storage
+  #   entrypoint: >
+  #     /bin/sh -c "
+  #     /usr/bin/mc config host rm local;
+  #     /usr/bin/mc config host add local http://storage:9000 ACCESS_KEY SECRET_KEY;
+  #     /usr/bin/mc rm -r --force local/outline;
+  #     /usr/bin/mc mb -p local/outline;
+  #     /usr/bin/mc anonymous set download local/outline;
+  #     "
+  #   environment:
+  #     - MC_HOST=storage
+
 volumes:
   data:
   db:
