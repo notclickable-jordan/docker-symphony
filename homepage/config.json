@@ -12,7 +12,7 @@
 				"name": "Calibre",
 				"uri": "http://starbase-80:8170",
 				"description": "eBook library",
-				"icon": "/icons/calibre.png"
+				"icon": "/icons/calibre.jpg"
 			},
 			{
 				"name": "Draw.io",
@@ -72,7 +72,7 @@
 				"name": "Outline",
 				"uri": "https://outline.starbase80.dev",
 				"description": "Documentation",
-				"icon": "/icons/outline.png"
+				"icon": "/icons/outline.jpg"
 			},
 			{
 				"name": "Portainer",
