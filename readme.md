@@ -86,3 +86,9 @@ crontab -e -u jordan
 0 2 * * * /bin/bash /home/jordan/docker-symphony/nginx/renew.sh
 0 3 * * * /bin/bash /home/jordan/docker-symphony/backup-all.sh
 ```
+
+# Docker entering a container
+
+``` bash
+docker exec -it container_name bash
+```
