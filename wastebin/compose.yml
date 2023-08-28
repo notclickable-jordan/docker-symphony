@@ -4,11 +4,5 @@ services:
     container_name: wastebin
     environment:
       - WASTEBIN_TITLE=Wastebin
-      - WASTEBIN_DATABASE_PATH=/data/state.db
     ports:
       - 8250:8088
-    volumes:
-      - data:/data
-
-volumes:
-  data:
