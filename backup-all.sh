@@ -52,7 +52,6 @@ Create-DatedDirectory "$BackupFolder"
 "/home/jordan/docker-symphony/vaultwarden/backup.sh"
 "/home/jordan/docker-symphony/vscode/backup.sh"
 "/home/jordan/docker-symphony/wallabag/backup.sh"
-"/home/jordan/docker-symphony/wastebin/backup.sh"
 
 # Delete backups older than 7 days
 find "$BackupFolder" -type d -mtime +7 -exec rm -rf {} \;
