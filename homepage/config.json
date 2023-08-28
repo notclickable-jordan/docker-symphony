@@ -39,6 +39,12 @@
 				"icon": "/icons/jellyfin.svg"
 			},
 			{
+				"name": "Lemmy",
+				"uri": "https://lemmy.starbase80.dev",
+				"description": "Link sharing",
+				"icon": "/icons/lemmy.jpg"
+			},
+			{
 				"name": "Mastodon",
 				"uri": "https://notclickable.social",
 				"description": "NotClickable.social",

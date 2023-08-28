@@ -38,6 +38,7 @@ Many services mention `env_file` in their `compose.yml`. For security reasons th
 - ROMM (8230)
 - FileGator (8240)
 - Wastebin (8250)
+- Lemmy (8260)
 
 # Cloudflare
 

@@ -1,0 +1,95 @@
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "50m"
+    max-file: "4"
+
+services:
+  backup:
+    image: alpine:3.17.2
+    container_name: lemmy_backup
+    entrypoint: "tail -f /dev/null"
+    restart: always
+    volumes:
+      - extra_themes:/app/extra_themes:ro
+      - pictrs:/mnt:ro
+      - postgres:/var/lib/postgresql/data:ro
+
+  proxy:
+    image: nginx:1-alpine
+    container_name: lemmy_nginx
+    ports:
+      - 8260:8536
+    volumes:
+      - ./nginx_internal.conf:/etc/nginx/nginx.conf:ro,Z
+    restart: always
+    logging: *default-logging
+    depends_on:
+      - pictrs
+      - lemmy-ui
+
+  lemmy:
+    image: dessalines/lemmy:latest
+    container_name: lemmy
+    hostname: lemmy
+    restart: always
+    logging: *default-logging
+    environment:
+      - RUST_LOG="warn"
+    volumes:
+      - ./lemmy.hjson:/config/config.hjson:Z
+    depends_on:
+      - postgres
+      - pictrs
+
+  lemmy-ui:
+    image: dessalines/lemmy-ui:latest
+    container_name: lemmy_ui
+    env_file: env.lemmy-ui
+    volumes:
+      - extra_themes:/app/extra_themes
+    depends_on:
+      - lemmy
+    restart: always
+    logging: *default-logging
+
+  pictrs:
+    image: asonix/pictrs:0.4.0
+    container_name: lemmy_pictrs
+    # this needs to match the pictrs url in lemmy.hjson
+    hostname: pictrs
+    # we can set options to pictrs like this, here we set max. image size and forced format for conversion
+    # entrypoint: /sbin/tini -- /usr/local/bin/pict-rs -p /mnt -m 4 --image-format webp
+    env_file: env.pictrs
+    user: 991:991
+    volumes:
+      - pictrs:/mnt:Z
+    restart: always
+    logging: *default-logging
+    deploy:
+      resources:
+        limits:
+          memory: 690m
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: lemmy_db
+    hostname: postgres
+    env_file: env.postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data:Z
+      - ./customPostgresql.conf:/etc/postgresql.conf
+    restart: always
+    logging: *default-logging
+
+  postfix:
+    image: mwader/postfix-relay
+    container_name: lemmy_postfix
+    env_file: env.postfix
+    restart: "always"
+    logging: *default-logging
+
+volumes:
+  extra_themes:
+  pictrs:
+  postgres:
