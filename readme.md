@@ -37,7 +37,7 @@ Many services mention `env_file` in their `compose.yml`. For security reasons th
 - Draw.io (8220)
 - ROMM (8230)
 - FileGator (8240)
-- Gramps (8250)
+- Wastebin (8250)
 
 # Cloudflare
 
@@ -67,6 +67,21 @@ Publicly facing websites should get SSL certificates from Let's Encrypt on top o
 1. Restart nginx: `docker exec switchboard nginx -s reload`
 1. Go back to Cloudflare Zero Trust and change the service to be https://localhost:443
 1. Set the **Origin Server Name** to the same value as **HTTP Host Header** and check **No TLS Verify**
+
+# nginx
+
+## Error during git pull
+If you get an error when pulling changes to nginx's sites/ folder, run this command:
+
+``` bash
+sudo chown -R $USER:$USER ./nginx/sites
+```
+
+## Restarting to pull new changes
+
+``` bash
+docker exec switchboard nginx -s reload
+```
 
 # File permissions
 
