@@ -63,7 +63,7 @@ services:
     env_file: env.pictrs
     user: 991:991
     volumes:
-      - pictrs:/mnt:Z
+      - pictrs:/mnt
     restart: always
     logging: *default-logging
     deploy:
@@ -77,7 +77,7 @@ services:
     hostname: postgres
     env_file: env.postgres
     volumes:
-      - postgres:/var/lib/postgresql/data:Z
+      - postgres:/var/lib/postgresql/data
       - ./customPostgresql.conf:/etc/postgresql.conf
     restart: always
     logging: *default-logging
