@@ -2,7 +2,7 @@ services:
   vaultwarden:
     image: vaultwarden/server:1.29.1
     container_name: vaultwarden
-    restart: always
+    restart: unless-stopped
     ports:
       - 8130:80
     volumes:

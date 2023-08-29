@@ -11,7 +11,7 @@ services:
       - /mnt/synology/video:/video
       - /mnt/synology/manga:/manga
       - /mnt/synology/downloads/Calibre:/calibre
-    restart: always
+    restart: unless-stopped
     # Optional - alternative address used for autodiscovery
     environment:
       - JELLYFIN_PublishedServerUrl=https://jellyfin.starbase80.dev

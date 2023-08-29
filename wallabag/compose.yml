@@ -3,7 +3,7 @@ services:
     image: alpine:3.17.2
     container_name: wallabag_backup
     entrypoint: "tail -f /dev/null"
-    restart: always
+    restart: unless-stopped
     volumes:
       - images:/var/www/wallabag/web/assets/images:ro
       - data:/var/lib/mysql:ro
@@ -12,7 +12,7 @@ services:
     image: wallabag/wallabag
     container_name: wallabag
     env_file: env.wallabag
-    restart: always
+    restart: unless-stopped
     ports:
       - 8180:80
     volumes:
@@ -29,7 +29,7 @@ services:
     image: mariadb
     container_name: wallabag_db
     env_file: env.db
-    restart: always
+    restart: unless-stopped
     volumes:
       - data:/var/lib/mysql
     healthcheck:
@@ -40,7 +40,7 @@ services:
   redis:
     image: redis:alpine
     container_name: wallabag_redis
-    restart: always
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 20s

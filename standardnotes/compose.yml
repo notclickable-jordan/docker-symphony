@@ -3,7 +3,7 @@ services:
     image: alpine:3.17.2
     container_name: standardnotes_backup
     entrypoint: "tail -f /dev/null"
-    restart: always
+    restart: unless-stopped
     volumes:
       - logs:/var/lib/server/logs:ro
       - uploads:/opt/bundled/files/packages/files/dist/uploads:ro
@@ -15,7 +15,7 @@ services:
     image: standardnotes/web:stable
     env_file: env.web
     container_name: standardnotes_web
-    restart: always
+    restart: unless-stopped
     ports:
       - 8190:3001
 
@@ -23,7 +23,7 @@ services:
     image: standardnotes/server
     env_file: env.server
     container_name: standardnotes_server
-    restart: always
+    restart: unless-stopped
     ports:
       - 8191:3000
       - 8192:3104
@@ -36,7 +36,7 @@ services:
     container_name: standardnotes_localstack
     expose:
       - 4566
-    restart: always
+    restart: unless-stopped
     environment:
       - SERVICES=sns,sqs
       - HOSTNAME_EXTERNAL=localstack
@@ -50,7 +50,7 @@ services:
     env_file: env.db
     expose:
       - 3306
-    restart: always
+    restart: unless-stopped
     command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
     volumes:
       - mysql:/var/lib/mysql
@@ -63,7 +63,7 @@ services:
       - redis:/data
     expose:
       - 6379
-    restart: always
+    restart: unless-stopped
 
 volumes:
   logs:

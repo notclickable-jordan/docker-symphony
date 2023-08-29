@@ -3,7 +3,7 @@ services:
     image: alpine:3.17.2
     container_name: rohertwins_backup
     entrypoint: "tail -f /dev/null"
-    restart: always
+    restart: unless-stopped
     volumes:
       - content:/var/lib/ghost/content:ro
       - db:/var/lib/mysql:ro
@@ -11,7 +11,7 @@ services:
   ghost:
     image: ghost:5.42-alpine
     container_name: rohertwins
-    restart: always
+    restart: unless-stopped
     depends_on:
       - db
     ports:
@@ -23,7 +23,7 @@ services:
   db:
     image: mysql:8.0
     container_name: rohertwins_db
-    restart: always
+    restart: unless-stopped
     env_file: env.db
     volumes:
       - db:/var/lib/mysql

@@ -9,7 +9,7 @@ services:
     image: alpine:3.17.2
     container_name: lemmy_backup
     entrypoint: "tail -f /dev/null"
-    restart: always
+    restart: unless-stopped
     volumes:
       - extra_themes:/app/extra_themes:ro
       - pictrs:/mnt:ro
@@ -22,7 +22,7 @@ services:
       - 8260:8536
     volumes:
       - ./nginx_internal.conf:/etc/nginx/nginx.conf:ro,Z
-    restart: always
+    restart: unless-stopped
     logging: *default-logging
     depends_on:
       - pictrs
@@ -32,7 +32,7 @@ services:
     image: dessalines/lemmy:latest
     container_name: lemmy
     hostname: lemmy
-    restart: always
+    restart: unless-stopped
     logging: *default-logging
     environment:
       - RUST_LOG="warn"
@@ -50,7 +50,7 @@ services:
       - extra_themes:/app/extra_themes
     depends_on:
       - lemmy
-    restart: always
+    restart: unless-stopped
     logging: *default-logging
 
   pictrs:
@@ -64,7 +64,7 @@ services:
     user: 991:991
     volumes:
       - pictrs:/mnt
-    restart: always
+    restart: unless-stopped
     logging: *default-logging
     deploy:
       resources:
@@ -79,7 +79,7 @@ services:
     volumes:
       - postgres:/var/lib/postgresql/data
       - ./customPostgresql.conf:/etc/postgresql.conf
-    restart: always
+    restart: unless-stopped
     logging: *default-logging
 
   postfix:

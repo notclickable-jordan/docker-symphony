@@ -2,7 +2,7 @@ services:
   metube:
     image: alexta69/metube:2023-03-05
     container_name: metube
-    restart: always
+    restart: unless-stopped
     environment:
       # - YTDL_OPTIONS={"format":"bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4","cookiefile":"/cookies/cookies.txt"}
       - YTDL_OPTIONS={"format":"bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4"}

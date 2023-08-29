@@ -3,7 +3,7 @@ services:
     image: miniflux/miniflux:2.0.47
     container_name: miniflux
     env_file: env.miniflux
-    restart: always
+    restart: unless-stopped
     ports:
       - 8050:8080
     depends_on:
@@ -14,7 +14,7 @@ services:
     image: postgres:15
     container_name: miniflux_db
     env_file: env.postgres
-    restart: always
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "miniflux"]
       interval: 10s

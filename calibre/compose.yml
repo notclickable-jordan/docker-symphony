@@ -13,7 +13,7 @@ services:
       - /mnt/synology/downloads/Calibre:/books
     ports:
       - 8170:8083
-    restart: always
+    restart: unless-stopped
 
 volumes:
   config:

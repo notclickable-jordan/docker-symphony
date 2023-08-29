@@ -2,7 +2,7 @@ services:
   mealie:
     container_name: mealie
     image: hkotel/mealie:latest
-    restart: always
+    restart: unless-stopped
     ports:
       - 8110:80
     environment:

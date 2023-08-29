@@ -3,7 +3,7 @@ services:
     image: alpine:3.17.2
     container_name: outline_backup
     entrypoint: "tail -f /dev/null"
-    restart: always
+    restart: unless-stopped
     volumes:
       - db:/var/lib/postgresql/data:ro
       - data:/data:ro
@@ -14,7 +14,7 @@ services:
     env_file: ./env.outline
     ports:
       - 8210:3000
-    restart: always
+    restart: unless-stopped
     depends_on:
       - postgres
       - redis
@@ -25,7 +25,7 @@ services:
     container_name: outline_redis
     ports:
       - 8212:6379
-    restart: always
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -37,7 +37,7 @@ services:
     container_name: outline_postgres
     ports:
       - 8213:5432
-    restart: always
+    restart: unless-stopped
     volumes:
       - db:/var/lib/postgresql/data
     healthcheck:
@@ -55,7 +55,7 @@ services:
       - 8211:9000
     entrypoint: sh
     command: -c 'minio server'
-    restart: always
+    restart: unless-stopped
     volumes:
       - data:/data
     healthcheck:

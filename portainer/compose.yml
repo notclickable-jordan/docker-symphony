@@ -2,7 +2,7 @@ services:
   portainer:
     image: portainer/portainer-ce:linux-amd64-2.18.1
     container_name: portainer
-    restart: always
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - data:/data

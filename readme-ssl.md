@@ -25,7 +25,7 @@
                 - 8082:443
             depends_on:
                 - my_app
-            restart: always
+            restart: unless-stopped
 
         letsencrypt:
             image: certbot/certbot:v2.4.0

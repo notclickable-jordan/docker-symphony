@@ -3,14 +3,15 @@ services:
     image: alpine:3.17.2
     container_name: switchboard_backup
     entrypoint: "tail -f /dev/null"
-    restart: always
+    restart: unless-stopped
     volumes:
       - letsencrypt:/etc/letsencrypt:ro
+      - authelia_db:/var/lib/postgresql/data:ro
 
   authelia:
     image: authelia/authelia:4.37.5
     container_name: switchboard_authelia
-    restart: always
+    restart: unless-stopped
     environment:
       - TZ=America/Los_Angeles
     expose:
@@ -21,6 +22,14 @@ services:
       - ./env.authelia_notification.txt:/config/notification.txt
       - authelia_logs:/logs
     network_mode: host
+
+  postgres:
+    image: postgres
+    container_name: switchboard_authelia_postgres
+    restart: unless-stopped
+    env_file: env.db
+    volumes:
+      - authelia_db:/var/lib/postgresql/data
 
   redis:
     image: redis:alpine
@@ -46,7 +55,7 @@ services:
       - logs:/var/log/nginx
       - letsencrypt:/etc/letsencrypt
       - certbot:/var/www/certbot
-    restart: always
+    restart: unless-stopped
     network_mode: host
 
   # Get one certificate
@@ -85,3 +94,4 @@ volumes:
   logs:
   authelia_logs:
   authelia_redis:
+  authelia_db:
