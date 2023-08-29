@@ -9,12 +9,6 @@
 				"icon": "/icons/authelia.png"
 			},
 			{
-				"name": "Briefkasten",
-				"uri": "https://briefkasten.starbase80.dev",
-				"description": "Bookmark management",
-				"icon": "/icons/briefkasten.jpg"
-			},
-			{
 				"name": "Calibre",
 				"uri": "http://starbase-80:8170",
 				"description": "eBook library",
