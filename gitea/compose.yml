@@ -30,7 +30,7 @@ services:
       - 5432
 
   woodpecker-server:
-    image: woodpeckerci/woodpecker-server:v0.15.7-alpine
+    image: woodpeckerci/woodpecker-server:v1.0.2-alpine
     container_name: gitea_woodpecker
     restart: always
     env_file: env.woodpecker
@@ -42,7 +42,7 @@ services:
       - woodpecker:/var/lib/woodpecker
 
   woodpecker-agent:
-    image: woodpeckerci/woodpecker-agent:v0.15.7-alpine
+    image: woodpeckerci/woodpecker-agent:v1.0.2-alpine
     container_name: gitea_woodpecker_agent
     env_file: env.woodpecker_agent
     command: agent
