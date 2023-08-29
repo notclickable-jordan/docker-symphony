@@ -16,6 +16,7 @@ Many services mention `env_file` in their `compose.yml`. For security reasons th
 # Services and ports
 
 - nginx (80, 443)
+- Authelia (8001)
 - Mastodon (8010-8013)
 - Jellyfin (8030)
 - Calibre (8040)
