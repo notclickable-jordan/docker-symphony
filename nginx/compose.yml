@@ -22,6 +22,9 @@ services:
       - ./env.authelia_notification.txt:/config/notification.txt
       - authelia_logs:/logs
     network_mode: host
+    depends_on:
+      - postgres
+      - redis
 
   postgres:
     image: postgres
