@@ -10,7 +10,7 @@ services:
       - woodpecker:/var/lib/woodpecker:ro
 
   gitea:
-    image: gitea/gitea:1.19.0
+    image: gitea/gitea:1.20
     container_name: gitea
     env_file: env.gitea
     restart: always
