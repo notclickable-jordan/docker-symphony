@@ -31,8 +31,9 @@ services:
     container_name: switchboard_authelia_postgres
     restart: unless-stopped
     env_file: env.db
-    ports:
-      - 8001:5432
+    network_mode: host
+    expose:
+      - 5432
     volumes:
       - authelia_db:/var/lib/postgresql/data
 
