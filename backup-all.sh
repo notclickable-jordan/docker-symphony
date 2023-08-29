@@ -37,6 +37,7 @@ export BackupFolder="/mnt/synology/home/docker-symphony"
 Create-DatedDirectory "$BackupFolder"
 
 # Run all backup scripts
+"/home/jordan/docker-symphony/briefkasten/backup.sh"
 "/home/jordan/docker-symphony/calibre/backup.sh"
 "/home/jordan/docker-symphony/filegator/backup.sh"
 "/home/jordan/docker-symphony/gitea/backup.sh"

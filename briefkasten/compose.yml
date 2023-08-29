@@ -1,0 +1,21 @@
+services:
+  app:
+    image: ndom91/briefkasten
+    container_name: briefkasten
+    env_file: env.app
+    restart: unless-stopped
+    ports:
+      - 8270:3000
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    container_name: briefkasten_postgres
+    restart: unless-stopped
+    env_file: env.postgres
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:

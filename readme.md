@@ -39,6 +39,7 @@ Many services mention `env_file` in their `compose.yml`. For security reasons th
 - FileGator (8240)
 - Wastebin (8250)
 - Lemmy (8260)
+- Briefkasten (8270)
 
 # Cloudflare
 
