@@ -1,0 +1,30 @@
+## LINKACE CONFIGURATION
+
+## Please note that the LinkAce Docker image will be renamed with the release of LinkAce 2!
+## Read more: https://github.com/Kovah/LinkAce/issues/502
+
+## Basic app configuration
+COMPOSE_PROJECT_NAME=linkace
+# The app key is generated later, please leave it like that
+APP_KEY=someRandomStringWith32Characters
+
+## Configuration of the database connection
+## Attention: Those settings are configured during the web setup, please do not modify them now.
+# Set the database driver (mysql, pgsql, sqlsrv, sqlite)
+DB_CONNECTION=mysql
+# Set the host of your database here
+DB_HOST=db
+# Set the port of your database here
+DB_PORT=3306
+# Set the database name here
+DB_DATABASE=linkace
+# Set both username and password of the user accessing the database
+DB_USERNAME=linkace
+# Wrap your password into quotes (") if it contains special characters
+DB_PASSWORD=<PASSWORD>
+
+## Redis cache configuration
+# Set the Redis connection here if you want to use it
+REDIS_HOST=redis
+REDIS_PASSWORD=<PASSWORD>
+REDIS_PORT=6379

@@ -1,4 +1,15 @@
 services:
+  backup:
+    image: alpine:3.17.2
+    container_name: linkace_backup
+    entrypoint: "tail -f /dev/null"
+    restart: unless-stopped
+    volumes:
+      - db:/var/lib/mysql:ro
+      - backups:/app/storage/app/backups:ro
+      - app:/app:ro
+      - logs:/app/storage/logs:ro
+
   db:
     image: mariadb:10.7
     container_name: linkace_db

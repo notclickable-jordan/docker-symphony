@@ -5,6 +5,10 @@ File1="nginx-letsencrypt.tgz"
 VolumeName1="nginx_letsencrypt"
 FolderName1="/restore/${VolumeName1}"
 
+File2="authelia-db.tgz"
+VolumeName2="authelia_db"
+FolderName2="/restore/${VolumeName2}"
+
 # Bring down the existing site
 docker compose down -v
 

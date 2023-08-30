@@ -45,6 +45,12 @@
 				"icon": "/icons/lemmy.jpg"
 			},
 			{
+				"name": "LinkAce",
+				"uri": "https://linkace.starbase80.dev",
+				"description": "Bookmark management",
+				"icon": "linkace"
+			},
+			{
 				"name": "Mastodon",
 				"uri": "https://notclickable.social",
 				"description": "NotClickable.social",

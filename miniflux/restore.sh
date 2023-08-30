@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # Variables
-BackupContainer="db"
-
 File1="miniflux-db.tgz"
 Volume1="miniflux_db"
 Folder1="/restore/${Volume1}"
@@ -11,7 +9,7 @@ Folder1="/restore/${Volume1}"
 docker compose down -v
 
 # Bring up the containers to recreate the volumes
-docker compose up -d --build ${BackupContainer}
+docker compose up -d --build db
 docker compose down
 
 # Restore the volume data from the backups

@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # Variables
-BackupContainer="portainer"
-
 File1="portainer-data.tgz"
 Volume1="portainer_data"
 Folder1="/restore/${Volume1}"
@@ -11,7 +9,7 @@ Folder1="/restore/${Volume1}"
 docker compose down -v
 
 # Bring up the containers to recreate the volumes
-docker compose up -d --build ${BackupContainer}
+docker compose up -d --build portainer
 docker compose down
 
 # Restore the volume data from the backups
