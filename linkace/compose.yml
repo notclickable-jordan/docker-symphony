@@ -1,0 +1,42 @@
+services:
+  db:
+    image: mariadb:10.7
+    restart: unless-stopped
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
+    env_file: env.db
+    volumes:
+      - db:/var/lib/mysql
+
+  app:
+    image: linkace/linkace:latest
+    restart: unless-stopped
+    depends_on:
+      - db
+    volumes:
+      - ./env.app:/app/.env
+      - backups:/app/storage/app/backups
+      - app:/app
+      - logs:/app/storage/logs
+
+  nginx:
+    image: bitnami/nginx:1.21
+    restart: unless-stopped
+    ports:
+      - 8270:8080
+    depends_on:
+      - app
+    volumes:
+      - app:/app
+      - ./nginx.conf:/opt/bitnami/nginx/conf/server_blocks/linkace.conf:ro
+
+  redis:
+    image: bitnami/redis:6.2
+    restart: unless-stopped
+    env_file: env.redis
+
+volumes:
+  backups:
+  app:
+  logs:
+  db:
+    driver: local
