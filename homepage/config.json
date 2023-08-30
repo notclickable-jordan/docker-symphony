@@ -48,7 +48,7 @@
 				"name": "LinkAce",
 				"uri": "https://linkace.starbase80.dev",
 				"description": "Bookmark management",
-				"icon": "linkace"
+				"icon": "/icons/linkace.png"
 			},
 			{
 				"name": "Mastodon",
