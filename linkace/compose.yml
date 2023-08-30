@@ -1,6 +1,7 @@
 services:
   db:
     image: mariadb:10.7
+    container_name: linkace_db
     restart: unless-stopped
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
     env_file: env.db
@@ -9,6 +10,7 @@ services:
 
   app:
     image: linkace/linkace:latest
+    container_name: linkace
     restart: unless-stopped
     depends_on:
       - db
@@ -20,6 +22,7 @@ services:
 
   nginx:
     image: bitnami/nginx:1.21
+    container_name: linkace_nginx
     restart: unless-stopped
     ports:
       - 8270:8080
@@ -31,6 +34,7 @@ services:
 
   redis:
     image: bitnami/redis:6.2
+    container_name: linkace_redis
     restart: unless-stopped
     env_file: env.redis
 
