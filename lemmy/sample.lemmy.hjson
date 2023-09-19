@@ -1,0 +1,21 @@
+{
+  # for more info about the config, check out the documentation
+  # https://join-lemmy.org/docs/en/administration/configuration.html
+
+  database: {
+    host: postgres
+    password: "password"
+  }
+  hostname: "lemmy.starbase80.dev"
+  pictrs: {
+    url: "http://pictrs:8080/"
+    api_key: "password"
+  }
+  email: {
+    smtp_server: "smtp.sendgrid.net:465"
+    smtp_from_address: "lemmy@starbase80.dev"
+    tls_type: "tls",
+    smtp_login: "apikey",
+    smtp_password: "password"
+  }
+}
