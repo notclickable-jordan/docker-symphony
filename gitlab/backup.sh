@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Set variables
-BackupContainer="gitea_backup"
+BackupContainer="gitlab"
 
-File1="gitea-data.tgz"
-Folder1="/data"
+File1="gitlab-config.tgz"
+Folder1="/etc/gitlab"
 
-File2="gitea-db.tgz"
-Folder2="/var/lib/postgresql/data"
+File2="gitlab-logs.tgz"
+Folder2="/var/log/gitlab"
 
-File3="gitea-woodpecker.tgz"
-Folder3="/var/lib/woodpecker"
+File3="gitlab-data.tgz"
+Folder3="/var/opt/gitlab"
 
 # Backup existing volumes by tarring and gzipping them
 docker run --rm --volumes-from ${BackupContainer} \

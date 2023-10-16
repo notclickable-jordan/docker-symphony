@@ -1,23 +1,23 @@
 #!/bin/bash
 
 # Variables
-File1="gitea-data.tgz"
-Volume1="gitea_data"
+File1="gitlab-config.tgz"
+Volume1="gitlab_config"
 Folder1="/restore/${Volume1}"
 
-File2="gitea-db.tgz"
-Volume2="gitea_db"
+File2="gitlab-logs.tgz"
+Volume2="gitlab_logs"
 Folder2="/restore/${Volume2}"
 
-File3="gitea-woodpecker.tgz"
-Volume3="gitea_woodpecker"
+File3="gitlab-data.tgz"
+Volume3="gitlab_data"
 Folder3="/restore/${Volume3}"
 
 # Bring down the existing site
 docker-compose down -v
 
 # Bring up the containers to recreate the volumes
-docker-compose up -d --build backup
+docker-compose up -d --build gitlab
 docker-compose down
 
 # Restore the volume data from the backups

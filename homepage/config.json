@@ -27,10 +27,10 @@
 				"icon": "/icons/filegator.png"
 			},
 			{
-				"name": "Gitea",
-				"uri": "https://git.starbase80.dev",
+				"name": "GitLab",
+				"uri": "https://gitlab.starbase80.dev",
 				"description": "Code hosting",
-				"icon": "/icons/gitea.svg"
+				"icon": "/icons/gitlab.jpg"
 			},
 			{
 				"name": "Jellyfin",
@@ -133,12 +133,6 @@
 				"uri": "https://wastebin.starbase80.dev",
 				"description": "Pastebin",
 				"icon": "/icons/wastebin.jpg"
-			},
-			{
-				"name": "Woodpecker",
-				"uri": "https://woodpecker.starbase80.dev",
-				"description": "Continuous integration",
-				"icon": "/icons/woodpecker.jpg"
 			}
 		]
 	},
