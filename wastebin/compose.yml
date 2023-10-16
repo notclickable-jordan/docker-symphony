@@ -6,3 +6,4 @@ services:
       - WASTEBIN_TITLE=Wastebin
     ports:
       - 8250:8088
+    restart: always

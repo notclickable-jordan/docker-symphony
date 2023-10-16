@@ -29,7 +29,7 @@ services:
     image: mariadb
     container_name: wallabag_db
     env_file: env.db
-    restart: unless-stopped
+    restart: always
     volumes:
       - data:/var/lib/mysql
     healthcheck:
