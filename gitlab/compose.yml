@@ -15,7 +15,16 @@ services:
       - data:/var/opt/gitlab
     shm_size: '256m'
 
+  runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab_runner
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - runner:/etc/gitlab-runner
+
 volumes:
   config:
   logs:
   data:
+  runner:
