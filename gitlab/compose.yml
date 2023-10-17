@@ -4,9 +4,7 @@ services:
     container_name: gitlab
     restart: always
     hostname: 'gitlab.starbase80.dev'
-    environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://localhost:80'
+    env_file: env.gitlab
     ports:
       - 8280:80
     volumes:
