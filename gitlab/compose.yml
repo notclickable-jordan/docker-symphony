@@ -4,13 +4,15 @@ services:
     container_name: gitlab
     restart: always
     hostname: 'gitlab.starbase80.dev'
-    env_file: env.gitlab
+    environment:
+      GITLAB_OMNIBUS_CONFIG: "from_file('/gitlab.rb')"
     ports:
       - 8280:80
     volumes:
       - config:/etc/gitlab
       - logs:/var/log/gitlab
       - data:/var/opt/gitlab
+      - ./gitlab.rb:/gitlab.rb:ro
     shm_size: '256m'
 
   runner:

@@ -5,3 +5,4 @@
 homepage/config/logs
 nginx/sites/default.*
 lemmy/lemmy.hjson
+gitlab/gitlab.rb
