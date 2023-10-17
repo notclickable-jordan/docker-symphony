@@ -12,4 +12,6 @@ To launch a short-lived gitlab-runner container to register the container you cr
 
 1. `docker run --rm -it -v gitlab_runner:/etc/gitlab-runner gitlab/gitlab-runner:latest register`
 2. GitLab instance URL: `http://192.168.1.15:8280`
-3. Entered registration token
+3. Entered registration token and name
+4. Executor: `docker`
+5. Default image: `node:16`
