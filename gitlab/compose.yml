@@ -6,7 +6,7 @@ services:
     hostname: 'gitlab.starbase80.dev'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'localhost:80'
+        external_url 'http://localhost:80'
     ports:
       - 8280:80
     volumes:
