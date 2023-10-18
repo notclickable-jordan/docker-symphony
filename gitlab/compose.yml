@@ -12,6 +12,7 @@ services:
       - config:/etc/gitlab
       - logs:/var/log/gitlab
       - data:/var/opt/gitlab
+      - runner:/etc/gitlab-runner:ro
       - ./gitlab.rb:/gitlab.rb:ro
     shm_size: '256m'
 
