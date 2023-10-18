@@ -23,7 +23,6 @@ Many services mention `env_file` in their `compose.yml`. For security reasons th
 - N8N (8060)
 - MeTube (8080)
 - Homepage (8090)
-# - Gitea (8100)
 - Mealie (8110)
 - Visual Studio Code (8120)
 - Vaultwarden (8130)
@@ -41,6 +40,7 @@ Many services mention `env_file` in their `compose.yml`. For security reasons th
 - Lemmy (8260)
 - LinkAce (8270)
 - GitLab (8280)
+- Chatwoot (8290)
 
 # Cloudflare
 
