@@ -15,12 +15,6 @@
 				"icon": "/icons/calibre.jpg"
 			},
 			{
-				"name": "Chatwoot",
-				"uri": "https://chatwoot.starbase80.dev",
-				"description": "Customer chat",
-				"icon": "chatwoot"
-			},
-			{
 				"name": "Draw.io",
 				"uri": "https://draw.starbase80.dev",
 				"description": "Graphs and charts",
