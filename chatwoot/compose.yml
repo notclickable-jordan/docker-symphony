@@ -56,7 +56,7 @@ services:
     image: redis:alpine
     container_name: chatwoot_redis
     restart: always
-    env_file: chatwoot.env
+    env_file: redis.env
     command: ["sh", "-c", "redis-server --requirepass \"$REDIS_PASSWORD\""]
     volumes:
       - redis:/data
