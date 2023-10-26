@@ -38,7 +38,6 @@ Create-DatedDirectory "$BackupFolder"
 
 # Run all backup scripts
 "/home/jordan/docker-symphony/calibre/backup.sh"
-"/home/jordan/docker-symphony/chatwoot/backup.sh"
 "/home/jordan/docker-symphony/filegator/backup.sh"
 "/home/jordan/docker-symphony/gitlab/backup.sh"
 "/home/jordan/docker-symphony/jellyfin/backup.sh"
@@ -47,13 +46,9 @@ Create-DatedDirectory "$BackupFolder"
 "/home/jordan/docker-symphony/mastodon/backup.sh"
 "/home/jordan/docker-symphony/mealie/backup.sh"
 "/home/jordan/docker-symphony/miniflux/backup.sh"
-"/home/jordan/docker-symphony/n8n/backup.sh"
 "/home/jordan/docker-symphony/nginx/backup.sh"
 "/home/jordan/docker-symphony/outline/backup.sh"
 "/home/jordan/docker-symphony/rohertwins/backup.sh"
-"/home/jordan/docker-symphony/standardnotes/backup.sh"
-"/home/jordan/docker-symphony/vaultwarden/backup.sh"
-"/home/jordan/docker-symphony/vscode/backup.sh"
 "/home/jordan/docker-symphony/wallabag/backup.sh"
 
 # Delete backups older than 7 days
