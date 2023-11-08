@@ -8,6 +8,7 @@ services:
     environment:
       - TITLE=Starbase 80
       - LOGO=/logo.png
+      - NEWWINDOW=false
     volumes:
         - ./config.json:/app/src/config.json
         - ./public/favicon.ico:/app/public/favicon.ico
