@@ -70,7 +70,7 @@ services:
     container_name: switchboard_letsencrypt_one
     entrypoint: ""
     command: >
-      sh -c "certbot certonly --reinstall -n -v -d otln_minio.starbase80.dev --cert-name otln_minio.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
+      sh -c "certbot certonly --reinstall -n -v -d otln-minio.starbase80.dev --cert-name otln-minio.starbase80.dev  --webroot --webroot-path /var/www/certbot/ --agree-tos --email jordan@notclickable.com"
     depends_on:
       - nginx
     volumes:
