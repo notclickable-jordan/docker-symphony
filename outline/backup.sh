@@ -7,7 +7,7 @@ File1="outline-db.tgz"
 Folder1="/var/lib/postgresql/data"
 
 File2="outline-data.tgz"
-Folder2="/data"
+Folder2="/var/lib/outline/data"
 
 # Backup existing volumes by tarring and gzipping them
 docker run --rm --volumes-from ${BackupContainer} \

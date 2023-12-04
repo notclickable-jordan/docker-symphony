@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     volumes:
       - db:/var/lib/postgresql/data:ro
-      - data:/data:ro
+      - data:/var/lib/outline/data:ro
 
   outline:
     image: docker.getoutline.com/outlinewiki/outline:latest
@@ -19,6 +19,8 @@ services:
       - postgres
       - redis
       - storage
+    volumes:
+      - data:/var/lib/outline/data
 
   redis:
     image: redis
@@ -46,40 +48,6 @@ services:
       timeout: 20s
       retries: 3
     env_file: env.postgres
-
-  storage:
-    image: minio/minio
-    container_name: outline_minio
-    env_file: ./env.minio
-    ports:
-      - 8211:9000
-    entrypoint: sh
-    command: -c 'minio server'
-    restart: unless-stopped
-    volumes:
-      - data:/data
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
-      interval: 30s
-      timeout: 20s
-      retries: 3
-
-  # Create the initial bucket
-  # create_bucket:
-  #   image: minio/mc
-  #   container_name: outline_create_bucket
-  #   depends_on:
-  #     - storage
-  #   entrypoint: >
-  #     /bin/sh -c "
-  #     /usr/bin/mc config host rm local;
-  #     /usr/bin/mc config host add local http://storage:9000 ACCESS_KEY SECRET_KEY;
-  #     /usr/bin/mc rm -r --force local/otln-minio;
-  #     /usr/bin/mc mb -p local/otln-minio;
-  #     /usr/bin/mc anonymous set download local/otln-minio;
-  #     "
-  #   environment:
-  #     - MC_HOST=storage
 
 volumes:
   data:
