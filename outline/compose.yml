@@ -34,7 +34,7 @@ services:
       retries: 3
 
   postgres:
-    image: postgres@15
+    image: postgres:15
     container_name: outline_postgres
     ports:
       - 8213:5432
