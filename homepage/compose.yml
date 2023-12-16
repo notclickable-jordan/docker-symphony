@@ -10,7 +10,7 @@ services:
       - LOGO=/logo.png
       - NEWWINDOW=false
     volumes:
-        - ./config.json:/app/src/config.json
+        - ./config.json:/app/src/config/config.json
         - ./public/favicon.ico:/app/public/favicon.ico
         - ./public/logo.png:/app/public/logo.png
         - ./public/icons:/app/public/icons
