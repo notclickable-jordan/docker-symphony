@@ -75,6 +75,12 @@
 				"icon": "/icons/miniflux.jpg"
 			},
 			{
+				"name": "Ollama",
+				"uri": "http://localhost:8290",
+				"description": "Large language model",
+				"icon": "/icons/ollama.png"
+			},
+			{
 				"name": "Outline",
 				"uri": "https://outline.starbase80.dev",
 				"description": "Documentation",
