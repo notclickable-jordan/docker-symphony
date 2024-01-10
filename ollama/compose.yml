@@ -1,0 +1,14 @@
+services:
+  ollama-webui:
+    container_name: ollama-webui
+    image: ghcr.io/ollama-webui/ollama-webui:main
+    ports:
+      - 8290:8080
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - data:/app/backend/data
+    restart: always
+
+volumes:
+  data:
