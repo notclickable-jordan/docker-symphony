@@ -1,6 +1,6 @@
 services:
   metube:
-    image: alexta69/metube:2023-03-05
+    image: alexta69/metube
     container_name: metube
     restart: unless-stopped
     environment:
