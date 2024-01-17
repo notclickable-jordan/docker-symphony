@@ -123,7 +123,7 @@
 			},
 			{
 				"name": "Home Assistant",
-				"uri": "http://homeassistant.local:8123/",
+				"uri": "http://homeassistant:8123/",
 				"description": "Home automation",
 				"icon": "/icons/home-assistant.svg"
 			},
