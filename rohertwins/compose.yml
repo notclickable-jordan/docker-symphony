@@ -9,7 +9,7 @@ services:
       - db:/var/lib/mysql:ro
 
   ghost:
-    image: ghost:5.42-alpine
+    image: ghost:alpine
     container_name: rohertwins
     restart: unless-stopped
     depends_on:
