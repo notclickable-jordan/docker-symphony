@@ -59,11 +59,11 @@ Publicly facing websites should get SSL certificates from Let's Encrypt on top o
 1. In `/nginx/sites`, add a new `.conf` for the site
     - Fill out the `server listen 80` block and comment out the `server listen 443` block
     - Ensure the `server listen 80 location /` block ends with `proxy_pass http://service_name_backend;`
-1. Modify `/nginx/docker-compose.yml` to expose the `letsencrypt_one` service and comment out the `letsencrypt` service
+1. Modify `/nginx/compose.yml` to expose the `letsencrypt_one` service and comment out the `letsencrypt` service
 1. Restart nginx: `docker exec switchboard nginx -s reload`
 1. In `/nginx`, run `docker compose up -d` to start the `letsencrypt_one` service
 1. Check in Portainer that the `letsencrypt_one` service exited after saving the certificate
-1. Modify `/nginx/docker-compose.yml` to expose the `letsencrypt` service and comment out the `letsencrypt_one` service
+1. Modify `/nginx/compose.yml` to expose the `letsencrypt` service and comment out the `letsencrypt_one` service
 1. Modify the `/nginx/sites/service_name.conf` file
     - Comment out the `server listen 80` block
     - Uncomment the `server listen 443` block
