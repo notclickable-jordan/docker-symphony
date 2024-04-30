@@ -110,3 +110,11 @@ crontab -e -u jordan
 ``` bash
 docker exec -it container_name bash
 ```
+
+# Update Cloudflared
+
+``` bash
+curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared.deb
+
+sudo systemctl restart cloudflared.service
+```
