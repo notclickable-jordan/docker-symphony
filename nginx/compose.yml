@@ -27,7 +27,7 @@ services:
       - redis
 
   postgres:
-    image: postgres
+    image: postgres:15
     container_name: switchboard_authelia_postgres
     restart: unless-stopped
     env_file: env.db
