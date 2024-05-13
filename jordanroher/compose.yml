@@ -1,0 +1,33 @@
+services:
+  backup:
+    image: alpine:3.17.2
+    container_name: jordanroher_backup
+    entrypoint: "tail -f /dev/null"
+    restart: unless-stopped
+    volumes:
+      - content:/var/lib/ghost/content:ro
+      - db:/var/lib/mysql:ro
+
+  ghost:
+    image: ghost:alpine
+    container_name: jordanroher
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - 8310:2368
+    env_file: env.ghost
+    volumes:
+      - content:/var/lib/ghost/content
+
+  db:
+    image: mysql:8.0
+    container_name: jordanroher_db
+    restart: unless-stopped
+    env_file: env.db
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  content:
+  db:
