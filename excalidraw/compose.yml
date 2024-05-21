@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  excalidraw:
+    image: excalidraw/excalidraw:latest
+    container_name: excalidraw
+    ports:
+      - 8320:80
+    restart: unless-stopped

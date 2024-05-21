@@ -21,6 +21,12 @@
 				"icon": "/icons/drawio.png"
 			},
 			{
+				"name": "Excalidraw",
+				"uri": "https://excalidraw.starbase80.dev",
+				"description": "Sketches and diagrams",
+				"icon": "excalidraw"
+			},
+			{
 				"name": "FileGator",
 				"uri": "https://filegator.starbase80.dev",
 				"description": "File server",
