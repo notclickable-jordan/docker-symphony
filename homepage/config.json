@@ -93,6 +93,12 @@
 				"icon": "/icons/outline.jpg"
 			},
 			{
+				"name": "Penpot",
+				"uri": "https://penpot.starbase80.dev",
+				"description": "Design tool",
+				"icon": "penpot"
+			},
+			{
 				"name": "Portainer",
 				"uri": "http://starbase-80:8160",
 				"description": "Docker management",
