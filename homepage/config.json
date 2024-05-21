@@ -96,7 +96,7 @@
 				"name": "Penpot",
 				"uri": "https://penpot.starbase80.dev",
 				"description": "Design tool",
-				"icon": "penpot"
+				"icon": "/icons/penpot.png"
 			},
 			{
 				"name": "Portainer",
