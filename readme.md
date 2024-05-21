@@ -119,3 +119,11 @@ curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/relea
 
 sudo systemctl restart cloudflared.service
 ```
+
+# NextCloud is inaccessible
+
+The container's IP address changed.
+
+1. Use Portainer to look for the IP address of container **nextcloud-aio-apache**
+1. Update that value at the top of `nginx/sites/nextcloud.conf`
+1. Restart nginx
