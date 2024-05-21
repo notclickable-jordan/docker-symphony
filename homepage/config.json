@@ -78,7 +78,7 @@
 				"name": "NextCloud",
 				"uri": "https://nextcloud.starbase80.dev",
 				"description": "Office suite",
-				"icon": "nextcloud"
+				"icon": "/icons/nextcloud.png"
 			},
 			{
 				"name": "Outline",
