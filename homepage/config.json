@@ -24,7 +24,7 @@
 				"name": "Excalidraw",
 				"uri": "https://excalidraw.starbase80.dev",
 				"description": "Sketches and diagrams",
-				"icon": "excalidraw"
+				"icon": "/icons/excalidraw.png"
 			},
 			{
 				"name": "FileGator",
@@ -84,7 +84,7 @@
 				"name": "NextCloud",
 				"uri": "https://nextcloud.starbase80.dev",
 				"description": "Office suite",
-				"icon": "/icons/nextcloud.png"
+				"icon": "/icons/nextcloud.jpg"
 			},
 			{
 				"name": "Outline",
