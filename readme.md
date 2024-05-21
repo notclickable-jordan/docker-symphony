@@ -43,6 +43,7 @@ Many services mention `env_file` in their `compose.yml`. For security reasons th
 - NextCloud (8300)
 - JordanRoher (8310)
 - Excalidraw (8320)
+- Penpot (8330)
 
 # Cloudflare
 
