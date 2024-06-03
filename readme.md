@@ -40,7 +40,6 @@ Many services mention `env_file` in their `compose.yml`. For security reasons th
 - Lemmy (8260)
 - LinkAce (8270)
 - GitLab (8280)
-- NextCloud (8300)
 - JordanRoher (8310)
 - Excalidraw (8320)
 - Penpot (8330)
@@ -121,11 +120,3 @@ curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/relea
 
 sudo systemctl restart cloudflared.service
 ```
-
-# NextCloud is inaccessible
-
-The container's IP address changed.
-
-1. Use Portainer to look for the IP address of container **nextcloud-aio-apache**
-1. Update that value at the top of `nginx/sites/nextcloud.conf`
-1. Restart nginx
