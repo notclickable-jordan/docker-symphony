@@ -60,17 +60,13 @@ services:
     container_name: mastodon_streaming
     restart: unless-stopped
     env_file: env.production
-    command: node ./streaming
+    command: node ./streaming/index.js
     networks:
       - external_network
       - internal_network
     healthcheck:
       # prettier-ignore
-      test:
-        [
-          'CMD-SHELL',
-          'wget -q --spider --proxy=off localhost:4000/api/v1/streaming/health || exit 1'
-        ]
+      test: ['CMD-SHELL', "curl -s --noproxy localhost localhost:4000/api/v1/streaming/health | grep -q 'OK' || exit 1"]
     ports:
       - 8013:4000
     depends_on:
@@ -92,7 +88,7 @@ services:
       - external_network
       - internal_network
     healthcheck:
-      test: [ 'CMD-SHELL', "ps aux | grep '[s]idekiq 6' || false" ]
+      test: ['CMD-SHELL', "ps aux | grep '[s]idekiq\ 6' || false"]
     volumes:
       - web:/mastodon/public/system
 
