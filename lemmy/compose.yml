@@ -29,7 +29,7 @@ services:
       - lemmy-ui
 
   lemmy:
-    image: dessalines/lemmy:0.19.3
+    image: dessalines/lemmy:0.19.7
     container_name: lemmy
     hostname: lemmy
     restart: unless-stopped
@@ -43,7 +43,7 @@ services:
       - pictrs
 
   lemmy-ui:
-    image: dessalines/lemmy-ui:0.19.3
+    image: dessalines/lemmy-ui:0.19.7
     container_name: lemmy_ui
     env_file: env.lemmy-ui
     volumes:
