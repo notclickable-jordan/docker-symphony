@@ -15,24 +15,6 @@
 				"icon": "/icons/calibre.jpg"
 			},
 			{
-				"name": "Draw.io",
-				"uri": "https://draw.starbase80.dev",
-				"description": "Graphs and charts",
-				"icon": "/icons/drawio.png"
-			},
-			{
-				"name": "Excalidraw",
-				"uri": "https://excalidraw.starbase80.dev",
-				"description": "Sketches and diagrams",
-				"icon": "/icons/excalidraw.png"
-			},
-			{
-				"name": "FileGator",
-				"uri": "https://filegator.starbase80.dev",
-				"description": "File server",
-				"icon": "/icons/filegator.png"
-			},
-			{
 				"name": "GitLab",
 				"uri": "https://gitlab.starbase80.dev",
 				"description": "Code hosting",
@@ -51,28 +33,10 @@
 				"icon": "/icons/lemmy.jpg"
 			},
 			{
-				"name": "LinkAce",
-				"uri": "https://linkace.starbase80.dev",
-				"description": "Bookmark management",
-				"icon": "/icons/linkace.png"
-			},
-			{
 				"name": "Mastodon",
 				"uri": "https://notclickable.social",
 				"description": "NotClickable.social",
 				"icon": "/icons/mastodon.jpg"
-			},
-			{
-				"name": "Mealie",
-				"uri": "https://mealie.starbase80.dev",
-				"description": "Recipe manager",
-				"icon": "/icons/mealie.jpg"
-			},
-			{
-				"name": "MeTube",
-				"uri": "http://starbase-80:8080",
-				"description": "Archive YouTube",
-				"icon": "/icons/metube.jpg"
 			},
 			{
 				"name": "Miniflux",
@@ -81,46 +45,16 @@
 				"icon": "/icons/miniflux.jpg"
 			},
 			{
-				"name": "Outline",
-				"uri": "https://outline.starbase80.dev",
-				"description": "Documentation",
-				"icon": "/icons/outline.jpg"
-			},
-			{
-				"name": "Penpot",
-				"uri": "https://penpot.starbase80.dev",
-				"description": "Design tool",
-				"icon": "/icons/penpot.png"
-			},
-			{
 				"name": "Portainer",
 				"uri": "http://starbase-80:8160",
 				"description": "Docker management",
 				"icon": "/icons/portainer.png"
 			},
 			{
-				"name": "Roher Twins",
-				"uri": "https://rohertwins.starbase80.dev",
-				"description": "Weekly newsletter",
-				"icon": "/icons/roher-twins.png"
-			},
-			{
 				"name": "Shamir's Secrets",
 				"uri": "https://shamir.starbase80.dev",
 				"description": "Secret distribution",
 				"icon": "/icons/shamir.jpg"
-			},
-			{
-				"name": "Wallabag",
-				"uri": "https://wallabag.starbase80.dev",
-				"description": "Read later",
-				"icon": "/icons/wallabag.png"
-			},
-			{
-				"name": "Wastebin",
-				"uri": "https://wastebin.starbase80.dev",
-				"description": "Pastebin",
-				"icon": "/icons/wastebin.jpg"
 			}
 		]
 	},

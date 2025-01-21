@@ -1,9 +1,0 @@
-services:
-  wastebin:
-    image: quxfoo/wastebin:latest
-    container_name: wastebin
-    environment:
-      - WASTEBIN_TITLE=Wastebin
-    ports:
-      - 8250:8088
-    restart: always
