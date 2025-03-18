@@ -9,7 +9,7 @@ services:
       - authelia_db:/var/lib/postgresql/data:ro
 
   authelia:
-    image: authelia/authelia:4.37.5
+    image: authelia/authelia:4.39
     container_name: switchboard_authelia
     restart: unless-stopped
     environment:
