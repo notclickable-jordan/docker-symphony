@@ -8,6 +8,7 @@ services:
       GITLAB_OMNIBUS_CONFIG: "from_file('/gitlab.rb')"
     ports:
       - 8280:80
+      - 8281:22
     volumes:
       - config:/etc/gitlab
       - logs:/var/log/gitlab
