@@ -58,7 +58,7 @@
 			},
 			{
 				"name": "Vaultwarden",
-				"uri": "http://starbase-80:8290",
+				"uri": "http://starbase-80:8130",
 				"description": "Password manager",
 				"icon": "/icons/vaultwarden.svg"
 			}

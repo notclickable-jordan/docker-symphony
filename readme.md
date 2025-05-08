@@ -21,12 +21,12 @@ Many services mention `env_file` in their `compose.yml`. For security reasons th
 - Calibre (8040)
 - Miniflux (8050)
 - Homepage (8090)
+- Vaultwarden (8130)
 - Portainer (8160)
 - Calibre (8170)
 - Shamir's Secret Sharing Scheme (8200)
 - Lemmy (8260)
 - GitLab (8280)
-- Vaultwarden (8290)
 
 # Cloudflare
 
