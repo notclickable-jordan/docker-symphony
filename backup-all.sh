@@ -44,6 +44,7 @@ Create-DatedDirectory "$BackupFolder"
 "/home/jordan/docker-symphony/mastodon/backup.sh"
 "/home/jordan/docker-symphony/miniflux/backup.sh"
 "/home/jordan/docker-symphony/nginx/backup.sh"
+"/home/jordan/docker-symphony/vaultwarden/backup.sh"
 
 # Delete backups older than 7 days
 find "$BackupFolder" -type d -mtime +7 -exec rm -rf {} \;

@@ -26,6 +26,7 @@ Many services mention `env_file` in their `compose.yml`. For security reasons th
 - Shamir's Secret Sharing Scheme (8200)
 - Lemmy (8260)
 - GitLab (8280)
+- Vaultwarden (8290)
 
 # Cloudflare
 
