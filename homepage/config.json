@@ -55,12 +55,6 @@
 				"uri": "https://shamir.starbase80.dev",
 				"description": "Secret distribution",
 				"icon": "/icons/shamir.jpg"
-			},
-			{
-				"name": "Vaultwarden",
-				"uri": "http://starbase-80:8130",
-				"description": "Password manager",
-				"icon": "/icons/vaultwarden.svg"
 			}
 		]
 	},
